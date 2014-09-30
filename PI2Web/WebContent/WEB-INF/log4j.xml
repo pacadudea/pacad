@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="ARCHIVO" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="log_PI2.log" />
+		<param name="MaxFileSize" value="100Mb" />
+		<param name="MaxBackupIndex" value="5" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} - %p %C{1} | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} - %p %C{1} | %m%n" />
+		</layout>
+	</appender>
+
+	<!-- PACKAGE PRODUCCION -->
+	<logger name="com.proint1.udea.produccion.ctl">
+		<level value="INFO"></level>
+	</logger>
+	<logger name="com.proint1.udea.produccion.dao.impl">
+		<level value="DEBUG"></level>
+	</logger>
+	<logger name="com.proint1.udea.produccion.ngc.impl">
+		<level value="INFO"></level>
+	</logger>
+
+
+	<!-- PACKAGE GESTION DE PROYECTOS -->
+	<!-- PACKAGE REPORTES -->
+	<!-- PACKAGE NOTIFICACION -->
+	<!-- PACKAGE WEB -->
+	<logger name="com.proint1.udea.ctl">
+		<level value="INFO"></level>
+	</logger>
+
+	<root>
+		<level value="ERROR" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ARCHIVO" />
+	</root>
+
+
+
+</log4j:configuration>

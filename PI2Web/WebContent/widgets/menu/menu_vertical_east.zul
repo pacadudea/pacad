@@ -1,0 +1,7 @@
+<zk xmlns:n="native">
+	<!-- Begin Menu -->
+	<menubar id="menubareast" autodrop="true">
+		<menuitem label="Laboratorio integrado de Sistemas"  href="https://lis.udea.edu.co/"/>
+	</menubar>
+	<!-- End Menu -->
+</zk>

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E73A5604-6DAC-DD62-7380-6E34E45E2ED9" name="TB_ACT_TIPO_ACTIVIDAD">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:32:39 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>TAC</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_TAC_IDN" id="908DA2F5-6AC6-E9F9-8998-7DB0B14EF85C">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:12:58 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_TAC_NOMBRE" id="6C5DEC54-4563-B247-1B38-BFC73D81B87B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:09:53 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_TAC_DESCRIPCION" id="8B881E7A-E4F4-4429-13F2-067B3A1F113B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:09:53 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E350114D-125F-4B5B-DBD3-95A5544F7A9E" name="ACTIVIDAD_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:13:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="908DA2F5-6AC6-E9F9-8998-7DB0B14EF85C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

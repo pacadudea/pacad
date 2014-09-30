@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7D3397A3-92C6-537B-712E-7885F5FC3411" name="TB_ADM_UNIVERSIDADES">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:03:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_IDM" id="12596C13-5D54-98BE-AB17-24EB76C5B644">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:04:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_NOMBRE" id="EBEB0C77-5ECA-2E56-CB11-2AEB04AF4694">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:05:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="0E169416-554E-3B1A-FA7E-7A51ECE5DF05">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:05:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="F67DBAAB-FA7A-1C1C-EB59-DC5E6D7C4A14">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:06:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_PAIS_IDN" id="0DEB7DCE-F580-7EEB-6124-D8BE24242BD4">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:06:45 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>89832BC5-B113-9D7F-9E3D-EBCFFF024544</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7AE75BB-F326-56A2-FB27-22E20CCF0CB4" referredColumn="89832BC5-B113-9D7F-9E3D-EBCFFF024544"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="813FC265-327F-272C-F921-33F879C39A5F" name="TB_ADM_UNIVERSIDADES_PK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:04:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12596C13-5D54-98BE-AB17-24EB76C5B644"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="038F8B23-775F-1A67-58CE-9918EF0CEE25" name="TB_ADM_UNIV_TB_ADM_PAIS_FK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:07:18 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0DEB7DCE-F580-7EEB-6124-D8BE24242BD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

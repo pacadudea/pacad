@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDC851C9-0C21-14C9-F5A1-A6B085B01950" name="TB_ADM_PAISES">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:36:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_IDN" id="89832BC5-B113-9D7F-9E3D-EBCFFF024544">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:39:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_DESCRIPCION" id="D25B300E-9729-ACD1-460C-621CC1AA2F53">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:43:37 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_CODIGO" id="7D8D6A03-4B9E-5C2F-11C4-608AE3533EB7">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:44:45 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="98AB8B1D-CE58-46C3-1770-08DD6C2C8AA3">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:45:45 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="DC6D6657-7F47-9873-CC81-5EC2E29C9356">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:49:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43C56A3D-5AC2-A4E5-E638-9A890226325D" name="TB_ADM_PAISES_PK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:39:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89832BC5-B113-9D7F-9E3D-EBCFFF024544"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

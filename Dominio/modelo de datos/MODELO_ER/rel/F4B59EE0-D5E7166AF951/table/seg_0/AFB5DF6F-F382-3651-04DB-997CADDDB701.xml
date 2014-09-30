@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AFB5DF6F-F382-3651-04DB-997CADDDB701" name="TB_ADM_USUARIO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:18:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_USU_IDN" id="74FD73AB-D708-B3C3-1495-4F785FE70CEC">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:26:29 UTC</createdTime>
+<comment>IDENTIFICADOR ÚNICO DE CADA REGISTRO DE LA TABLA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_USU_LOGIN" id="6D395FE6-63DB-3871-60C0-18E00E70656A">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:27:47 UTC</createdTime>
+<comment>CLAVE FORANEA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<delegate>3B4D712F-F06E-161A-0D46-D22A3854D321</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_USU_ACTIVO" id="97B8A2B9-4C02-A648-BD78-08E2C587731B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 03:12:10 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>17895605-56F4-8444-9C6E-D29414A14220</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_PER_IDN" id="96C3F25E-760C-E1C1-51D1-98C94605EFB9">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:20:31 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>17895605-56F4-8444-9C6E-D29414A14220</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="72709BA0-E86A-6CA6-53B9-7B21C872EC88" referredColumn="17895605-56F4-8444-9C6E-D29414A14220"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E323AE4-03E4-12A1-3073-7415961DBE53" name="USUARIO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:28:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74FD73AB-D708-B3C3-1495-4F785FE70CEC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9AF7404C-30ED-6EAC-8737-70D2C5D15A7E" name="USUARIO_PERSONA_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 03:15:17 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96C3F25E-760C-E1C1-51D1-98C94605EFB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

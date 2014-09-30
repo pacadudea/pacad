@@ -1,0 +1,42 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Gesti&#243;n de Autores" contentType="text/html;charset=UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?component name="dual-listbox" extends="div" class="com.proint1.udea.produccion.ctl.DualListBoxGrupo"?>
+
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window title="${c:l('pacad.window.miembros.titulo')}" border="normal" apply="${gestionMiembrosCtl}">
+		<vlayout spacing="15px">
+		
+			<hbox spacing="15px">
+           	
+           	<groupbox mold="3d" width="300px" height="100%">
+                <caption image="/img/group.png" label="${c:l('pacad.form.gestionMiembros.tituloGrupos')}" />
+                <hbox align="center">
+                	${c:l('pacad.textoGeneral.nombre')}
+			        <textbox id="txtBuscarGrupo" />
+			        <button id="btnBuscarGrupo" label="${c:l('pacad.textoGeneral.buscar')}" image="/img/search.png" />
+			    </hbox>
+			    <listbox id="listaGrupos" emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}" height="86%" style="margin-top:10px">
+			        <listhead>
+			            <listheader label="${c:l('pacad.form.gestionMiembros.tituloListaGrupos')}" />
+			        </listhead>
+			        <template name="model">
+			            <listitem>
+			                <listcell label="${each.vrNombre}"></listcell>
+			            </listitem>
+			        </template>
+			    </listbox>
+            </groupbox>
+            
+           	<groupbox mold="3d" width="500px">
+                <caption image="/img/users.png" label="${c:l('pacad.form.gestionMiembros.tituloAdminMiembros')}" />
+                <dual-listbox id="dualLBox" />
+            </groupbox>
+            
+            <vbox>
+				<button id="btnActualizarMiembros" label="${c:l('pacad.form.gestionMiembros.botonActualizar')}" image="/img/save.png" style="margin-top:70%" />
+            </vbox>
+        </hbox>
+		</vlayout>
+	</window>
+</zk>

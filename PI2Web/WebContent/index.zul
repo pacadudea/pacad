@@ -1,0 +1,10 @@
+	<?page title="Proyecto Integrador" contentType="text/html;charset=UTF-8"?>
+<!-- 	<?link rel="shortcut icon" href="/adm/res/favicon.ico" type="image/x-icon"?> -->
+<!-- 	<?link rel="icon" href="/adm/res/favicon.ico" type="image/x-icon"?> -->
+	<zk>
+	<zscript>
+		java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("menu_orientation.zul") ;
+		java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+		Executions.createComponentsDirectly(zulReader,"zul",null,new HashMap()) ;		
+	</zscript>
+	</zk>

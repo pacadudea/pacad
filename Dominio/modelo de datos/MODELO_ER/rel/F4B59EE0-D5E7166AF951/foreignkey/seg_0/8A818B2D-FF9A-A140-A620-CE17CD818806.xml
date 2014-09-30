@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8A818B2D-FF9A-A140-A620-CE17CD818806" name="MICROCURRICULO_ACTA_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:25:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>1B083981-4C38-4DBD-2CA5-CE39E52984BC</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>2CAC393C-B031-656A-96E1-563142C36C8E</localFKIndex>
+<keyObject>A68E4A89-0FE5-2E1A-A404-4CB66E274A99</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

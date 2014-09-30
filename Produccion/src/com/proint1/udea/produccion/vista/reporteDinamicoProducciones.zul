@@ -1,0 +1,73 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Reporte Dinamico de Producciones" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window title="Reporte Dinamico de Producciones" border="normal"
+		width="100%" height="480px" apply="${reporteDinamicoProduccionesCtl}">
+
+		<groupbox height="100%" width="100%" closable="false">
+			<caption label="Reporte Dinamico de Producciones"></caption>
+			<x:table border="0" height="90%" width="100%" >
+				<x:tr>
+					<x:td>Tipo de Producci&#243;n</x:td>
+					<x:td>
+						<listbox id="ltbTipoProduccion" tabindex="1" emptyMessage="No se encontraron tiposProduccion, para el resultado"
+							width="120px" rows="1" mold="select" height="2opx"
+							tooltiptext="Seleccione uno de la lista, ninguno para no usar el filtro">
+							<!-- llenar el listbox con lista de base de datos.  -->
+						</listbox>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>Autor(es)</x:td>
+					<x:td>
+						<listbox id="ltbAutores" tabindex="2" emptyMessage="No se encontraron autores, para el resultado"
+							width="120px" rows="1" mold="select" height="2opx"
+							tooltiptext="Seleccione uno o mas de la lista, ninguno para no usar el filtro">
+							<!-- llenar el listbox con lista de base de datos.-->
+						</listbox>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>Grupo de Investigaci&#243;n</x:td>
+					<x:td>
+						<listbox id="ltbGrupo" tabindex="3" emptyMessage="No se encontraron grupos, para el resultado"
+							width="120px" rows="1" mold="select" height="2opx"
+							tooltiptext="Seleccione uno de la lista, ninguno para no usar el filtro">
+							<!-- llenar el listbox con lista de base de datos. -->
+						</listbox>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>Fechas inicial publicaci&#243;n</x:td>
+					<x:td>
+						<datebox tabindex="4" id="tbiFechaInicio" width="120px" tooltiptext="Fecha desde la que se quiere generar el reporte"></datebox>
+					</x:td>
+					<x:td>Fecha final publicaci&#243;n</x:td>
+					<x:td><datebox tabindex="5" id="tbiFechaFin" width="120px" tooltiptext="Fecha hasta la que se quiere generar el reporte"></datebox></x:td>
+				</x:tr>
+				<!-- Botones -->
+				<x:tr>
+					<x:td colspan="4">
+						<div align="center">
+							<hlayout>
+								<button id="btnNuevoReporte"
+									label="Nuevo Reporte" tabindex="14"
+									tooltiptext="Limpia los filtros">
+								</button>
+								<button id="btnGenerarReporte"
+									label="Generar Reporte" tabindex="15" tooltiptext="Muestra en reporte generado con los filtros actuales">
+								</button>
+							</hlayout>
+							<!-- Resultado Seleccion -->
+							<x:tr>
+								<x:td>Mostrando reporte
+								<textbox tabindex="17" id="result" width="250px"></textbox>
+								</x:td>
+							</x:tr>
+						</div>
+					</x:td>
+				</x:tr>
+			</x:table>
+		</groupbox>
+	</window>
+</zk>

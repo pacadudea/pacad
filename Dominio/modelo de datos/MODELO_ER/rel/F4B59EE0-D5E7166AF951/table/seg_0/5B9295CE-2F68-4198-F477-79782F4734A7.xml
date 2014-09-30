@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B9295CE-2F68-4198-F477-79782F4734A7" name="TB_ADM_SEMESTREXCURSO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:13:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>SCU</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_SCU_IDN" id="5C819868-2C15-127D-89B6-7F15D736F40F">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:58:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_SEM_IDN" id="D8B2F9F9-DE30-DE8F-8876-0956417C555D">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:59:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>2267A4AA-7957-2FFB-0A8A-EAD0028B9892</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5632327C-6B25-68F4-BD48-A93F01081D86" referredColumn="2267A4AA-7957-2FFB-0A8A-EAD0028B9892"/>
+</associations>
+</Column>
+<Column name="NB_GRU_IDN" id="C6010351-7613-CB2C-E84A-437DFFA99F53">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:00:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>E12C9F86-1631-3141-0090-B003F296560B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="122B533B-1245-76D5-4F32-207AA8EDFF01" referredColumn="E12C9F86-1631-3141-0090-B003F296560B"/>
+</associations>
+</Column>
+<Column name="NB_CUR_IDN" id="E586D3DB-047A-3CEC-2478-F5C91D7FE727">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:00:51 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>AE3ABA1A-5CB4-0397-7CF4-8C0F3825F94E</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58FA6E7C-6F00-15F3-6587-4B4BD8251E4E" referredColumn="AE3ABA1A-5CB4-0397-7CF4-8C0F3825F94E"/>
+</associations>
+</Column>
+<Column name="NB_MCU_IDN" id="328D7761-2838-74F4-A484-4F021FC4A68A">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:56:33 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>D3C0AE31-E6C2-E93C-251D-A657BD3BAB5E</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2722BB16-882C-A5C1-AAE3-3788B5411D12" referredColumn="D3C0AE31-E6C2-E93C-251D-A657BD3BAB5E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E086E89-E952-9A1F-43D8-3424A2409EE4" name="SEMESTREXCURSO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:26:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C819868-2C15-127D-89B6-7F15D736F40F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05B98503-D4CA-D2C9-3E5E-D33E0551EA61" name="SEMESTREXCURSO_CURSO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:10:41 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E586D3DB-047A-3CEC-2478-F5C91D7FE727"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C8E5323-611B-6FC0-254D-BF07FFCC78E9" name="SEMESTREXCURSO_GRUPO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:11:03 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6010351-7613-CB2C-E84A-437DFFA99F53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06C551CB-5B74-167C-E573-CC76604CD4BC" name="SEMESTREXCURSO_SEMESTRE_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:11:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D8B2F9F9-DE30-DE8F-8876-0956417C555D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B44FBA5C-A42D-0BB4-3155-DD23DB305F38" name="TB_AD_SEXCU_TB_AD_MOD_CUR_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:56:49 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="328D7761-2838-74F4-A484-4F021FC4A68A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,28 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Producion Academica" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window title="Producion Academica" border="normal" width="900px"
+		height="480px">
+		<hlayout width="100%">
+			<groupbox height="400px" width="250px">
+				<caption label="Administracion"></caption>
+				<vlayout>
+				<button label="Gestion Autores" id="botonMenu"></button>
+					<x:a href="gestionAutores.zul">Gestion Autores</x:a>
+					<x:a href="gestionGruposInvestigacion.zul">Gestion Grupos de Investigacion</x:a> 
+				</vlayout>
+			</groupbox>
+
+			<groupbox height="400px" width="250px">
+				<caption label="Procucciones"></caption>
+			</groupbox>
+
+			<groupbox height="400px" width="250px">
+				<caption label="Consultas"></caption>
+				<vlayout>
+					<x:a href="reporteDinamicoProducciones.zul">Reporte Dinamico de Producciones</x:a>
+				</vlayout>
+			</groupbox>
+		</hlayout>
+	</window>
+</zk>

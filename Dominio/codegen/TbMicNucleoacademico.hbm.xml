@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbMicNucleoacademico" table="TB_MIC_NUCLEOACADEMICO" schema="PROINT1">
+        <id name="nbNacIdn" type="long">
+            <column name="NB_NAC_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="64" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" />
+        </property>
+        <property name="vrNacNombrenucleo" type="string">
+            <column name="VR_NAC_NOMBRENUCLEO" length="80" />
+        </property>
+        <set name="tbMicMicrocurriculos" table="TB_MIC_MICROCURRICULO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_NAC_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbMicMicrocurriculo" />
+        </set>
+    </class>
+</hibernate-mapping>

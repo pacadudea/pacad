@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<!-- BEANS DE ACCESO A DATOS, DAO -->
+
+	<bean id="personaDAO" class="com.proint1.udea.produccion.dao.impl.PersonaDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+
+	<bean id="paisDAO" class="com.proint1.udea.produccion.dao.impl.PaisDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+
+	<bean id="tipoIdentificacionDAO" class="com.proint1.udea.produccion.dao.impl.TipoIdentificacionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="factory"  />
+		</property>
+	</bean>
+	<!-- BEANS DE NEGOCIO -->
+
+	<bean id="tipoIdentificacionService" class="com.proint1.udea.produccion.ngc.impl.TipoIdentificacionServiceImpl">
+		<property name="tipoIdentificacionDAO" ref="tipoIdentificacionDAO"></property>
+	</bean>
+	
+	<bean id="paisService" class="com.proint1.udea.produccion.ngc.impl.PaisServiceImpl">
+	    <property name="paisDAO" ref="paisDAO"></property>
+	</bean>
+	
+	<bean id="personaService" class="com.proint1.udea.produccion.ngc.impl.PersonaServiceImpl">
+	    <property name="personaDAO" ref="personaDAO"></property>
+	</bean>
+</beans>

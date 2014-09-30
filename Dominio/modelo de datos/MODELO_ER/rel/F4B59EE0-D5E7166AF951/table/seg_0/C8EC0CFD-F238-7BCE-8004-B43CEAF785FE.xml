@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8EC0CFD-F238-7BCE-8004-B43CEAF785FE" name="TB_MIC_VERSIONPENSUM">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:15:31 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>VPE</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_VPE_IDN" id="02443EF4-2D8D-E41E-E9C4-D91C75822FAE">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:49:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1B285176-0811-C65A-2281-544A28CBB070" name="VERSIONPENSUM_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:49:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02443EF4-2D8D-E41E-E9C4-D91C75822FAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

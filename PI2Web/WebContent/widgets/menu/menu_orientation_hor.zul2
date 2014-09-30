@@ -1,0 +1,58 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk xmlns:n="native">
+	<!-- Begin Menu -->
+	<menubar id="menubar" autodrop="true" apply="${menuPrincipalHorCtl}">
+		<menuitem label="Inicio" onClick="alert(self.label)" />
+		<menu label="Institucional">
+			<menupopup>
+				<menuitem label="Quienes somos" onClick="alert(self.label)" />
+				<menuitem label="Perfil profesional" onClick="alert(self.label)" />
+			</menupopup>
+		</menu>
+		<menu label="Estudiar Sistemas">
+			<menupopup>
+				<menuitem label="Programas Pregrado" onClick="alert(self.label)" />
+				<menuitem label="Programos Posgrado" onClick="alert(self.label)" />
+			</menupopup>
+		</menu>
+		<menu label="Servicios y productos">
+			<menupopup>
+				<menuitem id="btnReporteActividades" label="Reporte de actividades docentes"/>
+				<menuitem id="btnCurriculo" label="Gestionar micro-curriculo"/>
+				<menuitem id="btnAdministracion" label="Administracin" />
+			</menupopup>
+		</menu>
+		<menu label="Investigacion">
+			<menupopup>
+				<menuitem label="Grupos" onClick="alert(self.label)" />
+				<menu label="Produccin acadmica" >
+					<menupopup>
+						<menu label="Administracin" >
+					<menupopup>
+						<menuitem label="Gestion Tipos Producción" id="gestionTiposProduccionMenu" />
+					</menupopup>
+				</menu>
+				
+				<menu label="Producciones" >
+					<menupopup>
+						<menuitem label="Gestion Autores" id="gestionAutoresMenu" />
+						<menuitem label="Gestion Grupos" id="gestionGrupoMenu" />
+						<menuitem label="Gestion Tipos de Producci�n" id="gestionTipoProduccionMenu" />
+						<menuitem label="Gestion Producciones" id="gestionProduccionMenu" />
+					</menupopup>
+				</menu>
+				
+				<menu label="Consultas" >
+					<menupopup>
+						<menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" />
+					</menupopup>
+				</menu>
+						
+					</menupopup>
+				</menu>
+			</menupopup>
+		</menu>
+	</menubar>
+	
+	<!-- End Menu -->
+</zk>

@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FC0F54B3-0D2E-DDCF-04BB-9B91E6F5C1FD" name="CURSOSXPENSUM_VERSIONPENSUM_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:53:34 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>75E89DCD-5D9A-58F2-7D7B-0E75B74BBF15</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>02852276-0C8A-DF0E-3CC3-307BA4EF9230</localFKIndex>
+<keyObject>1B285176-0811-C65A-2281-544A28CBB070</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

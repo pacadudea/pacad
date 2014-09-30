@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="038D2951-3059-6E83-7718-29BD87E04F8A" name="MICRO_NUCLEOACADEMICO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:25:15 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>1B083981-4C38-4DBD-2CA5-CE39E52984BC</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>F208ADD5-EBD0-F751-1AEF-EBF7C3FCB07E</localFKIndex>
+<keyObject>02663E9B-0E6E-D5EE-D59D-EB75FE1C121F</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

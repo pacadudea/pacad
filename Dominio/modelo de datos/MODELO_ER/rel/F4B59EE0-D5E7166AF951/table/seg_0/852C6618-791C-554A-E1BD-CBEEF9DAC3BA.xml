@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="852C6618-791C-554A-E1BD-CBEEF9DAC3BA" name="TB_ADM_CURSO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:12:02 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>CUR</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_CUR_IDN" id="AE3ABA1A-5CB4-0397-7CF4-8C0F3825F94E">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:54:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_CUR_ID" id="8CB8C9B6-8652-1454-9302-A5D243D990F1">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:14:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_CUR_NOMBRE" id="437A929D-4797-9CDA-2CDA-CDD1509D833B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:14:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="B9F75057-F6C7-62EF-4219-522D1AE7F493">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:14:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="4DB2DE70-0DEA-7573-35EC-EFB46FEC570E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:14:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BN_DEP_IDN" id="CF12D644-D2F3-9D6F-434F-38D52AEF0760">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:15:22 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>9656BFE7-1A24-ABEF-17A6-CAB5713F05CB</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27DE929D-70C1-C389-2A21-4DFC8152F45C" referredColumn="9656BFE7-1A24-ABEF-17A6-CAB5713F05CB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1EF2B6EB-798D-B2D0-FFFE-E4168145FB51" name="CURSO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:54:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE3ABA1A-5CB4-0397-7CF4-8C0F3825F94E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF0BF622-D9E1-8342-6471-0098E97BB296" name="CURSO_TB_GEN_DEPEN_ACAD_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:15:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF12D644-D2F3-9D6F-434F-38D52AEF0760"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

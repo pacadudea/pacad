@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A426B131-6B96-3EE8-F0CF-25902730733D" name="TB_GB_MATRICUL_TB_GEN_SEMES_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:34:03 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>1699FD22-5272-8625-AAB3-32A05A4959B7</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>C35E8348-531B-7862-BD46-E2058CA68B68</localFKIndex>
+<keyObject>F1C30026-81CE-A091-D07C-08C2DBA045C7</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

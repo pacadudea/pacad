@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4C8972E6-4978-9EB9-1C19-C656DABF5A18" name="TB_PRD_TIPOPRODUCIONESXCAMPO">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:19:21 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_IDN" id="D28A8548-33F2-8D99-FC75-92E84CB99773">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:20:23 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="F0DEDA2A-68F3-90F6-3CB6-3DF62B397022">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:20:39 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="AB84AF8F-2741-C027-741A-63596125039F">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:20:52 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_TIPOPRODUCCION_IDN" id="5D55405C-4BEA-CFB7-C8F1-16B1C6837034">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:21:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>5F637CC2-05BF-AEE9-20B1-942A934BE1A9</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75183B4E-637E-0F63-9C56-CBC15232AF5E" referredColumn="5F637CC2-05BF-AEE9-20B1-942A934BE1A9"/>
+</associations>
+</Column>
+<Column name="NB_CAMPO_IDN" id="4A1644C7-6DB3-41CC-F3D4-B29BD445178E">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:21:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>191E0188-2530-15B5-9B23-A683C5E02402</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="29745318-1442-4848-C833-BA9566F90F31" referredColumn="191E0188-2530-15B5-9B23-A683C5E02402"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89700E50-B086-3F10-EDA1-3AB521E43F0E" name="TB_PDR_TIPOPRODUCXCAMPO_PK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:20:23 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D28A8548-33F2-8D99-FC75-92E84CB99773"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="456AE4B5-D3D1-073C-EB6C-06640268C162" name="TB_PDR_PRDXCAM_TB_PRD_CAMP_FK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:23:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A1644C7-6DB3-41CC-F3D4-B29BD445178E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9CCE98F3-57B4-2AF1-50EF-A02D93FFA1E6" name="TB_PDR_PRDXCAM_TN_PRD_PRO_FK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 22:24:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D55405C-4BEA-CFB7-C8F1-16B1C6837034"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Note class="oracle.dbtools.crest.model.design.Note" name="Note_3" directorySegmentName="seg_0" id="A6C0D6BC-04BE-0932-7772-20FAD051D3E8">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:31:58 UTC</createdTime>
+<comment>SISTEMA INTEGRADO DE OPERACIONES ADMINISTRATIVAS - SIOA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+</Note>

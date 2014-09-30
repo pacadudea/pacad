@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbMicMicrocurriculo" table="TB_MIC_MICROCURRICULO" schema="PROINT1">
+        <id name="nbMicIdn" type="big_decimal">
+            <column name="NB_MIC_IDN" precision="22" scale="0" />
+            <generator class="foreign">
+                <param name="property">tbMicEstadomic</param>
+            </generator>
+        </id>
+        <one-to-one name="tbMicEstadomic" class="TbMicEstadomic" constrained="true"></one-to-one>
+        <many-to-one name="tbMicNucleoacademico" class="TbMicNucleoacademico" fetch="select">
+            <column name="NB_NAC_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbAdmSemestrexcurso" class="TbAdmSemestrexcurso" fetch="select">
+            <column name="NB_SCU_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbMicEvaluacion" class="TbMicEvaluacion" fetch="select">
+            <column name="NB_MIC_UNIDAD" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbMicActa" class="TbMicActa" fetch="select">
+            <column name="NB_ACT_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbMicUnidades" class="TbMicUnidades" update="false" insert="false" fetch="select">
+            <column name="NB_MIC_UNIDAD" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="64" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" />
+        </property>
+        <property name="vrMicNombre" type="string">
+            <column name="VR_MIC_NOMBRE" length="32" not-null="true" />
+        </property>
+        <property name="vrMicValidable" type="string">
+            <column name="VR_MIC_VALIDABLE" length="32" />
+        </property>
+        <property name="nbMicHorasteoricasemanales" type="java.lang.Byte">
+            <column name="NB_MIC_HORASTEORICASEMANALES" precision="2" scale="0" />
+        </property>
+        <property name="nbMicHorasterosem" type="java.lang.Short">
+            <column name="NB_MIC_HORASTEROSEM" precision="4" scale="0" />
+        </property>
+        <property name="nbMicNumerocreditos" type="java.lang.Byte">
+            <column name="NB_MIC_NUMEROCREDITOS" precision="2" scale="0" />
+        </property>
+        <property name="nbHorasclasexsemestre" type="java.lang.Short">
+            <column name="NB_HORASCLASEXSEMESTRE" precision="4" scale="0" />
+        </property>
+        <property name="vrMicCampodeformacion" type="string">
+            <column name="VR_MIC_CAMPODEFORMACION" length="32" />
+        </property>
+        <property name="vrMicHabilitable" type="string">
+            <column name="VR_MIC_HABILITABLE" length="28" />
+        </property>
+        <property name="vrMicClasificable" type="string">
+            <column name="VR_MIC_CLASIFICABLE" length="28" />
+        </property>
+        <property name="vrMicRequisitos" type="string">
+            <column name="VR_MIC_REQUISITOS" length="64" />
+        </property>
+        <property name="vrMicCorrequisito" type="string">
+            <column name="VR_MIC_CORREQUISITO" length="64" />
+        </property>
+        <property name="nbMicProgram" type="byte">
+            <column name="NB_MIC_PROGRAM" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="vrMicProposito" type="string">
+            <column name="VR_MIC_PROPOSITO" length="128" />
+        </property>
+        <property name="vrMicJustificacion" type="string">
+            <column name="VR_MIC_JUSTIFICACION" length="128" />
+        </property>
+        <property name="vrMicObjetivogeneral" type="string">
+            <column name="VR_MIC_OBJETIVOGENERAL" length="64" />
+        </property>
+        <property name="vrMicObjetivosespecificos" type="string">
+            <column name="VR_MIC_OBJETIVOSESPECIFICOS" length="128" />
+        </property>
+        <property name="vrMicContenidoresumido" type="string">
+            <column name="VR_MIC_CONTENIDORESUMIDO" length="200" />
+        </property>
+        <property name="nbMicEstado" type="java.lang.Byte">
+            <column name="NB_MIC_ESTADO" precision="2" scale="0" />
+        </property>
+        <property name="vrMicBibliografia" type="string">
+            <column name="VR_MIC_BIBLIOGRAFIA" length="64" />
+        </property>
+    </class>
+</hibernate-mapping>

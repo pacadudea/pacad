@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbAdmPermisosxrol" table="TB_ADM_PERMISOSXROL" schema="PROINT1">
+        <composite-id name="id" class="TbAdmPermisosxrolId">
+            <key-property name="nbPxrIdn" type="long">
+                <column name="NB_PXR_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="nbRecIdn" type="long">
+                <column name="NB_REC_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="nbRolIdn" type="big_decimal">
+                <column name="NB_ROL_IDN" precision="22" scale="0" />
+            </key-property>
+            <key-property name="nbPxrActivo" type="java.lang.Character">
+                <column name="NB_PXR_ACTIVO" length="1" />
+            </key-property>
+            <key-property name="nbPxrAgregar" type="java.lang.Character">
+                <column name="NB_PXR_AGREGAR" length="1" />
+            </key-property>
+            <key-property name="bnPxrEliminar" type="java.lang.Character">
+                <column name="BN_PXR_ELIMINAR" length="1" />
+            </key-property>
+            <key-property name="bnPxrActualizar" type="java.lang.Character">
+                <column name="BN_PXR_ACTUALIZAR" length="1" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="tbAdmRecurso" class="TbAdmRecurso" update="false" insert="false" fetch="select">
+            <column name="NB_REC_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbAdmRol" class="TbAdmRol" update="false" insert="false" fetch="select">
+            <column name="NB_ROL_IDN" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="51FFBE6A-B88E-A0B4-1B50-D3CD6A0CF334" name="TB_ADM_PERMISOSXROL">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:18:33 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_PXR_IDN" id="1697C606-568E-5FB3-4390-8589BFE8F2EA">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:33:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_REC_IDN" id="654BFB4A-29EC-698C-B7C3-2411EFCCC153">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:33:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>29711607-B60A-6054-0E81-4B5B908B12D0</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF2A6C23-88DC-D1EA-522F-E6E0A32AF2FD" referredColumn="29711607-B60A-6054-0E81-4B5B908B12D0"/>
+</associations>
+</Column>
+<Column name="NB_ROL_IDN" id="98A866FE-7DD3-BEF8-F138-04D5505B6298">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:34:33 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>3B4D712F-F06E-161A-0D46-D22A3854D321</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6924B1FC-3B72-BE9B-130D-D9CAA19DE19F" referredColumn="3B4D712F-F06E-161A-0D46-D22A3854D321"/>
+</associations>
+</Column>
+<Column name="NB_PXR_ACTIVO" id="EF87502B-2005-31B8-B072-F91CAC845CA6">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:30:43 UTC</createdTime>
+<comment>Indica si esta visible o activo el recurso</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_PXR_AGREGAR" id="15E25DE4-F881-6512-58CA-B6C749ED8E2E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:30:43 UTC</createdTime>
+<comment>Indica si puede agregar datos del recurso</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BN_PXR_ELIMINAR" id="5D5FFCB7-3906-44A1-3E4D-D2D7B119C215">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:30:43 UTC</createdTime>
+<comment>Indica si tiene permisos de eliminar</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BN_PXR_ACTUALIZAR" id="54B4A8BE-F6BA-86E8-79B0-F7E1D18AD126">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:30:43 UTC</createdTime>
+<comment>Indica si puede acualizar los datos del recurso</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE189BF4-A3A0-FEE8-2E98-0629BA14ACB3" name="PERMISOS_ROL_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:34:52 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98A866FE-7DD3-BEF8-F138-04D5505B6298"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FF6756C-4386-672A-4D02-4CDE24AFC594" name="PERMISOS_FUNCIONALIDAD_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:35:02 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="654BFB4A-29EC-698C-B7C3-2411EFCCC153"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

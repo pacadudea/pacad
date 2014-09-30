@@ -1,0 +1,30 @@
+<!-- Lista doble para la administracion de los miembros de los grupos -->
+<hlayout height="300px" style="padding:10px">
+    <listbox id="listaSeleccionados" hflex="1" vflex="true" multiple="true" rows="8">
+        <listhead>
+            <listheader label="${c:l('pacad.form.gestionMiembros.panelPosiblesMiembros')}" width="100%"></listheader>
+        </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="${each.nombreMiembro}"/>
+            </listitem>
+        </template>
+    </listbox>
+    <zscript><![CDATA[String imgPath = "/img/dualListBox";]]></zscript>
+    <vbox spacing="10px" width="24px" style="margin-top:50px;">
+        <image style="cursor:pointer" id="chooseAllBtn" src="${imgPath}/rowidt.png" />
+        <image style="cursor:pointer" id="chooseBtn" src="${imgPath}/rowid.png" />
+        <image style="cursor:pointer" id="removeBtn" src="${imgPath}/rowdi.png" />
+        <image style="cursor:pointer" id="removeAllBtn" src="${imgPath}/rowdit.png" />
+    </vbox>	
+    <listbox id="listaMiembros" hflex="1" vflex="true" multiple="true" rows="8">
+        <listhead>
+            <listheader label="${c:l('pacad.form.gestionMiembros.panelMiembrosGrupo')}" width="100%"></listheader>
+        </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="${each.nombreMiembro}"/>
+            </listitem>
+        </template>
+    </listbox>
+</hlayout>

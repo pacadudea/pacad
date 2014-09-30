@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                                                   http://www.springframework.org/schema/beans/spring-beans.xsd
+                                                   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                                                   http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<!-- BEANS CONFIGURACION DATASOURCE -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:XE</value>
+		</property>
+		<property name="username">
+			<value>proint1</value>
+		</property>
+		<property name="password">
+			<value>proint1</value>
+		</property>
+	</bean>
+	
+	<!-- BEANS CONFIGURACION HIBERNATE -->
+	<bean id="factory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="mappingResources">
+			<list>
+			    
+			    <!-- CONFIGURACION -->
+			    <value>com/proint1/udea/administracion/mapeo/configuracion/Pais.hbm.xml</value>
+			    
+			    <!-- TERCEROS -->
+			    <value>com/proint1/udea/administracion/mapeo/terceros/Tipoidentificacion.hbm.xml</value>
+			    <value>com/proint1/udea/administracion/mapeo/terceros/Persona.hbm.xml</value>
+
+				<!-- Mapeos produccion academica -->
+				<value>com/proint1/udea/produccion/mapeo/TbPrdAutor.hbm.xml</value> 
+				<value>com/proint1/udea/produccion/mapeo/TbPrdAutoresxproduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdProduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdCampos.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproduciones.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproducionesxcampo.hbm.xml</value> 
+				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value>  
+				
+				<!--<value>com/proint1/udea/produccion/mapeo/TbPrdAutoresxproduccion.hbm.xml</value> 
+					
+					<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproduciones.hbm.xml</value> 
+					<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value> 
+					<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value> 
+					
+					 
+					 
+					<value>com/proint1/udea/produccion/mapeo/TbAdmPersona.hbm.xml</value> <value>com/proint1/udea/actividad/mapeo/TipoActividad.hbm.xml</value> -->
+				<!-- Mapeos registro actividad -->
+
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect"> org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.transaction.factory_class">
+					org.hibernate.transaction.JDBCTransactionFactory
+				</prop>
+			</props>
+		</property>
+		
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+		
+	<bean id="menuPrincipalHorCtl" scope="prototype"
+		class="com.proint1.udea.ctl.MenuPrincipalHorCtl"></bean>
+
+
+
+	<!-- BEANS ADMINISTRACION -->
+
+	 <import resource="administracionContext.xml"/>
+
+	<!-- BEANS MICROCURRICULO -->
+	<!-- <import resource="microcurriculoContext.xml"/> -->
+
+	<!-- BEANS PRODUCCION ACADEMICA -->
+	<import resource="produccionAcademicaContext.xml" />
+
+	<!-- BEANS REGISTRO ACTIVIDAD -->
+	<!-- <import resource="registroActividadContext.xml"/> -->
+
+</beans>

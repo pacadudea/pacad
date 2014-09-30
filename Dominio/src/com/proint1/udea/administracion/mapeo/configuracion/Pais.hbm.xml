@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.proint1.udea.administracion.entidades.terceros.Pais" table="TB_ADM_PAISES" schema="PROINT1">
+        <id name="nbIdn" type="long">
+            <column name="NB_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrDescripcion" type="string">
+            <column name="VR_DESCRIPCION" length="80" not-null="true" />
+        </property>
+        <property name="vrCodigo" type="string">
+            <column name="VR_CODIGO" length="40" not-null="true" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="10" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

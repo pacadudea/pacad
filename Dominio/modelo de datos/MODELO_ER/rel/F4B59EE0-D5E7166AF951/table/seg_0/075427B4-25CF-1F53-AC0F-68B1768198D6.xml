@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="075427B4-25CF-1F53-AC0F-68B1768198D6" name="TB_ADM_RECURSO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:18:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>REC</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_REC_IDN" id="29711607-B60A-6054-0E81-4B5B908B12D0">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:31:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_REC_NOMBRE" id="331B03B3-8590-1C3F-1BAB-BA7BC756789E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:25:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_REC_TIPO" id="07CD4ECF-73C4-50CC-1252-EEFE0B70776B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:25:26 UTC</createdTime>
+<comment>MENU&lt;br/&gt;TAB&lt;br/&gt;BUTON&lt;br/&gt;LINK</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_REC_RECPADRE" id="1C2AAA58-C712-7307-8DAB-D3C750D38DFA">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:34:58 UTC</createdTime>
+<comment>Recurso padre para poder generar arbol de dependencia ejemplo&lt;br/&gt;- SIOA&lt;br/&gt;  - Administraciòn&lt;br/&gt;        - Seguridad&lt;br/&gt;               - Usuarios&lt;br/&gt;               - Roles&lt;br/&gt;  - Registro de Actividades&lt;br/&gt;       - Registrar Actividades&lt;br/&gt; - Microcurriculo&lt;br/&gt;    - xxxx</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>29711607-B60A-6054-0E81-4B5B908B12D0</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C941D4C-0E73-CA8B-DF10-D3F73A567ECF" referredColumn="29711607-B60A-6054-0E81-4B5B908B12D0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7A97499D-B08D-5FC3-3C7B-F4ED85E54177" name="FUNCIONALIDAD_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:31:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29711607-B60A-6054-0E81-4B5B908B12D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F2413D4-6256-BA61-198D-1620B81B9BFB" name="TB_ADM_REC_TB_ADM_REC_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:36:41 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C2AAA58-C712-7307-8DAB-D3C750D38DFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

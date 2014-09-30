@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbAdmTareasProgramadas" table="TB_ADM_TAREAS_PROGRAMADAS" schema="PROINT1">
+        <id name="nbTprIdn" type="big_decimal">
+            <column name="NB_TPR_IDN" precision="38" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbAdmDependenciaAcademica" class="TbAdmDependenciaAcademica" fetch="select">
+            <column name="NB_DEP_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrTprNombre" type="string">
+            <column name="VR_TPR_NOMBRE" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="vrTprManager" type="string">
+            <column name="VR_TPR_MANAGER" length="500" not-null="true" />
+        </property>
+        <property name="nbTprActiva" type="char">
+            <column name="NB_TPR_ACTIVA" length="1" not-null="true" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="32" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

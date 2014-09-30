@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A42F224D-F5DA-4353-782D-2AD1EF2C4C3B" name="TB_ADM_GRUPO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:11:40 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>GPO</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_GPO_IDN" id="E12C9F86-1631-3141-0090-B003F296560B">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:57:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_GPO_NUMERO" id="FAEE1E7E-DC0B-5E64-D116-E30F90BF0689">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:55:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_GPO_HORARIO" id="9959757F-AD44-E382-7A74-31C85F553F5F">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:15:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="870539C7-2ED3-CA79-BC9E-E13B98A675DB">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:15:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="C11D645B-EF3E-F6E2-5AD6-5C541864A280">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:15:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_SCU_IBN" id="4A2AA3AA-E89F-FC3F-7099-50A649544136">
+<createdBy>Daniela</createdBy>
+<createdTime>2014-05-26 00:48:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>5C819868-2C15-127D-89B6-7F15D736F40F</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1B0146F-1DFE-316F-8326-8486FB0712A0" referredColumn="5C819868-2C15-127D-89B6-7F15D736F40F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB038C3D-D4CF-6C2F-68E9-EC68850B2C05" name="GRUPO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:57:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E12C9F86-1631-3141-0090-B003F296560B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A7805E4-0CAE-390E-1006-5AE9B420B553" name="TB_ADM_GRU_TB_ADM_SEMXCUR_FK">
+<createdBy>Daniela</createdBy>
+<createdTime>2014-05-26 00:48:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A2AA3AA-E89F-FC3F-7099-50A649544136"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

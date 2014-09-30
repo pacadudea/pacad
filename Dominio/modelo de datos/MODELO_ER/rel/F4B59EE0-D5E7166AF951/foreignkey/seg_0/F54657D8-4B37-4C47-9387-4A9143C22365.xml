@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F54657D8-4B37-4C47-9387-4A9143C22365" name="AUTORESXPRODUCCION_AUTOR_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:09:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>EDC3DA4D-B1FB-6110-9CD8-67D2F4FB6D3A</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>74550E6F-6367-DAB6-8768-66F58BA78268</localFKIndex>
+<keyObject>901535BD-A808-0C15-DDD6-B476B80E6DCC</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

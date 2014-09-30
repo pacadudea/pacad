@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E77D3176-96AB-1052-85A1-27B76FC6F2B3" name="TB_ADM_PROPIEDADES">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:18:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_PRP_IDN" id="AB9D3596-7901-A633-4D74-EA9B7A19390C">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_PRP_CODIGO" id="A7F67AC0-0B82-9E9C-B65D-7E2B967250D1">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_PRP_VALOR" id="019F49F0-2C6D-6062-6F4B-F178D450AF03">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_DEP_IDN" id="62534A13-D5E5-C337-8EDD-E584C3F42A1D">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:45 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>9656BFE7-1A24-ABEF-17A6-CAB5713F05CB</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E459ECB1-6409-755C-44DD-76A835899AC3" referredColumn="9656BFE7-1A24-ABEF-17A6-CAB5713F05CB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8AAD667B-836F-EBEA-4A70-ACDC9A6B735C" name="TB_ADM_PROPIEDADES_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB9D3596-7901-A633-4D74-EA9B7A19390C"/>
+<colUsage columnID="019F49F0-2C6D-6062-6F4B-F178D450AF03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="54D585A0-A6D7-6770-B430-362F743EC1D0" name="TB_ADM_PROP_TB_ADM_DEP_ACAD_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:43:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62534A13-D5E5-C337-8EDD-E584C3F42A1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

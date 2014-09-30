@@ -1,0 +1,416 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1B083981-4C38-4DBD-2CA5-CE39E52984BC" name="TB_MIC_MICROCURRICULO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:16:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>MIC</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_MIC_IDN" id="AB48EB92-2D06-C8BD-D24F-CF0CFB701A38">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:24:20 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>A01B12C8-7DA6-4013-ABE9-95AB48D86808</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="07D8A04E-CF9A-7F6B-FA61-BC25BAE64F50" referredColumn="A01B12C8-7DA6-4013-ABE9-95AB48D86808"/>
+</associations>
+</Column>
+<Column name="VR_ADTUSUARIO" id="728E7D62-3077-6F17-2924-EEEADBFD7B77">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:53:31 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="A22D3B0D-850C-1C7E-7287-4B731AF37DEB">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:37:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_NOMBRE" id="9B4A8D2B-1051-EF03-5531-3FA60AB24238">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_VALIDABLE" id="3DF7E807-6AFE-DFB9-596D-97517E3C5A1D">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_HORASTEORICASEMANALES" id="52E253DB-F51C-26A3-4D31-F6719F67160E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_HORASTEROSEM" id="BF98B816-3AC2-686A-CB43-E35C75D6DEBC">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_NUMEROCREDITOS" id="2ABDA011-77F2-F8E6-56F1-57C055C5EA02">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_HORASCLASEXSEMESTRE" id="404FADF0-E896-9849-4FD8-AC9816AA16CB">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:24:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_CAMPODEFORMACION" id="8A470C0A-883F-22BD-90AE-A030ABD607A5">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:26:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_SCU_IDN" id="F1BAF6DB-D31A-05C0-66F7-E769D4B1DE3A">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:26:04 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>5C819868-2C15-127D-89B6-7F15D736F40F</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4E62797E-BB27-68EF-1CD1-F58644E0E360" referredColumn="5C819868-2C15-127D-89B6-7F15D736F40F"/>
+</associations>
+</Column>
+<Column name="NB_ACT_IDN" id="5C42E38E-228E-01C3-AA14-0323CDDDE774">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:24:34 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>BFAE6556-FB68-05DB-350F-75974B983697</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A818B2D-FF9A-A140-A620-CE17CD818806" referredColumn="BFAE6556-FB68-05DB-350F-75974B983697"/>
+</associations>
+</Column>
+<Column name="NB_NAC_IDN" id="1AA9CB5F-D78F-BB28-1C9D-098295009004">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:25:04 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>2A062638-8300-7936-EA8F-F66221B59351</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="038D2951-3059-6E83-7718-29BD87E04F8A" referredColumn="2A062638-8300-7936-EA8F-F66221B59351"/>
+</associations>
+</Column>
+<Column name="VR_MIC_HABILITABLE" id="78E26215-4A0E-0FEA-0004-D2C9C6A9D300">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:27:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>14 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_CLASIFICABLE" id="17FEBB7A-157B-A8D4-0843-FC7D384A566E">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:27:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>14 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_REQUISITOS" id="0E3589F1-B1CD-57D0-047C-E3647ADAB307">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:28:33 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_CORREQUISITO" id="A3E60450-FB3B-DD12-E337-C9430209EEE2">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:28:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_PROGRAM" id="EA7C9388-30CD-8F4A-EBEE-650C1896C1B6">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:28:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_PROPOSITO" id="7F730253-C52D-8D96-9A23-7546B8B46AEE">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:31:31 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_JUSTIFICACION" id="0D7FB172-F5DD-C1F9-7EDD-28CA7D6A2E1C">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:32:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_OBJETIVOGENERAL" id="2572CB7A-9588-C899-C37D-E118261A9C14">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:33:08 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_OBJETIVOSESPECIFICOS" id="091E8686-C8CA-94C0-6EF6-7D049485CE32">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:33:55 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MIC_CONTENIDORESUMIDO" id="1F4D2D16-1F2A-8270-0596-A7CC8E9B89AF">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:34:36 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_ESTADO" id="092DACB0-924F-3984-A4D8-5957F67B3F36">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:35:20 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_MIC_UNIDAD" id="2415D30B-609B-B615-2F2D-62367B7CDFB3">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:35:47 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>49074283-9AB8-3680-832C-C8061C6D77E4</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AEEF76A7-8018-7985-5487-65D2829A29B9" referredColumn="49074283-9AB8-3680-832C-C8061C6D77E4"/>
+<colAssociation fkAssociation="DB5B93C8-5638-7DB6-5081-D37AF9BB8CC0" referredColumn="7203ADFF-5BEA-2770-BC16-E3325AB79351"/>
+</associations>
+</Column>
+<Column name="VR_MIC_BIBLIOGRAFIA" id="390C58DB-4063-15F2-847F-116618EB9D40">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 01:36:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>32 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6A41A534-DDB3-EA45-95EC-69DB0E37E156" name="MICROCURRICULO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:24:20 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB48EB92-2D06-C8BD-D24F-CF0CFB701A38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F208ADD5-EBD0-F751-1AEF-EBF7C3FCB07E" name="MICRO_NUCLEOACADEMICO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:25:15 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AA9CB5F-D78F-BB28-1C9D-098295009004"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2CAC393C-B031-656A-96E1-563142C36C8E" name="MICROCURRICULO_ACTA_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:25:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C42E38E-228E-01C3-AA14-0323CDDDE774"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D5EE8F9-C9B2-1FE5-5719-0784792474E0" name="MICRO_SEMESTREXCURSO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:26:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1BAF6DB-D31A-05C0-66F7-E769D4B1DE3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CDF1D99-0DA8-AFB7-BF2C-2ED28D1DC47B" name="TB_MIC_MICRO_TB_MIC_EST_FK">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 02:38:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB48EB92-2D06-C8BD-D24F-CF0CFB701A38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B22A0737-31BE-8EBA-26DB-846556AC1D1F" name="TB_MIC_MICRO_TB_MIC_EVAL_FK">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 03:03:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2415D30B-609B-B615-2F2D-62367B7CDFB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8886A441-2F19-866C-7CCA-9DC509A01F73" name="TB_MIC_MICRO_TB_MIC_UNID_FK">
+<createdBy>Jeidi</createdBy>
+<createdTime>2014-04-28 04:03:50 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2415D30B-609B-B615-2F2D-62367B7CDFB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

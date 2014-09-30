@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbMicActa" table="TB_MIC_ACTA" schema="PROINT1">
+        <id name="nbActIdn" type="long">
+            <column name="NB_ACT_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="64" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" />
+        </property>
+        <property name="vrActContenido" type="string">
+            <column name="VR_ACT_CONTENIDO" length="100" />
+        </property>
+        <property name="vrActAsistentes" type="string">
+            <column name="VR_ACT_ASISTENTES" length="400" />
+        </property>
+        <property name="vrActOrdendeldia" type="string">
+            <column name="VR_ACT_ORDENDELDIA" length="400" />
+        </property>
+        <property name="vrActDesarrollo" type="string">
+            <column name="VR_ACT_DESARROLLO" length="1000" />
+        </property>
+        <property name="vrActFirmas" type="string">
+            <column name="VR_ACT_FIRMAS" length="200" />
+        </property>
+        <set name="tbMicMicrocurriculos" table="TB_MIC_MICROCURRICULO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_ACT_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbMicMicrocurriculo" />
+        </set>
+    </class>
+</hibernate-mapping>

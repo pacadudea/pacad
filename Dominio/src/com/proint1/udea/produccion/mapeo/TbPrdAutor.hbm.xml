@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.proint1.udea.produccion.entidades.TbPrdAutor" table="TB_PRD_AUTOR" schema="PROINT1">
+        <id name="Id" type="long">
+            <column name="NB_AUT_IDN" precision="10" scale="0" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="pais" class="com.proint1.udea.administracion.entidades.terceros.Pais" fetch="select" lazy="false">
+            <column name="VR_PAIS_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+         <many-to-one name="persona" class="com.proint1.udea.administracion.entidades.terceros.Persona" fetch="select" lazy="false">
+            <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

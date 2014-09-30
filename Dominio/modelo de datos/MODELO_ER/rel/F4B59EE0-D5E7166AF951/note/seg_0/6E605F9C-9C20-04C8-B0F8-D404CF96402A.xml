@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Note class="oracle.dbtools.crest.model.design.Note" name="Note_10" directorySegmentName="seg_0" id="6E605F9C-9C20-04C8-B0F8-D404CF96402A">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:57:36 UTC</createdTime>
+<comment>VIRTUAL&lt;br/&gt;PRESENCIAL&lt;br/&gt;DIRIJIDA&lt;br/&gt;RADIAL&lt;br/&gt;SEME PRESENCIAL&lt;br/&gt;ASESORIA&lt;br/&gt;DIGITAL&lt;br/&gt;ESCRITA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+</Note>

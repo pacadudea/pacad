@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5632327C-6B25-68F4-BD48-A93F01081D86" name="SEMESTREXCURSO_SEMESTRE_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:11:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>5B9295CE-2F68-4198-F477-79782F4734A7</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>06C551CB-5B74-167C-E573-CC76604CD4BC</localFKIndex>
+<keyObject>F1C30026-81CE-A091-D07C-08C2DBA045C7</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

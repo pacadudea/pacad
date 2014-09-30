@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Note class="oracle.dbtools.crest.model.design.Note" name="Note_6" directorySegmentName="seg_0" id="E18ACB4B-204C-C5DE-B3C0-9396C7C7076B">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:45:02 UTC</createdTime>
+<comment>MICROCURRICULO</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+</Note>

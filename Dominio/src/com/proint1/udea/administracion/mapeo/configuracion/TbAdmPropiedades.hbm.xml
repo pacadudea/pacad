@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbAdmPropiedades" table="TB_ADM_PROPIEDADES" schema="PROINT1">
+        <composite-id name="id" class="TbAdmPropiedadesId">
+            <key-property name="nbPrpIdn" type="long">
+                <column name="NB_PRP_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="vrPrpValor" type="string">
+                <column name="VR_PRP_VALOR" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="tbAdmDependenciaAcademica" class="TbAdmDependenciaAcademica" fetch="select">
+            <column name="NB_DEP_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrPrpCodigo" type="string">
+            <column name="VR_PRP_CODIGO" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

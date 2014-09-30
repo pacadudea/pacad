@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C555A6CB-51C4-2D8E-887D-84AC5FE6A167" name="TB_ADM_USUARIOXROL">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 03:17:04 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>UXR</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_UXR_IDN" id="88EAC39C-5524-5554-13D0-4D190A5574D9">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:18:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ROL_IDN" id="EC63EB17-C395-EA93-C9EC-50A6DF2AB376">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:18:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>3B4D712F-F06E-161A-0D46-D22A3854D321</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F5B1923-99DC-24F7-807D-07FE2738F187" referredColumn="3B4D712F-F06E-161A-0D46-D22A3854D321"/>
+</associations>
+</Column>
+<Column name="NB_USU_IDN" id="A51ED141-CDF2-5740-C347-BBE678A180C3">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:18:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>74FD73AB-D708-B3C3-1495-4F785FE70CEC</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59A0B2FF-AC22-5AB6-E72A-15FA67DD44B0" referredColumn="74FD73AB-D708-B3C3-1495-4F785FE70CEC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="67475A4A-CE14-9C11-C5CB-F495839F6681" name="TB_ADM_USUARIOXROL_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:18:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88EAC39C-5524-5554-13D0-4D190A5574D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FE78E3B-E91D-BEF4-2F4A-F03B291409C5" name="TB_AD_USUXROL_TB_AD_USU_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:22:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A51ED141-CDF2-5740-C347-BBE678A180C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="941E4455-0607-C379-EDC9-472AB3875283" name="TB_ADM_USUARIOXROL_ROL_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:22:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC63EB17-C395-EA93-C9EC-50A6DF2AB376"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BE2930DE-19D7-AF97-15CA-8891C3742C16" name="TB_ADM_MODALIDAD_CURSO">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:50:41 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>MCU</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BN_MCU_IDN" id="D3C0AE31-E6C2-E93C-251D-A657BD3BAB5E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:55:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MCU_CODIGO" id="3CD26456-B2B2-CFC3-B8D6-1DCFA287684F">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:55:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_MCU_DESCRIPCION" id="9A7DD654-B44A-6C53-4787-52C5B55D88A3">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:55:54 UTC</createdTime>
+<comment>VIRTUAL&lt;br/&gt;PRESENCIAL&lt;br/&gt;DIRIJIDA&lt;br/&gt;RADIAL&lt;br/&gt;SEME PRESENCIAL&lt;br/&gt;ASESORIA&lt;br/&gt;DIGITAL&lt;br/&gt;ESCRITA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="02F65B78-57AB-B532-6F3C-AA89E0C51F3E" name="TB_ADM_MODALIDAD_CURSO_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:55:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3C0AE31-E6C2-E93C-251D-A657BD3BAB5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

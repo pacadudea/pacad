@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbAdmRecurso" table="TB_ADM_RECURSO" schema="PROINT1">
+        <id name="nbRecIdn" type="long">
+            <column name="NB_REC_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbAdmRecurso" class="TbAdmRecurso" fetch="select">
+            <column name="NB_REC_RECPADRE" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrRecNombre" type="string">
+            <column name="VR_REC_NOMBRE" length="100" not-null="true" />
+        </property>
+        <property name="vrRecTipo" type="string">
+            <column name="VR_REC_TIPO" length="40" not-null="true" />
+        </property>
+        <set name="tbAdmPermisosxrols" table="TB_ADM_PERMISOSXROL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_REC_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbAdmPermisosxrol" />
+        </set>
+        <set name="tbAdmRecursos" table="TB_ADM_RECURSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_REC_RECPADRE" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbAdmRecurso" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="PI2Web">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/Produccion/Produccion">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/Dominio/Dominio">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="PI2Web"/>
+        <property name="java-output-path" value="/PI2Web/build/classes"/>
+    </wb-module>
+</project-modules>

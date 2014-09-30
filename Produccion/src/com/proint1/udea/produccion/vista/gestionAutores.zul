@@ -1,0 +1,131 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Gesti&#243;n de Autores" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window title="Gesti&#243;n de Autores" border="normal"
+		width="100%" height="480px" apply="${gestionAutoresCtl}">
+
+		<hlayout width="100%">
+
+			<div width="180px" height="400px"><!-- panel del lado izquierdo -->
+				<groupbox height="400px" width="180px"
+					closable="false"><!-- buscador -->
+					<caption label="Autores Activos"></caption>
+					<vlayout width="100%" height="450px">
+						<label value="Buscar"></label>
+						<bandbox id="bdAutores" autodrop="true"
+							tabindex="1" placeholder="Nombre autor a buscar">
+						</bandbox>
+						<grid height="300px" id="gridAutores">
+							<columns menupopup="auto">
+								<column label="Nombre Autores"
+									sort="auto" id="columnasGrid" />
+							</columns>
+
+						</grid>
+					</vlayout>
+				</groupbox>
+			</div>
+
+			<!-- panel del lado derecho -->
+
+			<x:table border="0" height="400px">
+				<x:tr>
+					<x:td>Tipo de Identificaci&#243;n:</x:td>
+					<x:td>
+						<listbox id="ltbTipoId" tabindex="2" width="120px"
+							rows="1" mold="select" height="2opx">
+						</listbox>
+					</x:td>
+					<x:td>Numero de identificaci&#243;n</x:td>
+					<x:td>
+						<textbox id="txtNumeroId" tabindex="3"  />
+					</x:td>
+				</x:tr>
+
+				<x:tr>
+					<x:td>Primer Apellido</x:td>
+					<x:td>
+						<textbox id="txtPrimerApellido" tabindex="4" />
+					</x:td>
+					<x:td>Segundo Apellido</x:td>
+					<x:td>
+						<textbox id="txtSegundoApellido" tabindex="5" />
+					</x:td>
+
+				</x:tr>
+
+				<x:tr>
+					<x:td>Nombres*</x:td>
+					<x:td>
+						<textbox id="txtNombres" tabindex="6" />
+					</x:td>
+					<x:td>Email*</x:td>
+					<x:td>
+						<textbox id="txtEmail" tabindex="7" />
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>Direcci&#243;n</x:td>
+					<x:td>
+						<textbox id="txtDireccion" tabindex="8" />
+					</x:td>
+					<x:td>Tel&#233;fono*</x:td>
+					<x:td>
+						<textbox id="txtTelefono" tabindex="9" />
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>Fecha de Nacimiento</x:td>
+					<x:td>
+						<datebox tabindex="10"
+							id="tbiFechaNacimiento">
+						</datebox>
+					</x:td>
+					<x:td>
+						<label value="Edad: " id="lblEdad"></label>
+					</x:td>
+				</x:tr>
+
+				<x:tr>
+					<x:td>Nacionalidad</x:td>
+					<x:td>
+						<listbox id="ltbNacionalidad" tabindex="11"
+							width="120px" rows="1" mold="select" height="2opx">
+						</listbox>
+					</x:td>
+					<x:td>Sexo</x:td>
+					<x:td>
+						<radiogroup>
+							<radiogroup id="rdoSexo"
+								onCheck="choice1.value = self.selectedItem.label" />
+							<radio id="ra1" label="M" value="M"
+								radiogroup="rdoSexo" tabindex="12" />
+							<html>
+								&#160;&#160;&#160;&#160;&#160;&#160;
+							</html>
+							<radio id="ra2" label="F" value="F"
+								radiogroup="rdoSexo" tabindex="13" />
+						</radiogroup>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td colspan="4">
+						<div align="center">
+							<hlayout>
+								<button id="btnNuevoAutor"
+									label="Nuevo Autor" tabindex="12">
+								</button>
+								<button id="btnGuardarAutor"
+									label="Guardar Autor" tabindex="13">
+								</button>
+								<button id="btnEliminarAutor"
+									label="Eliminar Autor" tabindex="14">
+								</button>
+							</hlayout>
+						</div>
+					</x:td>
+				</x:tr>
+			</x:table>
+		</hlayout>
+	</window>
+</zk>

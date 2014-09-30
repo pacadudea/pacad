@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29AA7C4C-12DE-8F3E-6F16-E3D1CA833F0C" name="TB_ADM_DOCENTESXDEPENDENCIA">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:01:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>DPD</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_DPD_IDN" id="AD17FE86-D38B-E83F-1050-297FC78E9E6D">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:02:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_DOC_IDN" id="47AA0D62-658D-8215-4379-24844725F3AB">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:02:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>58B35FA6-CAAD-5296-12A5-9E26D5A1AEF2</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FA783AA7-8648-25E0-8D43-EB21FB9296A9" referredColumn="58B35FA6-CAAD-5296-12A5-9E26D5A1AEF2"/>
+</associations>
+</Column>
+<Column name="NB_DEP_IDN" id="414B589E-6AA7-1A96-A60A-AA5D27D0347E">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:02:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>9656BFE7-1A24-ABEF-17A6-CAB5713F05CB</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67D81AD2-54DB-CC3C-CB45-26EEF10A23EB" referredColumn="9656BFE7-1A24-ABEF-17A6-CAB5713F05CB"/>
+</associations>
+</Column>
+<Column name="VR_DPD_TIPOVINCULACION" id="E88B0393-6AF2-97CC-7246-2751E3B12003">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 13:33:21 UTC</createdTime>
+<comment>Tipo de vinculación del docente</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43969061-1DBE-1A26-3B63-97165D279F94" name="TB_ADM_DOCENTESXDEPENDENCIA_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:02:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD17FE86-D38B-E83F-1050-297FC78E9E6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB2BF331-B53B-4617-9463-F8EC72C75BC9" name="TB_AD_DCTXDEP_TB_AD_DCT_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:03:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47AA0D62-658D-8215-4379-24844725F3AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4AD57477-F413-DDD4-B4CB-5FDEEF5EC115" name="TB_AD_DCTXDEP_TB_AD_DEP_AC_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:03:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="414B589E-6AA7-1A96-A60A-AA5D27D0347E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

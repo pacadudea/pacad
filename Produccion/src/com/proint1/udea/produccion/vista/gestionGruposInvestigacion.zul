@@ -1,0 +1,98 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Gestión de Grupos de Investigación" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+	<window title="Gesti&#243;n de Grupos de Investigaci&#243;n" border="normal"
+		width="100%" height="480px" apply="${gestionGruposInvestigacionCtl}">
+
+		<hlayout width="100%" height="600px;">
+			<hbox spacing="15px">
+				<groupbox mold="3d" width="300px" height="450px;">
+					 <caption image="/img/group.png" label="${c:l('pacad.form.gestionMiembros.tituloGrupos')}" />
+	                <hbox align="center">
+	                	${c:l('pacad.textoGeneral.nombre')}
+				        <textbox id="txtBuscarGrupo" />
+				        <button id="btnBuscarGrupo" label="${c:l('pacad.textoGeneral.buscar')}" image="/img/search.png" />
+				    </hbox>
+					<listbox id="listaGrupos" emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}" height="86%" style="margin-top:10px">
+				        <listhead>
+				            <listheader label="${c:l('pacad.form.gestionMiembros.tituloListaGrupos')}" />
+				        </listhead>
+				        <template name="model">
+				            <listitem>
+				                <listcell label="${each.vrNombre}"></listcell>
+				            </listitem>
+				        </template>
+				    </listbox>
+				</groupbox>
+			
+			<!-- panel del lado derecho -->
+			<groupbox mold="3d" width="500px" height="100%">
+				<caption image="/img/group.png" label="Informacion del grupo " />
+				<div style="margin-left:50px;" height="70%">
+					<x:table border="0" height="100%" >
+					<x:tr>
+						<x:td>Nombre Grupo</x:td>
+						<x:td>
+							<textbox id="txtNombreGrupo" tabindex="2" />
+						</x:td>
+					</x:tr>
+					<x:tr>
+						<x:td>Abreviatura</x:td>
+						<x:td>
+							<textbox id="txtAbreviatura" tabindex="3" />
+						</x:td>
+					</x:tr>
+					<x:tr>
+						<x:td>Director</x:td>
+						<x:td>
+							<bandbox id="opcDirectores" mold="rounded" autodrop="true">  
+						        <bandpopup>
+						            <listbox id="listaDirectores" emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}" height="200px" width="200px">
+								        <listhead>
+								            <listheader label="${c:l('pacad.form.gestionMiembros.tituloListaGrupos')}" />
+								        </listhead>
+								        <template name="model">
+								            <listitem>
+								                <listcell label="${each.persona.nombres}"></listcell>
+								            </listitem>
+								        </template>
+								    </listbox>
+						        </bandpopup>
+						    </bandbox>
+						</x:td>
+					</x:tr>
+					<x:tr>
+						<x:td>Estado</x:td>
+						<x:td>
+							<listbox id="ltbEstado" tabindex="6" width="20"
+								rows="1" mold="select" height="2opx">
+								<listitem selected="true" label="Activo"></listitem>
+								<listitem selected="false"
+									label="Inactivo">
+								</listitem>
+							</listbox>
+						</x:td>
+					</x:tr>
+					<x:tr>
+						<x:td colspan="4">
+							<div align="center">
+								<hlayout>
+									<button id="btnNuevoGrupo"
+										label="Nuevo Grupo" tabindex="7">
+									</button>
+									<button id="btnGuardarGrupo"
+										label="Guardar Grupo" tabindex="8">
+									</button>
+									<button id="btnEliminarGrupo"
+										label="Eliminar Grupo" tabindex="9">
+									</button>
+								</hlayout>
+							</div>
+						</x:td>
+					</x:tr>
+				</x:table></div>
+			</groupbox>
+			</hbox>
+		</hlayout>
+	</window>
+</zk>

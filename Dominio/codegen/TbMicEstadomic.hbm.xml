@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="TbMicEstadomic" table="TB_MIC_ESTADOMIC" schema="PROINT1">
+        <id name="nbEstIdn" type="big_decimal">
+            <column name="NB_EST_IDN" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="64" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" />
+        </property>
+        <property name="vrEstNombreest" type="string">
+            <column name="VR_EST_NOMBREEST" length="20" />
+        </property>
+        <one-to-one name="tbMicMicrocurriculo" class="TbMicMicrocurriculo"></one-to-one>
+    </class>
+</hibernate-mapping>

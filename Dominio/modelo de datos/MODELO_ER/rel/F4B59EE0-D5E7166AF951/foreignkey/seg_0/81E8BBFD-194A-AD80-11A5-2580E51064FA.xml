@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="81E8BBFD-194A-AD80-11A5-2580E51064FA" name="MIEMBROS_GRUPOINVESTIGACION_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:32:52 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>A00DAA9C-B6CA-BB38-64D5-AD71118047BB</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>15F8501F-6CFC-2D43-F9B8-9AC9CA70C226</localFKIndex>
+<keyObject>41B7552C-C916-7315-0F5F-4A9D1647E57A</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

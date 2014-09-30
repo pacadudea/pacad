@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6BFF8CE3-4458-480E-EE81-0ABBFD67D6F4" name="TB_ADM_ROL">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:18:21 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>ROL</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_ROL_IDN" id="3B4D712F-F06E-161A-0D46-D22A3854D321">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:26:53 UTC</createdTime>
+<comment>IDENTIFICADOR ÚNICO DE CADA REGISTRO DE LA TABLA</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ROL_NOMBRE" id="1DFB8F95-22A9-C4B1-7330-E80901C37362">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:21:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="92F74EA3-3F55-D715-4AE3-202DD1EFC15C" name="ROL_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 00:28:14 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B4D712F-F06E-161A-0D46-D22A3854D321"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

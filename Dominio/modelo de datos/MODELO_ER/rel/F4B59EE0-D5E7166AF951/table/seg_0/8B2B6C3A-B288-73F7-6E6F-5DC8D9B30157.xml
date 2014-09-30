@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B2B6C3A-B288-73F7-6E6F-5DC8D9B30157" name="TB_ADM_ESTADO_SEMESTRE">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:24:21 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>ESM</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="VR_ESM_CODIGO" id="9B5FFB56-870C-4BFE-CE61-84E6033BDD84">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:25:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ESM_DESCRIPCION" id="047739C9-795F-23D0-D202-616488A1CAD1">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:25:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9CFBF652-427E-FD7C-4179-94EC657BCA3F" name="GEN_TB_ESTADO_SEMESTRE_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:25:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B5FFB56-870C-4BFE-CE61-84E6033BDD84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

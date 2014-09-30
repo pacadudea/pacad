@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0D453613-970A-A951-FDFA-4D55BFC84FD2" name="TB_ACT_REPORTEACTIVIDAD">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:31:59 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_RAC_IDN" id="EEA37B82-F190-75AB-5C87-A9BFEA7B34E0">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:14:23 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_TAC_IDN" id="3824D9A2-66D5-36B4-3E0E-5FB4FF60A70B">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:14:47 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>908DA2F5-6AC6-E9F9-8998-7DB0B14EF85C</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C2194C2-6A07-F137-7EC7-584595E27DB9" referredColumn="908DA2F5-6AC6-E9F9-8998-7DB0B14EF85C"/>
+</associations>
+</Column>
+<Column name="NB_DOG_IDN" id="BE949F84-7EF8-32A2-38D4-DE36F62EDE4A">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:17:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>68587A67-FF93-F892-F69C-D925A6A01532</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8779F8A9-AE34-D855-8BE2-F7CF5FFAC678" referredColumn="68587A67-FF93-F892-F69C-D925A6A01532"/>
+</associations>
+</Column>
+<Column name="DT_RAC_FECHA" id="27100B38-6F03-E7FE-A29B-82BE0DE33005">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:09:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_RAC_DESCRIPCION" id="4201A8AB-3B59-0836-437A-C14B342962F2">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:09:42 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_RAC_TIEMPO" id="1B33C688-9829-CA13-2187-3066199D3866">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:10:07 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>14</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="E48DF029-43E0-34E4-B09E-C5349BACC1CB">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:10:40 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="76734B83-E96E-7414-EDB5-EDDFBC6A4EC6">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:10:40 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2B5B32A9-FDB0-DB75-356B-CB2298E4294E" name="REPORTEACTIVIDAD_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:14:27 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEA37B82-F190-75AB-5C87-A9BFEA7B34E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B4F126EC-639E-F2F6-2E1C-0C585677EF00" name="REPORTEACTIVIDAD_ACTIVIDAD_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:14:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3824D9A2-66D5-36B4-3E0E-5FB4FF60A70B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8EC39DD-0DCF-78FA-5CEB-0D6BE2C91573" name="REPORTEACT_DOCENTEXGRUPO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:18:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE949F84-7EF8-32A2-38D4-DE36F62EDE4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

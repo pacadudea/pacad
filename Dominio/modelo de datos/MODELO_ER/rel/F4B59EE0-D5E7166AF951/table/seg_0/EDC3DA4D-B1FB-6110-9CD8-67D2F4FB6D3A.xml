@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EDC3DA4D-B1FB-6110-9CD8-67D2F4FB6D3A" name="TB_PRD_AUTORESXPRODUCCION">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:28:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_APP_IDN" id="8A534B72-06CA-29A5-C567-B12F20921BBD">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 01:49:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_PRO_IDN" id="F19815FE-AEE5-C7D3-AA57-380255DD8A59">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:02:08 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>C7AD264B-F5A1-8B2B-A938-9527419F8335</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25D0C528-339F-F104-91BC-9BBD93371230" referredColumn="C7AD264B-F5A1-8B2B-A938-9527419F8335"/>
+</associations>
+</Column>
+<Column name="NB_AUT_IDN" id="17C1CA9D-5C0C-7019-D349-3A961CD1B550">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:08:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>0A289966-3BD9-02E0-84E1-2542B2BA570A</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F54657D8-4B37-4C47-9387-4A9143C22365" referredColumn="0A289966-3BD9-02E0-84E1-2542B2BA570A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7FC9517A-17E7-44ED-A208-16DF8BA66018" name="AUTORESXPRODUCCION_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 01:49:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A534B72-06CA-29A5-C567-B12F20921BBD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5AB56820-BEFF-BD28-37E4-94A1F869AAEB" name="AUTORESXPRODUCCION_PRODUC_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:02:22 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F19815FE-AEE5-C7D3-AA57-380255DD8A59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74550E6F-6367-DAB6-8768-66F58BA78268" name="AUTORESXPRODUCCION_AUTOR_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:09:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17C1CA9D-5C0C-7019-D349-3A961CD1B550"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

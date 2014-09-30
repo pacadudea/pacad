@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" table="TB_PRD_GRUPOINVESTIGACION" schema="PROINT1">
+        <id name="nbIdn" type="long">
+            <column name="NB_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbAdmPersona" class="com.proint1.udea.administracion.entidades.terceros.Persona" fetch="select">
+            <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="vrNombre" type="string">
+            <column name="VR_NOMBRE" length="400" not-null="true" />
+        </property>
+        <property name="vrAbreviatura" type="string">
+            <column name="VR_ABREVIATURA" length="80" />
+        </property>
+        <property name="dtFechacreacion" type="date">
+            <column name="DT_FECHACREACION" length="7" not-null="true" />
+        </property>
+        <property name="blEstado" type="char">
+            <column name="BL_ESTADO" length="1" not-null="true" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="NB_GPI_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Ingeniería de Sistemas" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="style/style.css"/>
+<div  apply="${principalCtl}">
+	<borderlayout height="670px">
+		<north size="135px" >
+			<div zclass="banner" > 
+				<div align="center" zclass="imgBanner">
+					<image  src="/img/h_udea_3.jpg"></image>
+				</div>
+				<div>
+					<include id="listMenu" src="/widgets/menu/menu_orientation_hor.zul" ></include>
+				</div>
+			</div>
+		</north>
+		
+		<center >
+			<div id="divCenter" zclass="center"/>
+		</center>
+		
+		<west>
+		</west>
+		
+		 <east size="205px" title="Enlaces" flex="true">
+		 	<div zclass="east">
+		 		<include id="menueast" src="/widgets/menu/menu_vertical_east.zul" ></include>
+		 	</div>
+		 </east>
+		 
+		<south size="50px">
+			<div zclass="footer">
+				<div>
+					<label value="Departamento de Ingeniería de Sistemas - Universidad de Antioquia "/>
+				</div>
+				<div>
+					<label value="Medellín - Colombia |Todos los Derechos Reservados © 2014"/>
+				</div>				
+			</div>
+		</south>
+		
+	</borderlayout>
+</div>
+
+</zk>	

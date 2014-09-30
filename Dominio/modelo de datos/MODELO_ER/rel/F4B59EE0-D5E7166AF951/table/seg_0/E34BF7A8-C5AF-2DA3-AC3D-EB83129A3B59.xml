@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E34BF7A8-C5AF-2DA3-AC3D-EB83129A3B59" name="TB_ADM_TAREAS_PROGRAMADAS">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_TPR_IDN" id="DDEA89D3-6E14-F15B-BD13-BF89F18C70C1">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>38</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_TPR_NOMBRE" id="9110B85A-4A73-023B-B237-D54548E74D18">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_TPR_MANAGER" id="5F34789F-7EAF-6094-5D71-86C5E4A16D10">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<comment>Nmbre y ruta de la clase que implementa la alerta</comment>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_TPR_ACTIVA" id="0B0DF40D-96D3-07FC-5FCD-471D2700B0EA">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>0</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="C212BDF7-E175-19C6-1F5A-562979EB93DF">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="E2F017A9-16B3-B8FC-0D14-6FE3FB8E9E26">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_DEP_IDN" id="0548C5BF-3F03-A567-9E80-AE3969E800F8">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:53 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>9656BFE7-1A24-ABEF-17A6-CAB5713F05CB</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F4D5BE4-4AEA-2D95-E974-C1B05CB8797C" referredColumn="9656BFE7-1A24-ABEF-17A6-CAB5713F05CB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C48F8492-115A-6A3E-8CC9-6ADC6745007B" name="TB_ACT_ALERTAS_PK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDEA89D3-6E14-F15B-BD13-BF89F18C70C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6DE138F8-9862-B4FC-7D6E-07A59E91C05F" name="UC_ALERTAS_NOMBRE">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:38:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9110B85A-4A73-023B-B237-D54548E74D18"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A938C20A-01D3-0A2B-8836-520E891391A4" name="TB_ACT_ALER_TB_ADM_DEP_ACAD_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 12:39:02 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0548C5BF-3F03-A567-9E80-AE3969E800F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.proint1.udea.produccion.entidades.TbPrdCampo" table="TB_PRD_CAMPOS" schema="PROINT1">
+        <id name="nbIdn" type="long">
+            <column name="NB_IDN" precision="10" scale="0" />
+            <generator class="increment" />
+        </id>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        <property name="vrDescripcion" type="string">
+            <column name="VR_DESCRIPCION" length="120" not-null="true" />
+        </property>
+        <property name="blEstado" type="char">
+            <column name="BL_ESTADO" length="1" not-null="true" />
+        </property>
+        <set name="tbPrdTipoproducionesxcampos" table="TB_PRD_TIPOPRODUCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo" />
+        </set>
+    </class>
+</hibernate-mapping>

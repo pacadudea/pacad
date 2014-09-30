@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1CED2D1E-6D30-A680-DCCF-5D1F5E22188D" name="TB_ADM_SEMESTRE">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:12:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_SEM_IDN" id="2267A4AA-7957-2FFB-0A8A-EAD0028B9892">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:48:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_SEM_AGNO" id="A16A4258-1AC3-3C87-5183-88E04E6BF9C0">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:51:08 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_SEM_PERIODO" id="15F7F8FF-D589-D281-D3A5-4A91382B3B3A">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:51:31 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ESM_CODIGO" id="EF406930-9F15-E734-BC26-551E83BBBFEE">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:52:18 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<delegate>9B5FFB56-870C-4BFE-CE61-84E6033BDD84</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="653B9C50-1911-3B1E-CA74-F78E303C095C" referredColumn="9B5FFB56-870C-4BFE-CE61-84E6033BDD84"/>
+</associations>
+</Column>
+<Column name="NB_DEP_IDN" id="1F3530A8-6A85-0103-3395-5602E6319DD5">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:59:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>9656BFE7-1A24-ABEF-17A6-CAB5713F05CB</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="35E00900-2E50-9AD0-D325-4FA8CA364324" referredColumn="9656BFE7-1A24-ABEF-17A6-CAB5713F05CB"/>
+</associations>
+</Column>
+<Column name="DT_ADTFECHA" id="E644418F-6CAA-DD44-83E6-04BE9B4FFCBF">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:01:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VR_ADTUSUARIO" id="D13705F7-9162-A313-DF59-CCC10D655C65">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:01:01 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1C30026-81CE-A091-D07C-08C2DBA045C7" name="SEMESTRE_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:48:32 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2267A4AA-7957-2FFB-0A8A-EAD0028B9892"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B53A999F-EC9C-B3AE-1B9F-46162F14AD6D" name="SEM_GEN_TB_ESTADO_SEM_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:26:46 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF406930-9F15-E734-BC26-551E83BBBFEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD595031-2250-B574-F074-33BA7D3BF0CB" name="TB_AD_SEM_TB_AD_DEP_ACA_FK">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 11:59:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F3530A8-6A85-0103-3395-5602E6319DD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

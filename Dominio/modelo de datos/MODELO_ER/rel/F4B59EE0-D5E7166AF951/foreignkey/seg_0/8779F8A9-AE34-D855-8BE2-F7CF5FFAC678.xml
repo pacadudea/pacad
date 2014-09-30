@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8779F8A9-AE34-D855-8BE2-F7CF5FFAC678" name="REPORTEACT_DOCENTEXGRUPO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:18:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<containerWithKeyObject>0D453613-970A-A951-FDFA-4D55BFC84FD2</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>D8EC39DD-0DCF-78FA-5CEB-0D6BE2C91573</localFKIndex>
+<keyObject>973AE554-3A9D-6080-0BA0-C5EAE102ACAE</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

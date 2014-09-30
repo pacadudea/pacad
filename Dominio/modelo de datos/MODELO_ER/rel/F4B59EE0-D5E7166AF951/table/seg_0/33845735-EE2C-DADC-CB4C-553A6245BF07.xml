@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33845735-EE2C-DADC-CB4C-553A6245BF07" name="TB_PRD_AUTOR">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-21 14:35:21 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_AUT_IDN" id="0A289966-3BD9-02E0-84E1-2542B2BA570A">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:07:00 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_PER_IDN" id="B0455837-4123-F3E3-24A6-2083B3438963">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:07:16 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>17895605-56F4-8444-9C6E-D29414A14220</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF8AC905-FCE2-1612-4220-D39D50FE6F22" referredColumn="17895605-56F4-8444-9C6E-D29414A14220"/>
+</associations>
+</Column>
+<Column name="VR_PAIS_IDN" id="BAD17AA7-1587-2A55-A654-A1AE431B7D3D">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:28:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>89832BC5-B113-9D7F-9E3D-EBCFFF024544</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A5E87D3A-4BE3-20B5-A2ED-5D471489A30D" referredColumn="89832BC5-B113-9D7F-9E3D-EBCFFF024544"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="901535BD-A808-0C15-DDD6-B476B80E6DCC" name="AUTOR_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:08:45 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A289966-3BD9-02E0-84E1-2542B2BA570A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F4ED42B-80B8-006A-D9FD-A3B4E8490F8C" name="AUTOR_PERSONA_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 02:07:37 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0455837-4123-F3E3-24A6-2083B3438963"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="947E88DB-90E7-35B7-49CA-84F1689178B6" name="TB_PRD_AUTOR_TB_ADM_PAISES_FK">
+<createdBy>HernánDarío</createdBy>
+<createdTime>2014-04-27 21:50:50 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BAD17AA7-1587-2A55-A654-A1AE431B7D3D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

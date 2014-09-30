@@ -1,0 +1,14 @@
+<zk xmlns:n="native">
+	<style src="/widgets/menu/menu_orientation/style.css" />
+	<zscript><![CDATA[
+		Integer[] products = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8};
+		Integer num = 4;
+		]]></zscript>
+	<separator />
+	<div align="center">
+	<image src="/widgets/menu/menu_orientation/img/banner.png" />
+	<include id="list" src="/widgets/menu/menu_orientation/menu_orientation_hor.zul" ></include>
+	</div>
+	<separator height="4px"></separator>
+	<div align="center" sclass="mo_footer">Copyright 2014 UdeA All rights reserved.</div>
+</zk>

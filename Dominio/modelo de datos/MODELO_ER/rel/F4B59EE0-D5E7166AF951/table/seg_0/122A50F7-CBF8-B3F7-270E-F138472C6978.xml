@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="122A50F7-CBF8-B3F7-270E-F138472C6978" name="TB_ACT_DOCENTEXGRUPO">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-22 19:10:13 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<abbreviation>DOG</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NB_DOG_IDN" id="68587A67-FF93-F892-F69C-D925A6A01532">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:50:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_DOG_TIEMPOTOTAL" id="C604436E-E2D7-3816-0014-A33D0539C4FD">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:16:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>14</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_DOC_IDN" id="47FEB4A9-6ED2-28D2-38B6-0E1AA2039750">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:50:33 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>58B35FA6-CAAD-5296-12A5-9E26D5A1AEF2</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9FF542F3-D618-1A65-1789-0D0E56627A26" referredColumn="58B35FA6-CAAD-5296-12A5-9E26D5A1AEF2"/>
+</associations>
+</Column>
+<Column name="NB_GPO_IDN" id="49C819C9-8FA0-B14C-5B9D-2C18F6B4DDE8">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:51:00 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<delegate>E12C9F86-1631-3141-0090-B003F296560B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB61AA7E-F76B-8648-7AD4-9A77E53341B2" referredColumn="E12C9F86-1631-3141-0090-B003F296560B"/>
+</associations>
+</Column>
+<Column name="VR_ADTUSUARIO" id="C3BF0AEF-70D4-C6A7-13D4-86A7AFB981F4">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:16:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ADTFECHA" id="42536507-27BE-AA35-EF40-0499567FA423">
+<createdBy>Seven</createdBy>
+<createdTime>2014-04-27 17:16:48 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="973AE554-3A9D-6080-0BA0-C5EAE102ACAE" name="DOCENTEXGRUPO_PK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 04:18:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="68587A67-FF93-F892-F69C-D925A6A01532"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B701D135-1899-282B-1001-479DC3142A4C" name="DOCENTEXGRUPO_DOCENTE_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:51:12 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47FEB4A9-6ED2-28D2-38B6-0E1AA2039750"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68548CAD-DFED-E48B-BA7F-69743EB3782C" name="DOCENTEXGRUPO_GRUPO_FK">
+<createdBy>ITOS</createdBy>
+<createdTime>2014-04-23 03:51:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MODELO_ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49C819C9-8FA0-B14C-5B9D-2C18F6B4DDE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
