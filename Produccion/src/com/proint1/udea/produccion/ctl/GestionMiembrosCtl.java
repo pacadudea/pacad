@@ -44,7 +44,6 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 	AutorService autorService;
 	
 	//Componentes de la vista
-	
 	Button btnBuscarGrupo;
 	Button btnActualizarMiembros;
 	Listbox listaGrupos;
@@ -127,14 +126,14 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 			 TbPrdMiembrosxgrupo member = (TbPrdMiembrosxgrupo) iterator.next();
 			 
 			 MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(new Integer((int)grupoSelected.getNbIdn()), 
-					 grupoSelected.getVrNombre(), new Integer((int)member.getTbAdmPersona().getIdn()), member.getTbAdmPersona().getNombres(), 
-					 member.getTbAdmPersona().getApellidos());
+					 grupoSelected.getVrNombre(), new Integer((int)member.getTbAdmPersona().getNbIdn()), member.getTbAdmPersona().getVrNombres(), 
+					 member.getTbAdmPersona().getVrApellidos());
 			 
 			 listaMiembros.add(miembro); 
 		}
 		//Carga la lista de los posibles candidatos a ser miembros
 		List<MiembrosGrupoInvestigacion> posiblesMiembros = generarPosiblesMiembros(listaMiembros);
-				 
+		
 		dualLBox.setModel(new ListModelList<MiembrosGrupoInvestigacion>(listaMiembros), 
 				 new ListModelList<MiembrosGrupoInvestigacion>(posiblesMiembros));
 	}
@@ -149,6 +148,7 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 		List<MiembrosGrupoInvestigacion> posiblesMiembros = new ArrayList<MiembrosGrupoInvestigacion>();
 		try {
 			List<TbPrdAutor> autores = autorService.listar();
+			System.err.println("SE RECIBIO AUTORES " + autores.size());
 			
 			for (Iterator iterator = autores.iterator(); iterator.hasNext();) {
 				TbPrdAutor autor = (TbPrdAutor) iterator.next();
@@ -163,8 +163,8 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 				}
 				
 				if (!existe){
-					MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(null, null, new Integer((int)autor.getPersona().getIdn()), 
-							autor.getPersona().getNombres(), autor.getPersona().getApellidos());
+					MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(null, null, new Integer((int)autor.getPersona().getNbIdn()), 
+							autor.getPersona().getVrNombres(), autor.getPersona().getVrApellidos());
 					
 					posiblesMiembros.add(miembro);
 				}
@@ -172,6 +172,7 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 		} catch (ProduccionBLException e) {
 			throw new ProduccionIWException("No se pudo generar la lista de posibles miembros");
 		}
+		System.err.println("SE RETORNAN " + posiblesMiembros.size());
 		return posiblesMiembros;
 	}
 	

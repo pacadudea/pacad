@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 
 import com.proint1.udea.produccion.dao.TipoProduccionDAO;
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
-import com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo;
 import com.proint1.udea.produccion.ngc.TipoProduccionService;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
@@ -58,7 +58,7 @@ public class TipoProduccionServiceImpl implements TipoProduccionService {
 		}
 	}
 	@Override
-	public List<TbPrdTipoproducionesxcampo> obtenerCamposXTipo(
+	public List<TbPrdTipoproduccionesxcampo> obtenerCamposXTipo(
 			long idTipoProduccion) throws ProduccionDAOException {
 		return tipoProduccionDAO.obtenerCamposXTipo(idTipoProduccion);
 	}

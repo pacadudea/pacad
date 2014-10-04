@@ -13,40 +13,44 @@ public class TbPrdProduccion implements java.io.Serializable {
 	private TbPrdTipoproduccion tbPrdTipoproduccion;
 	private String vrNombreproduccion;
 	private Date dtFechapublicacion;
+	private String vrUrl;
+	private String vrDoi;
 	private char blEstado;
-	private Date dtAdtfecha;
 	private String vrAdtusuario;
+	private Date dtAdtfecha;
+	private Set tbPrdDetalleproduccioneses = new HashSet(0);
 	private Set tbPrdAutoresxproduccions = new HashSet(0);
-	private Set tbPrdDetalleproducioneses = new HashSet(0);
 
 	public TbPrdProduccion() {
 	}
 
 	public TbPrdProduccion(long nbIdn, TbPrdTipoproduccion tbPrdTipoproduccion,
 			String vrNombreproduccion, Date dtFechapublicacion, char blEstado,
-			Date dtAdtfecha, String vrAdtusuario) {
+			String vrAdtusuario, Date dtAdtfecha) {
 		this.nbIdn = nbIdn;
 		this.tbPrdTipoproduccion = tbPrdTipoproduccion;
 		this.vrNombreproduccion = vrNombreproduccion;
 		this.dtFechapublicacion = dtFechapublicacion;
 		this.blEstado = blEstado;
-		this.dtAdtfecha = dtAdtfecha;
 		this.vrAdtusuario = vrAdtusuario;
+		this.dtAdtfecha = dtAdtfecha;
 	}
 
 	public TbPrdProduccion(long nbIdn, TbPrdTipoproduccion tbPrdTipoproduccion,
-			String vrNombreproduccion, Date dtFechapublicacion, char blEstado,
-			Date dtAdtfecha, String vrAdtusuario, Set tbPrdAutoresxproduccions,
-			Set tbPrdDetalleproducioneses) {
+			String vrNombreproduccion, Date dtFechapublicacion, String vrUrl,
+			String vrDoi, char blEstado, String vrAdtusuario, Date dtAdtfecha,
+			Set tbPrdDetalleproduccioneses, Set tbPrdAutoresxproduccions) {
 		this.nbIdn = nbIdn;
 		this.tbPrdTipoproduccion = tbPrdTipoproduccion;
 		this.vrNombreproduccion = vrNombreproduccion;
 		this.dtFechapublicacion = dtFechapublicacion;
+		this.vrUrl = vrUrl;
+		this.vrDoi = vrDoi;
 		this.blEstado = blEstado;
-		this.dtAdtfecha = dtAdtfecha;
 		this.vrAdtusuario = vrAdtusuario;
+		this.dtAdtfecha = dtAdtfecha;
+		this.tbPrdDetalleproduccioneses = tbPrdDetalleproduccioneses;
 		this.tbPrdAutoresxproduccions = tbPrdAutoresxproduccions;
-		this.tbPrdDetalleproducioneses = tbPrdDetalleproducioneses;
 	}
 
 	public long getNbIdn() {
@@ -81,20 +85,28 @@ public class TbPrdProduccion implements java.io.Serializable {
 		this.dtFechapublicacion = dtFechapublicacion;
 	}
 
+	public String getVrUrl() {
+		return this.vrUrl;
+	}
+
+	public void setVrUrl(String vrUrl) {
+		this.vrUrl = vrUrl;
+	}
+
+	public String getVrDoi() {
+		return this.vrDoi;
+	}
+
+	public void setVrDoi(String vrDoi) {
+		this.vrDoi = vrDoi;
+	}
+
 	public char getBlEstado() {
 		return this.blEstado;
 	}
 
 	public void setBlEstado(char blEstado) {
 		this.blEstado = blEstado;
-	}
-
-	public Date getDtAdtfecha() {
-		return this.dtAdtfecha;
-	}
-
-	public void setDtAdtfecha(Date dtAdtfecha) {
-		this.dtAdtfecha = dtAdtfecha;
 	}
 
 	public String getVrAdtusuario() {
@@ -105,20 +117,28 @@ public class TbPrdProduccion implements java.io.Serializable {
 		this.vrAdtusuario = vrAdtusuario;
 	}
 
+	public Date getDtAdtfecha() {
+		return this.dtAdtfecha;
+	}
+
+	public void setDtAdtfecha(Date dtAdtfecha) {
+		this.dtAdtfecha = dtAdtfecha;
+	}
+
+	public Set getTbPrdDetalleproduccioneses() {
+		return this.tbPrdDetalleproduccioneses;
+	}
+
+	public void setTbPrdDetalleproduccioneses(Set tbPrdDetalleproduccioneses) {
+		this.tbPrdDetalleproduccioneses = tbPrdDetalleproduccioneses;
+	}
+
 	public Set getTbPrdAutoresxproduccions() {
 		return this.tbPrdAutoresxproduccions;
 	}
 
 	public void setTbPrdAutoresxproduccions(Set tbPrdAutoresxproduccions) {
 		this.tbPrdAutoresxproduccions = tbPrdAutoresxproduccions;
-	}
-
-	public Set getTbPrdDetalleproducioneses() {
-		return this.tbPrdDetalleproducioneses;
-	}
-
-	public void setTbPrdDetalleproducioneses(Set tbPrdDetalleproducioneses) {
-		this.tbPrdDetalleproducioneses = tbPrdDetalleproducioneses;
 	}
 
 }

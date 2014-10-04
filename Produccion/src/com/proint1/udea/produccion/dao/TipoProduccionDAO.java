@@ -3,9 +3,9 @@ package com.proint1.udea.produccion.dao;
 import java.util.List;
 
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
-import com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
-
+	
 public interface TipoProduccionDAO {
 	/**
 	 * Obtiene la lista de TiposProduccion
@@ -38,7 +38,7 @@ public interface TipoProduccionDAO {
 	 */
 	public TbPrdTipoproduccion obtener(long id)throws ProduccionDAOException;
 	
-	public List<TbPrdTipoproducionesxcampo> obtenerCamposXTipo(
+	public List<TbPrdTipoproduccionesxcampo> obtenerCamposXTipo(
 			long idTipoProduccion)  throws ProduccionDAOException;
 	
 	

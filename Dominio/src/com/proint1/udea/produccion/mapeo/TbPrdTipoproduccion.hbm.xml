@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
     <class name="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" table="TB_PRD_TIPOPRODUCCION" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
         <property name="vrDescripcion" type="string">
             <column name="VR_DESCRIPCION" length="20" not-null="true" />
@@ -15,22 +15,22 @@
             <column name="BL_ESTADO" length="1" not-null="true" />
         </property>
         <property name="vrAdtusuario" type="string">
-            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
         </property>
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdTipoproducionesxcampos" table="TB_PRD_TIPOPRODUCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo" />
-        </set>
         <set name="tbPrdProduccions" table="TB_PRD_PRODUCCION" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_TPR_IDN" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdProduccion" />
+        </set>
+        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo" />
         </set>
     </class>
 </hibernate-mapping>

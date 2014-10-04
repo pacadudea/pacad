@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" table="TB_ADM_PERSONA" schema="PROINT1">
+        <id name="nbIdn" type="long">
+            <column name="NB_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrNombres" type="string">
+            <column name="VR_NOMBRES" length="200" not-null="true" />
+        </property>
+        <property name="vrApellidos" type="string">
+            <column name="VR_APELLIDOS" length="50" not-null="true" />
+        </property>
+        <property name="nbTipoidentificacionIdn" type="long">
+            <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="vrIdentificacion" type="string">
+            <column name="VR_IDENTIFICACION" length="48" not-null="true" />
+        </property>
+        <property name="vrDireccion" type="string">
+            <column name="VR_DIRECCION" length="80" />
+        </property>
+        <property name="vrTelefono" type="string">
+            <column name="VR_TELEFONO" length="80" />
+        </property>
+        <property name="vrEmail" type="string">
+            <column name="VR_EMAIL" length="240" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="80" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        
+        <set name="tbPrdGrupoinvestigacionsForNbDirector" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
+        </set>
+        <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
+        </set>
+        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
+        </set>
+        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutor" />
+        </set>
+    </class>
+</hibernate-mapping>

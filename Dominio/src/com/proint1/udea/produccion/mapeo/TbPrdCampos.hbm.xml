@@ -1,30 +1,39 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdCampo" table="TB_PRD_CAMPOS" schema="PROINT1">
+    <class name="com.proint1.udea.produccion.entidades.TbPrdCampos" table="TB_PRD_CAMPOS" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
-        <property name="vrAdtusuario" type="string">
-            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
-        </property>
-        <property name="dtAdtfecha" type="date">
-            <column name="DT_ADTFECHA" length="7" not-null="true" />
-        </property>
         <property name="vrDescripcion" type="string">
             <column name="VR_DESCRIPCION" length="120" not-null="true" />
+        </property>
+        <property name="vrTipocampo" type="char">
+            <column name="VR_TIPOCAMPO" length="1" not-null="true" />
+        </property>
+        <property name="nbTama&#241;ocampo" type="short">
+            <column name="NB_TAMAÑOCAMPO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="nbDecimales" type="java.lang.Boolean">
+            <column name="NB_DECIMALES" precision="1" scale="0" />
         </property>
         <property name="blEstado" type="char">
             <column name="BL_ESTADO" length="1" not-null="true" />
         </property>
-        <set name="tbPrdTipoproducionesxcampos" table="TB_PRD_TIPOPRODUCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo" />
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo" />
         </set>
     </class>
 </hibernate-mapping>

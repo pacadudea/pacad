@@ -1,18 +1,40 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
     <class name="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" table="TB_PRD_MIEMBROSXGRUPO" schema="PROINT1">
-        <id name="nbMieIdn" type="long">
-            <column name="NB_MIE_IDN" precision="10" scale="0" />
-            <generator class="increment" />
-        </id>
-        <many-to-one name="tbAdmPersona" class="com.proint1.udea.administracion.entidades.terceros.Persona" fetch="select" lazy="false" insert="true">
-            <column name="NB_PER_IDN" precision="10" scale="0" not-null="true"  />
-        </many-to-one>
-        <many-to-one name="tbPrdGrupoinvestigacion" class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" fetch="select" insert="true">
+        <composite-id name="id" class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupoId">
+            <key-property name="nbGpiIdn" type="long">
+                <column name="NB_GPI_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="nbPerIdn" type="long">
+                <column name="NB_PER_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="nbConsecutivo" type="long">
+                <column name="NB_CONSECUTIVO" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="tbPrdGrupoinvestigacion" class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" update="false" insert="false" fetch="select">
             <column name="NB_GPI_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
+        <many-to-one name="tbAdmPersona" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" update="false" insert="false" fetch="select">
+            <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dtFechacreacion" type="date">
+            <column name="DT_FECHACREACION" length="7" not-null="true" />
+        </property>
+        <property name="blEstado" type="string">
+            <column name="BL_ESTADO" length="4" not-null="true" />
+        </property>
+        <property name="dtFecharetiro" type="date">
+            <column name="DT_FECHARETIRO" length="7" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

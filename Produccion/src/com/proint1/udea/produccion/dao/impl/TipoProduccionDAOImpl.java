@@ -1,7 +1,6 @@
 package com.proint1.udea.produccion.dao.impl;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -13,9 +12,8 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.proint1.udea.produccion.dao.TipoProduccionDAO;
-import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
-import com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 
 public class TipoProduccionDAOImpl extends HibernateDaoSupport implements TipoProduccionDAO {
@@ -88,16 +86,16 @@ public class TipoProduccionDAOImpl extends HibernateDaoSupport implements TipoPr
 	}
 
 	@Override
-	public List<TbPrdTipoproducionesxcampo> obtenerCamposXTipo(
+	public List<TbPrdTipoproduccionesxcampo> obtenerCamposXTipo(
 			long idTipoProduccion)  throws ProduccionDAOException {
 		Session session = null;
-		List<TbPrdTipoproducionesxcampo> tiposProduccion = new ArrayList<TbPrdTipoproducionesxcampo>();
+		List<TbPrdTipoproduccionesxcampo> tiposProduccion = new ArrayList<TbPrdTipoproduccionesxcampo>();
 		TbPrdTipoproduccion tipo = new TbPrdTipoproduccion();
 		tipo.setNbIdn(idTipoProduccion);
 		
 		try {
 			session = getSession(true);
-			Criteria criteria = session.createCriteria(TbPrdTipoproducionesxcampo.class).add(Restrictions.eq("nbTipoproduccion", tipo));
+			Criteria criteria = session.createCriteria(TbPrdTipoproduccionesxcampo.class).add(Restrictions.eq("nbTipoproduccion", tipo));
 			tiposProduccion = criteria.list();
 		} catch (HibernateException e) { 
 			throw new ProduccionDAOException("No se pudieron obtener los campos por tiposProduccion de la base de datos: " +e.getMessage());
