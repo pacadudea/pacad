@@ -3,26 +3,17 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdProduccion" table="TB_PRD_PRODUCCION" schema="PROINT1">
+    <class name="com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select">
-            <column name="NB_TPR_IDN" precision="10" scale="0" not-null="true" />
+        <many-to-one name="tbPrdCampos" class="com.proint1.udea.produccion.entidades.TbPrdCampos" fetch="select">
+            <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <property name="vrNombreproduccion" type="string">
-            <column name="VR_NOMBREPRODUCCION" length="400" not-null="true" />
-        </property>
-        <property name="dtFechapublicacion" type="date">
-            <column name="DT_FECHAPUBLICACION" length="7" not-null="true" />
-        </property>
-        <property name="vrUrl" type="string">
-            <column name="VR_URL" length="3996" />
-        </property>
-        <property name="vrDoi" type="string">
-            <column name="VR_DOI" length="3996" />
-        </property>
+        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select">
+            <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
         <property name="blEstado" type="char">
             <column name="BL_ESTADO" length="1" not-null="true" />
         </property>
@@ -32,17 +23,14 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
+        <property name="blCampoobligatorio" type="java.lang.Character">
+            <column name="BL_CAMPOOBLIGATORIO" length="1" />
+        </property>
         <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="NB_PRODUCCION_IDN" precision="10" scale="0" not-null="true" />
+                <column name="NB_TIPOPRODUCCIONCAMPOS_IDN" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdDetalleproducciones" />
-        </set>
-        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="NB_PRO_IDN" precision="10" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion" />
         </set>
     </class>
 </hibernate-mapping>

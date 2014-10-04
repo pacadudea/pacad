@@ -1,7 +1,5 @@
 package com.proint1.udea.produccion.ctl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +8,6 @@ import org.zkoss.zhtml.Button;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Bandbox;
-import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Grid;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -18,16 +15,12 @@ import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.ext.Selectable;
 
-import com.proint1.udea.administracion.entidades.terceros.Persona;
-import com.proint1.udea.produccion.dto.MiembrosGrupoInvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
-import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo;
 import com.proint1.udea.produccion.ngc.AutorService;
 import com.proint1.udea.produccion.ngc.GrupoInvestigacionService;
 import com.proint1.udea.produccion.ngc.PersonaService;
 import com.proint1.udea.produccion.util.ControlMensajes;
-import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionIWException;
 
 public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
@@ -114,9 +107,9 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 		System.out.println("CUENTA -- " + a.size());
 		for (Listitem l : a) {
 			TbPrdAutor y = l.getValue();
-			System.out.println("EN LISTA ------ " + y.getPersona().getNombres());
+			System.out.println("EN LISTA ------ " + y.getPersona().getVrNombres());
 			//this.listaDirectores.
-			if (y.getPersona().getNombres().equals("Edison")){
+			if (y.getPersona().getVrNombres().equals("Edison")){
 				l.setSelected(true);
 			}
 		}

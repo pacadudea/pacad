@@ -160,9 +160,9 @@ public class reporteDinamicoProduccionesCtl extends GenericForwardComposer{
 		List<TbPrdAutor> autores = autorService.listar();
 		logger.info("se obtuvo la lista de Autores size: "+autores.size());
 		for (TbPrdAutor autor : autores) { 
-			logger.info("Estoy agregando al listbox: "+autor.getPersona().getNombres()+ "");
+			logger.info("Estoy agregando al listbox: "+autor.getPersona().getVrNombres()+ "");
 			items = new Listitem();
-			uncell = new Listcell(autor.getId()+" - "+autor.getPersona().getNombres()+ "");
+			uncell = new Listcell(autor.getId()+" - "+autor.getPersona().getVrNombres()+ "");
 	        uncell.setParent(items);
 	        uncell.setValue(autor.getId());
 	        items.setParent(ltbAutores);

@@ -1,18 +1,34 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 3/10/2014 01:25:49 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="com.proint1.udea.produccion.entidades.TbPrdAutor" table="TB_PRD_AUTOR" schema="PROINT1">
-        <id name="Id" type="long">
+        <id name="id" type="long">
             <column name="NB_AUT_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
-        <many-to-one name="pais" class="com.proint1.udea.administracion.entidades.terceros.Pais" fetch="select" lazy="false">
+        <many-to-one name="pais" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPaises" fetch="select" lazy="false">
             <column name="VR_PAIS_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-         <many-to-one name="persona" class="com.proint1.udea.administracion.entidades.terceros.Persona" fetch="select" lazy="false">
+        <many-to-one name="persona" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select" lazy="false">
             <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
+        <property name="foto" type="blob">
+            <column name="PH_FOTO" />
+        </property>
+        <property name="usuarioModifico" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+        </property>
+        <property name="fechaModifico" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion" />
+        </set>
     </class>
 </hibernate-mapping>
+

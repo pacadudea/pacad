@@ -3,7 +3,7 @@ package com.proint1.udea.produccion.ngc;
 import java.util.List;
 
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
-import com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
  
@@ -32,6 +32,6 @@ public interface TipoProduccionService {
 	 * @param idTipoProduccion
 	 * @return
 	 */
-	public List<TbPrdTipoproducionesxcampo> obtenerCamposXTipo(long idTipoProduccion)  throws ProduccionDAOException ;
+	public List<TbPrdTipoproduccionesxcampo> obtenerCamposXTipo(long idTipoProduccion)  throws ProduccionDAOException ;
 	
 }

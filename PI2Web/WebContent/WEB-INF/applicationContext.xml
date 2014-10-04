@@ -29,33 +29,23 @@
 			<list>
 			    
 			    <!-- CONFIGURACION -->
-			    <value>com/proint1/udea/administracion/mapeo/configuracion/Pais.hbm.xml</value>
+			    <value>com/proint1/udea/administracion/mapeo/configuracion/TbAdmPaises.hbm.xml</value>
 			    
 			    <!-- TERCEROS -->
 			    <value>com/proint1/udea/administracion/mapeo/terceros/Tipoidentificacion.hbm.xml</value>
-			    <value>com/proint1/udea/administracion/mapeo/terceros/Persona.hbm.xml</value>
+			    <value>com/proint1/udea/administracion/mapeo/terceros/TbAdmPersona.hbm.xml</value>
 
 				<!-- Mapeos produccion academica -->
 				<value>com/proint1/udea/produccion/mapeo/TbPrdAutor.hbm.xml</value> 
-				<value>com/proint1/udea/produccion/mapeo/TbPrdAutoresxproduccion.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdProduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdAutoresxproduccion.hbm.xml</value> 
 				<value>com/proint1/udea/produccion/mapeo/TbPrdCampos.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproduciones.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproducionesxcampo.hbm.xml</value> 
-				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccion.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value>  
+				<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproducciones.hbm.xml</value>
 				
-				<!--<value>com/proint1/udea/produccion/mapeo/TbPrdAutoresxproduccion.hbm.xml</value> 
-					
-					<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproduciones.hbm.xml</value> 
-					<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value> 
-					<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value> 
-					
-					 
-					 
-					<value>com/proint1/udea/produccion/mapeo/TbAdmPersona.hbm.xml</value> <value>com/proint1/udea/actividad/mapeo/TipoActividad.hbm.xml</value> -->
-				<!-- Mapeos registro actividad -->
+				<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value> 
+				<value>com/proint1/udea/produccion/mapeo/TbPrdProduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccion.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccionesxcampo.hbm.xml</value>
 
 			</list>
 		</property>
@@ -78,19 +68,10 @@
 	<bean id="menuPrincipalHorCtl" scope="prototype"
 		class="com.proint1.udea.ctl.MenuPrincipalHorCtl"></bean>
 
-
-
 	<!-- BEANS ADMINISTRACION -->
-
 	 <import resource="administracionContext.xml"/>
-
-	<!-- BEANS MICROCURRICULO -->
-	<!-- <import resource="microcurriculoContext.xml"/> -->
 
 	<!-- BEANS PRODUCCION ACADEMICA -->
 	<import resource="produccionAcademicaContext.xml" />
-
-	<!-- BEANS REGISTRO ACTIVIDAD -->
-	<!-- <import resource="registroActividadContext.xml"/> -->
 
 </beans>

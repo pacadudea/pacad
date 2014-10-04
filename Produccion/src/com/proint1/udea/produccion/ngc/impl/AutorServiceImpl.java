@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.proint1.udea.administracion.entidades.terceros.Pais;
-import com.proint1.udea.administracion.entidades.terceros.Persona;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPaises;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
 import com.proint1.udea.produccion.dao.AutorDAO;
 import com.proint1.udea.produccion.dao.PaisDAO;
@@ -75,6 +75,7 @@ public class AutorServiceImpl implements AutorService {
 	public List<TbPrdAutor> listar() throws ProduccionBLException {
 		logger.info("-- Iniciando consulta de autores");
 		try {
+			System.err.println("A POR LA CONSULTA");
 			return autorDAO.listar();
 		} catch (ProduccionDAOException e) {
 			throw new ProduccionBLException(e.getMessage());
@@ -87,10 +88,10 @@ public class AutorServiceImpl implements AutorService {
 		try {
 		TipoIdentificacion tipoidentificacion = tipoIdentificacionDAO.obtener(tipoIdentificacionIdn);
 		System.out.println("TipoID: " + tipoIdentificacionIdn);
-		Persona persona = new Persona(tipoidentificacion, nombres, apellidos, id, direccion, telefono, email, new Date());
-		persona.setUsuarioActualizacion("1");
-		personaDAO.insertar(persona);
-		Pais pais = paisDAO.obtener(nacionalidad);
+		TbAdmPersona persona = new TbAdmPersona();
+		//persona.setUsuarioActualizacion("1");
+		//personaDAO.insertar(persona);
+		TbAdmPaises pais = paisDAO.obtener(nacionalidad);
 		TbPrdAutor autor = new TbPrdAutor(pais, persona);
 		
 			autorDAO.insertarAutor(autor);

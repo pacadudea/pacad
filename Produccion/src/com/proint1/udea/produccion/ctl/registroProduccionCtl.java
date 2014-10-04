@@ -15,7 +15,7 @@ import org.zkoss.zul.Rows;
 import org.zkoss.zul.Textbox;
 
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
-import com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo;
 import com.proint1.udea.produccion.ngc.ProduccionService;
 import com.proint1.udea.produccion.ngc.TipoProduccionService;
 import com.proint1.udea.produccion.util.ProduccionBLException;
@@ -67,7 +67,7 @@ public class registroProduccionCtl extends GenericForwardComposer {
 	
 	public void onSelect$ltbTipoProduccion() {
 		//Messagebox.show("Tipo elegido: " + ltbTipoProduccion.getSelectedItem().getValue().toString());
-		List<TbPrdTipoproducionesxcampo> camposXTipo = null;
+		List<TbPrdTipoproduccionesxcampo> camposXTipo = null;
 		try {
 			//camposXTipo = tipoProduccionService.obtenerCamposXTipo(Long.parseLong(ltbTipoProduccion.getSelectedItem().getValue().toString()));
 			//Messagebox.show("Campos: " + camposXTipo.size());
