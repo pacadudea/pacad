@@ -47,6 +47,7 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 	Button btnBuscarGrupo;
 	Button btnActualizarMiembros;
 	Listbox listaGrupos;
+	
 	@Wire
     private DualListBoxGrupo dualLBox;
 	

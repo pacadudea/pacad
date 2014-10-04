@@ -1,0 +1,37 @@
+<window>
+<div apply="org.zkoss.bind.BindComposer" 
+	viewModel="@id('vm') @init('com.proint1.udea.produccion.ctl.FilterProduccionesCtl')">
+	
+
+
+	<grid model="@load(vm.foodModel)">
+		<auxhead sclass="category-center">
+			<auxheader label="Healthy Food List" colspan="6" />
+		</auxhead>
+		<auxhead sclass="category-center">
+			<auxheader colspan="1">
+				<image src="/widgets/grid/data_filter/img/funnel.png" />
+				<textbox instant="true" width="100px"  
+					value="@bind(vm.foodFilter.nombre)" onChange="@command('changeFilter')" />
+			</auxheader>
+			<auxheader colspan="1">
+				<image src="/widgets/grid/data_filter/img/funnel.png" />
+				<textbox instant="true"  width="100px"
+					value="@bind(vm.foodFilter.fecha)" onChange="@command('changeFilter')"/>
+			</auxheader>
+		</auxhead>
+		<columns>
+			<column hflex="2">Category</column>
+			<column hflex="2">Name</column>
+		</columns>
+		<template name="model">
+			<row>
+				<label value="@load(each.vrNombreproduccion)" />
+				<label value="@load(each.dtFechapublicacion)" />
+			</row>
+		</template>
+		<foot>
+			<footer span="4" class="footer_right" label="@load(vm.footer)" />
+		</foot>
+	</grid>
+</div></window>

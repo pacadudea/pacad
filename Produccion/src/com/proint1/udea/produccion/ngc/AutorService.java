@@ -45,4 +45,6 @@ public interface AutorService {
 	 * @throws ProduccionBLException
 	 */
 	public TbPrdAutor obtenerAutor(long id)throws ProduccionBLException;
+	
+	public TbPrdAutor bucarPersona(long id)throws ProduccionBLException;
 }
