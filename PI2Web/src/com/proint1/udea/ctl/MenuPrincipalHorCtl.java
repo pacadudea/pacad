@@ -115,6 +115,18 @@ public class MenuPrincipalHorCtl  extends GenericForwardComposer{
 		windowCenter.setClass("window");
 	}
 	
+	public void onClick$consultaInteractiva() throws IOException{
+		if(divCenter==null){
+			divCenter = (Div)Sessions.getCurrent().getAttribute("divPrincipalCtl");
+		}
+		divCenter.getChildren().clear();
+		java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/consultaInteractiva.zul") ; 
+		java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+		Window windowCenter= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,new HashMap()) ;	
+		windowCenter.doEmbedded();
+		windowCenter.setClass("window");
+	}
+	
 	public void onClick$gestionMiembros() throws ProduccionException {
 		if(divCenter==null){
 			divCenter = (Div)Sessions.getCurrent().getAttribute("divPrincipalCtl");
