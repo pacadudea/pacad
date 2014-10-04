@@ -8,7 +8,7 @@
             <column name="NB_IDN" precision="10" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select">
+        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select" lazy="false">
             <column name="NB_TPR_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrNombreproduccion" type="string">
@@ -38,7 +38,7 @@
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdDetalleproducciones" />
         </set>
-        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" fetch="select" lazy="false">
             <key>
                 <column name="NB_PRO_IDN" precision="10" scale="0" not-null="true" />
             </key>
