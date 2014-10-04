@@ -9,13 +9,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.proint1.udea.administracion.entidades.terceros.Persona;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.dao.GrupoInvestigacionDAO;
-import com.proint1.udea.produccion.dao.PersonaDAO;
 import com.proint1.udea.produccion.dto.MiembrosGrupoInvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo;
@@ -40,8 +38,8 @@ public class GrupoInvestigacionDAOImpl extends HibernateDaoSupport implements Gr
 		} catch (HibernateException e) {
 			throw new ProduccionDAOException("No se pudo ejecutar la operacion DAO, para obtener la lista de grupos de investigacion " + e.getMessage());
 		} finally {
-			if (session != null)
-				session.close();
+			/*if (session != null)
+				session.close();*/
 		}
 		return grupos;
 	}
@@ -168,8 +166,8 @@ public class GrupoInvestigacionDAOImpl extends HibernateDaoSupport implements Gr
 				MiembrosGrupoInvestigacion member = (MiembrosGrupoInvestigacion) iterator.next();
 				
 				TbPrdMiembrosxgrupo nm = new TbPrdMiembrosxgrupo();
-				nm.setTbAdmPersona(new Persona());
-				nm.getTbAdmPersona().setIdn(Long.parseLong(member.getIdPersona()+""));
+				nm.setTbAdmPersona(new TbAdmPersona());
+				nm.getTbAdmPersona().setNbIdn(Long.parseLong(member.getIdPersona()+""));
 				nm.setTbPrdGrupoinvestigacion(new TbPrdGrupoinvestigacion());
 				nm.getTbPrdGrupoinvestigacion().setNbIdn(idGrupo);
 				

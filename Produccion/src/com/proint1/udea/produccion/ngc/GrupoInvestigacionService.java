@@ -3,7 +3,7 @@ package com.proint1.udea.produccion.ngc;
 import java.util.Date;
 import java.util.List;
 
-import com.proint1.udea.administracion.entidades.terceros.Persona;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.dto.MiembrosGrupoInvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.util.ProduccionBLException;
@@ -39,14 +39,14 @@ public interface GrupoInvestigacionService {
 	public void actualizarMiembros(long idGrupo, List<MiembrosGrupoInvestigacion> nuevosMiembros) throws ProduccionBLException, ProduccionDAOException;
 	
 	
-	public void insertarGrupoInvestigacion(long nbIdn, Persona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
+	public void insertarGrupoInvestigacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
 			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionBLException, ProduccionDAOException; 
 					//throws ProduccionBLException, ProduccionDAOException;
 	
-	public void eliminarGrupoInvesticacion(long nbIdn, Persona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
+	public void eliminarGrupoInvesticacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
 			char blEstado, String vrAdtusuario, Date dtAdtfecha)throws ProduccionBLException, ProduccionDAOException;
 	
-	public void editarGrupoInvesticacion(long nbIdn, Persona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
+	public void editarGrupoInvesticacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
 			char blEstado, String vrAdtusuario, Date dtAdtfecha)throws ProduccionBLException, ProduccionDAOException;
 
 	}

@@ -26,12 +26,16 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 	 */
 	@Override
 	public List<TbPrdAutor> listar() throws ProduccionDAOException {
+		System.err.println("LLEGO AQUI DEFINIENDO SESSION");
 		Session session = null;
 		List<TbPrdAutor> autores = new ArrayList<TbPrdAutor>();
 		try {
 			session = getSession(true);
+			System.err.println("OBTUVO LA  SESSION -- ");
 			Criteria criteria = session.createCriteria(TbPrdAutor.class);
+			System.err.println("CONSULTADO ");
 			autores = criteria.list();
+			System.err.println("DEVOLVIENDO " + autores.size());
 		} catch (HibernateException e) { // throw new
 			throw new ProduccionDAOException("No se pudieron obtener los autores de la base de datos");
 		} finally {

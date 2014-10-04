@@ -3,7 +3,6 @@ package com.proint1.udea.produccion.ctl;
 import java.awt.Label;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.zkoss.zhtml.Messagebox;
@@ -15,23 +14,24 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Column;
 import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Grid;
+import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
-import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.Row;
 import org.zkoss.zul.Rows;
 import org.zkoss.zul.Textbox;
 
-import com.proint1.udea.administracion.entidades.terceros.Pais;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPaises;
 import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
-import com.proint1.udea.produccion.ngc.TipoIdentificacionService;
+import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.ngc.impl.AutorServiceImpl;
 import com.proint1.udea.produccion.ngc.impl.PaisServiceImpl;
 import com.proint1.udea.produccion.ngc.impl.TipoIdentificacionServiceImpl;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
+import com.proint1.udea.produccion.util.ProduccionIWException;
 
 public class gestionAutoresCtl extends GenericForwardComposer {
 
@@ -43,8 +43,9 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	TipoIdentificacionServiceImpl tipoIdentificacionService;
 	PaisServiceImpl paisService;
 
-	Bandbox bdAutores;
-	Grid gridAutores;
+	Listbox listaAutores;	
+	Button btnBuscarGrupo;
+	
 	Listbox ltbTipoId;
 	Textbox txtNumeroId;
 	Textbox txtPrimerApellido;
@@ -54,13 +55,11 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	Textbox txtDireccion;
 	Textbox txtTelefono;
 	Datebox tbiFechaNacimiento;
-	Label lblEdad;
 	Listbox ltbNacionalidad;
 	Radiogroup rdoSexo;
 	Button btnGuardarAutor;
 	Button btnEliminarAutor;
 	Button btnNuevoAutor;
-	Column columnasGrid;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
@@ -81,26 +80,38 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		Messagebox.show("Autor guardado correctamente");
 	}
 
-	public void onCreate() throws ProduccionDAOException, ProduccionBLException {
-		logger.info("cargando LISTA DE AUTORES");
+	public void onCreate() throws ProduccionDAOException, ProduccionBLException, ProduccionIWException {
+		/*logger.info("cargando LISTA DE AUTORES");
 		Rows rows = new Rows();
+		System.err.println("YESSS ... LOGRAMOS ir");
 		List<TbPrdAutor> autores = autorService.listar();
+		System.err.println("YESSS ... LOGRAMOS RECIBIR");
 		for (TbPrdAutor autor : autores) {
 			Row row = new Row();
-			row.appendChild(new org.zkoss.zul.Label(autor.getPersona().getNombres() + " " + autor.getPersona().getApellidos() + ""));
+			row.appendChild(new org.zkoss.zul.Label(autor.getPersona().getVrNombres() + " " + autor.getPersona().getVrApellidos() + ""));
 			rows.appendChild(row);
 		}
-		gridAutores.appendChild(rows);
+		gridAutores.appendChild(rows);*/
+		
+		
+		try {
+			List<TbPrdAutor> result = autorService.listar();
+			listaAutores.setModel(new ListModelList<TbPrdAutor>(result));
+		} catch (Exception e) {
+			throw new ProduccionIWException("No se pudo cargar los elementos iniciales del formulario de autores");
+		}
+		
+		
 
 		// LLENAR LISTBOX TIPOS DE DOCUMETNOS
 		List<TipoIdentificacion> tipos = tipoIdentificacionService.listar();
 		for (TipoIdentificacion tipo : tipos) {
 			ltbTipoId.appendChild(new Listitem(tipo.getDescripcion(), tipo.getIdn()));
 		}
-
+		
 		// LLENAR LISTBOX PAISES
-		List<Pais> paises = paisService.listar();
-		for (Pais pais : paises) {
+		List<TbAdmPaises> paises = paisService.listar();
+		for (TbAdmPaises pais : paises) {
 			ltbNacionalidad.appendChild(new Listitem(pais.getVrDescripcion(), pais.getNbIdn()));
 		}
 	}

@@ -11,23 +11,21 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.proint1.udea.administracion.entidades.terceros.Pais;
-import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPaises;
 import com.proint1.udea.produccion.dao.PaisDAO;
-import com.proint1.udea.produccion.entidades.TbPrdAutor;
 
 public class PaisDAOImpl  extends HibernateDaoSupport implements PaisDAO {
 
 	@Override
-	public List<Pais> listar() {
+	public List<TbAdmPaises> listar() {
 		Session session = null;
-		List<Pais> paises = new ArrayList<Pais>();
+		List<TbAdmPaises> paises = new ArrayList<TbAdmPaises>();
 		try {
 			session = getSession(true);
-			Criteria criteria = session.createCriteria(Pais.class);
+			Criteria criteria = session.createCriteria(TbAdmPaises.class);
 			paises = criteria.list();
 			for (Iterator iterator = paises.iterator(); iterator.hasNext();) {
-				Pais pais = (Pais) iterator.next();
+				TbAdmPaises pais = (TbAdmPaises) iterator.next();
 			}
 		} catch (HibernateException e) { // throw new
 			//
@@ -39,7 +37,7 @@ public class PaisDAOImpl  extends HibernateDaoSupport implements PaisDAO {
 	}
 
 	@Override
-	public void insertar(Pais pais) {
+	public void insertar(TbAdmPaises pais) {
 		Session session = null;
 		Transaction tx = null;
 		try {
@@ -57,13 +55,13 @@ public class PaisDAOImpl  extends HibernateDaoSupport implements PaisDAO {
 	}
 
 	@Override
-	public Pais obtener(long id) {
-		Pais  pais = null;
+	public TbAdmPaises obtener(long id) {
+		TbAdmPaises  pais = null;
 		Session session = null;
 		try {
 			session = getSession(true);
-			Criteria criteria = session.createCriteria(Pais.class).add(Restrictions.eq("nbIdn", id));
-			pais = (Pais) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(TbAdmPaises.class).add(Restrictions.eq("nbIdn", id));
+			pais = (TbAdmPaises) criteria.uniqueResult();
 		} catch (HibernateException e) {
 			System.out.println("Error: Pais.obtener: "+e.getMessage());
 		} finally {

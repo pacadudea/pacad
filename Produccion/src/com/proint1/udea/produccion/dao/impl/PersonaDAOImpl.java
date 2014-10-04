@@ -8,26 +8,24 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.proint1.udea.administracion.entidades.terceros.Persona;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.dao.PersonaDAO;
-import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 
 public class PersonaDAOImpl  extends HibernateDaoSupport implements PersonaDAO {
 
 	@Override
-	public List<Persona> listar() {
+	public List<TbAdmPersona> listar() {
 		 Session session = null;
-		  List<Persona> personas = new ArrayList<Persona>();
+		  List<TbAdmPersona> personas = new ArrayList<TbAdmPersona>();
 		  try {
 		   session = getSession(true);
-		   Criteria criteria = session.createCriteria(Persona.class);
+		   Criteria criteria = session.createCriteria(TbAdmPersona.class);
 		   personas = criteria.list();
 		   for (Iterator iterator = personas.iterator(); iterator.hasNext();) {
-		    Persona tipoIdentificacion = (Persona) iterator.next();
+			   TbAdmPersona tipoIdentificacion = (TbAdmPersona) iterator.next();
 		   }
 		  } catch (HibernateException e) { // throw new
 		   //
@@ -41,7 +39,7 @@ public class PersonaDAOImpl  extends HibernateDaoSupport implements PersonaDAO {
 	}
 
 	@Override
-	public void insertar(Persona persona) throws ProduccionDAOException {
+	public void insertar(TbAdmPersona persona) throws ProduccionDAOException {
 		Session session = null;
 		Transaction tx = null;
 		try {
