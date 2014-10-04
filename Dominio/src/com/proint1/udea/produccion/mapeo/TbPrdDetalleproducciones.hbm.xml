@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdDetalleproduciones" table="TB_PRD_DETALLEPRODUCIONES" schema="PROINT1">
+    <class name="com.proint1.udea.produccion.entidades.TbPrdDetalleproducciones" table="TB_PRD_DETALLEPRODUCCIONES" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
             <generator class="assigned" />
@@ -11,11 +11,11 @@
         <many-to-one name="tbPrdProduccion" class="com.proint1.udea.produccion.entidades.TbPrdProduccion" fetch="select">
             <column name="NB_PRODUCCION_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbPrdTipoproducionesxcampo" class="com.proint1.udea.produccion.entidades.TbPrdTipoproducionesxcampo" fetch="select">
+        <many-to-one name="tbPrdTipoproduccionesxcampo" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccionesxcampo" fetch="select">
             <column name="NB_TIPOPRODUCCIONCAMPOS_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrValor" type="string">
-            <column name="VR_VALOR" length="80" />
+            <column name="VR_VALOR" length="4000" />
         </property>
         <property name="blEstado" type="char">
             <column name="BL_ESTADO" length="1" not-null="true" />
