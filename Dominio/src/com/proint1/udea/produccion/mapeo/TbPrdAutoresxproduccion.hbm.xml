@@ -18,7 +18,7 @@
         <many-to-one name="tbPrdGrupoinvestigacion" class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" fetch="select">
             <column name="NB_GRU_IDN" precision="10" scale="0" />
         </many-to-one>
-        <many-to-one name="tbPrdAutor" class="com.proint1.udea.produccion.entidades.TbPrdAutor" update="false" insert="false" fetch="select">
+        <many-to-one name="tbPrdAutor" class="com.proint1.udea.produccion.entidades.TbPrdAutor" update="false" insert="false" fetch="select" lazy="false">
             <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrAdtusuario" type="string">

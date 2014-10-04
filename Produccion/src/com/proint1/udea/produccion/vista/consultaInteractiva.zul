@@ -1,73 +1,110 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?page title="Reporte Dinamico de Producciones" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
-	<window title="Reporte Dinamico de Producciones" border="normal"
-		width="100%" height="480px" apply="${reporteDinamicoProduccionesCtl}">
+	<window title="Consulta Dinamica Producciones" border="normal"
+		width="100%" height="480px" apply="${consultaInteractivaCtl}">
 
 		<groupbox height="100%" width="100%" closable="false">
-			<caption label="Consulta Interactiva"></caption>
-			<x:table border="0" height="90%" width="100%" >
-				<x:tr>
-					<x:td>Tipo de Producci&#243;n</x:td>
-					<x:td>
-						<listbox id="ltbTipoProduccion" tabindex="1" emptyMessage="No se encontraron tiposProduccion, para el resultado"
-							width="120px" rows="1" mold="select" height="2opx"
-							tooltiptext="Seleccione uno de la lista, ninguno para no usar el filtro">
-							<!-- llenar el listbox con lista de base de datos.  -->
-						</listbox>
-					</x:td>
-				</x:tr>
-				<x:tr>
-					<x:td>Autor(es)</x:td>
-					<x:td>
-						<listbox id="ltbAutores" tabindex="2" emptyMessage="No se encontraron autores, para el resultado"
-							width="120px" rows="1" mold="select" height="2opx"
-							tooltiptext="Seleccione uno o mas de la lista, ninguno para no usar el filtro">
-							<!-- llenar el listbox con lista de base de datos.-->
-						</listbox>
-					</x:td>
-				</x:tr>
-				<x:tr>
-					<x:td>Grupo de Investigaci&#243;n</x:td>
-					<x:td>
-						<listbox id="ltbGrupo" tabindex="3" emptyMessage="No se encontraron grupos, para el resultado"
-							width="120px" rows="1" mold="select" height="2opx"
-							tooltiptext="Seleccione uno de la lista, ninguno para no usar el filtro">
-							<!-- llenar el listbox con lista de base de datos. -->
-						</listbox>
-					</x:td>
-				</x:tr>
-				<x:tr>
-					<x:td>Fechas inicial publicaci&#243;n</x:td>
-					<x:td>
-						<datebox tabindex="4" id="tbiFechaInicio" width="120px" tooltiptext="Fecha desde la que se quiere generar el reporte"></datebox>
-					</x:td>
-					<x:td>Fecha final publicaci&#243;n</x:td>
-					<x:td><datebox tabindex="5" id="tbiFechaFin" width="120px" tooltiptext="Fecha hasta la que se quiere generar el reporte"></datebox></x:td>
-				</x:tr>
-				<!-- Botones -->
-				<x:tr>
-					<x:td colspan="4">
-						<div align="center">
-							<hlayout>
-								<button id="btnNuevoReporte"
-									label="Nuevo Reporte" tabindex="14"
-									tooltiptext="Limpia los filtros">
-								</button>
-								<button id="btnGenerarReporte"
-									label="Generar Reporte" tabindex="15" tooltiptext="Muestra en reporte generado con los filtros actuales">
-								</button>
-							</hlayout>
-							<!-- Resultado Seleccion -->
-							<x:tr>
-								<x:td>Mostrando reporte
-								<textbox tabindex="17" id="result" width="250px"></textbox>
-								</x:td>
-							</x:tr>
-						</div>
-					</x:td>
-				</x:tr>
-			</x:table>
+			
+			<button id="bt1" label="ensayo" />
+			<button id="bt2" label="ensayo2" />
+			
+			<listbox id="listaProducciones" width="100%">
+				<auxhead sclass="category-center">
+					<auxheader label="Lista categorizada de producciones" colspan="4" />
+				</auxhead>
+				<auxhead sclass="category-center">
+					<auxheader colspan="1">
+						<image	src="/img/funel-icon.png" />
+						<textbox id="filNombre" instant="true" width="400px" />
+					</auxheader>
+					<auxheader colspan="1">
+						<image	src="/img/funel-icon.png" />
+						<textbox id="filTipoProduccion" instant="true" width="150px" />
+					</auxheader>
+					<auxheader colspan="1">
+						<image	src="/img/funel-icon.png" />
+						<textbox id="filEstado" instant="true" width="20px" />
+					</auxheader>
+				</auxhead>
+
+				<listhead>
+					<listheader   label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.producciones')}" width="450px" />
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.tipoProduccion')}" width="200px"/>
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.estado')}" width="50px"/>
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.fechaPublicacion')}" width="150px"/>
+				</listhead>
+
+				<template name="model">
+					<listitem>
+						<listcell  label="${each.vrNombreproduccion}"></listcell>
+						<listcell  label="${each.tbPrdTipoproduccion.vrDescripcion}"></listcell>
+						<listcell  label="${each.blEstado}"></listcell>
+						<listcell  label="${each.dtFechapublicacion}"></listcell>
+					</listitem>
+				</template>
+			</listbox>
 		</groupbox>
 	</window>
+	
+    <popup id="popDetallesProduccion" width="400px" height="300px;">
+        <groupbox sclass="z-demo-config" closable="false">
+            <caption>Detalles de la produccion</caption>
+            Producción: <textbox id="prodd" value="${produccionSeleccionada.vrNombreproduccion}" />
+            
+            <listbox id="listaAutoresxProduccion" width="100%">
+				<auxhead sclass="category-center">
+					<auxheader label="Autores de la produccion" colspan="4" width="400px"/>
+				</auxhead>
+				<auxhead sclass="category-center">
+					<auxheader colspan="1">
+						<image	src="/img/funel-icon.png" />
+						<textbox id="filAutorSeleccionado" instant="true" width="400px" />
+					</auxheader>
+				</auxhead>
+
+				<listhead>
+					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.autores')}" />
+				</listhead>
+
+				<template name="model">
+					<listitem>
+						<listcell  label="${each.vrNombres}"></listcell>
+					</listitem>
+				</template>
+			</listbox>
+        </groupbox>
+    </popup>
+    
+    <popup id="popDetallesAutor" width="400px" height="300px;">
+        <groupbox sclass="z-demo-config" closable="false">
+            <caption>Detalles del autor</caption>
+            Autor: <textbox id="txtautorSeleccionado" value="${autorSeleccionada.vrNombres}" />
+            
+            <listbox id="listaDetallesAutor" width="100%">
+				<auxhead sclass="category-center">
+					<auxheader label="Autores de la produccion" colspan="4" width="400px" />
+				</auxhead>
+				<auxhead sclass="category-center">
+					<auxheader colspan="1">
+						<image	src="/img/funel-icon.png" />
+						<textbox id="filProduccionSeleccionado" instant="true"/>
+					</auxheader>
+				</auxhead>
+
+				<listhead>
+					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.autores')}" />
+				</listhead>
+
+				<template name="model">
+					<listitem>
+						<listcell  label="${each.vrNombres}"></listcell>
+					</listitem>
+				</template>
+			</listbox>
+        </groupbox>
+    </popup>
 </zk>

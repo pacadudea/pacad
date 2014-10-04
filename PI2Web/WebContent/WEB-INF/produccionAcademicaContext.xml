@@ -99,4 +99,17 @@
 		<property name="autorService" ref="autorService"></property>
 	    <property name="grupoInvestigacionService" ref="grupoInvestigacionService"></property>    
 	</bean>
+	
+	<bean id="consultaInteractivaCtl" class="com.proint1.udea.produccion.ctl.ConsultaInteractivaCtl" scope="prototype">
+		<property name="produccionService" ref="produccionService"></property>   
+		<property name="autorService" ref="autorService"></property>
+	</bean>
+	
+	<bean id="filterProduccionesCtl" class="com.proint1.udea.produccion.ctl.FilterProduccionesCtl" scope="prototype">
+		<property name="produccionService" ref="produccionService"></property>   
+	</bean>
+	
+	<bean id="employeeDialogController" class="com.proint1.udea.produccion.ctl.EmployeeDialogController" scope="prototype">
+		<property name="produccionService" ref="produccionService"></property>     
+	</bean>
 </beans>
