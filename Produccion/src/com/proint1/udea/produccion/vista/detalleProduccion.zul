@@ -57,6 +57,7 @@
 					<listheader label="${c:l('pacad.form.gestionAutores.email')}" width="25%" />
 				</listhead>
 			</listbox>
+			
 		</div>
 	</window>
 </zk>

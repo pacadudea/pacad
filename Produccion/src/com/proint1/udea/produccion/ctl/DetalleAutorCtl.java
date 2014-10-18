@@ -26,6 +26,7 @@ import org.zkoss.zul.Window;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
 import com.proint1.udea.produccion.util.ControlMensajes;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
@@ -38,6 +39,7 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 	
 	private TbPrdAutor autor;
 	
+	Label lbNombreAutor;
 	Label lbTipoId;
 	Label lbNumeroId;
 	Label lbNacionalidad;
@@ -64,10 +66,16 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 	
 	public void onCreate() throws ProduccionDAOException, ProduccionBLException, ProduccionIWException {
 		this.cargarDatosBasicos();
+		System.err.println("Cargados");
 		this.cargarProducciones();
 	}
 	
+	/**
+	 * Carga los datos basicos del formulario
+	 */
 	private void cargarDatosBasicos(){
+		
+		this.lbNombreAutor.setValue(this.autor.getPersona().getVrApellidos() + " " + this.autor.getPersona().getVrNombres() );
 		this.lbTipoId.setValue(this.autor.getPersona().getTbAdmTipoidentificacion().getVrDescripcion());
 		this.lbNumeroId.setValue(this.autor.getPersona().getVrIdentificacion());
 		this.lbNacionalidad.setValue(this.autor.getPais().getVrDescripcion());
@@ -91,6 +99,7 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 			this.listaProducciones.setModel(new ListModelList<TbPrdProduccion>(listaProds));
 			this.listaProducciones.setItemRenderer(this);
 		} catch (Exception e) {
+			e.printStackTrace();
 			ControlMensajes.mensajeError(Labels.getLabel("pacad.mensajeError.noCargaDatos"));
 		}
 	}
@@ -111,7 +120,7 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 		Listcell cellTipo = new Listcell();
 		cellTipo.setLabel(pr.getTbPrdTipoproduccion().getVrDescripcion());
 		cellTipo.setStyle(estiloLink);
-		//cellTipo.addEventListener(Events.ON_CLICK, new ProduccionSel(pr));	
+		cellTipo.addEventListener(Events.ON_CLICK, new TipoProduccionSel(pr.getTbPrdTipoproduccion()));	
 		
 		Listcell cellEstado = new Listcell();
 		cellEstado.setLabel(pr.getBlEstado()+"");
@@ -146,12 +155,39 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 			try {
 				Window window;
 				Div divCenter = VistasZk.obtenerDivCenter(detalleAutor);
-				if (divCenter == null  ){
-					System.err.println("no se encontro el div");
-				}else{
-					System.err.println("SE encontro el div");
-				}
 								
+				divCenter.getChildren().clear();
+				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
+				window.doEmbedded();
+			} catch (IOException e) {
+				System.err.println("ERROR ENVIANDO");
+				e.printStackTrace();
+			}
+	    }
+	}
+	
+	/**
+	 * Clase que controla el evento de seleccionar la produccón
+	 */
+	private class TipoProduccionSel implements EventListener {
+		
+		private TbPrdTipoproduccion tipoProd;
+		
+		public TipoProduccionSel(TbPrdTipoproduccion tipoProd){
+			this.tipoProd = tipoProd;
+		}
+		
+	    public void onEvent(Event event) {
+	    	Map a = new HashMap<>();
+			a.put("tipoProduccion", tipoProd);
+			
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/detalleTipoProduccion.zul") ;
+			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+			
+			try {
+				Window window;
+				Div divCenter = VistasZk.obtenerDivCenter(detalleAutor);
+												
 				divCenter.getChildren().clear();
 				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
 				window.doEmbedded();
