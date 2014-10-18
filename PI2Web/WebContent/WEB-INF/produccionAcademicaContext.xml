@@ -117,6 +117,20 @@
 		<property name="produccionService" ref="produccionService"></property>   
 	</bean>
 	
+	<bean id="ensayoCtl" class="com.proint1.udea.produccion.ctl.ensayoCtl" scope="prototype">
+		   
+	</bean>
+	
+	<bean id="detalleProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleProduccionCtl" scope="prototype">
+		   
+	</bean>
+	
+	<bean id="detalleAutorCtl" class="com.proint1.udea.produccion.ctl.DetalleAutorCtl" scope="prototype"/>
+	
+	<bean id="detalleTipoProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleTipoProduccionCtl" scope="prototype"/>
+	
+	
+	
 	<bean id="employeeDialogController" class="com.proint1.udea.produccion.ctl.EmployeeDialogController" scope="prototype">
 		<property name="produccionService" ref="produccionService"></property>     
 	</bean>

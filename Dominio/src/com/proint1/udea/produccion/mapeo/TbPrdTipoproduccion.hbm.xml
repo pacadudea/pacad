@@ -20,13 +20,13 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdProduccions" table="TB_PRD_PRODUCCION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdProduccions" table="TB_PRD_PRODUCCION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_TPR_IDN" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdProduccion" />
         </set>
-        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
             </key>
