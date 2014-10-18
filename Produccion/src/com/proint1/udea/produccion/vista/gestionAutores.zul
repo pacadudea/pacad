@@ -12,12 +12,12 @@
 					<caption image="/img/users-icon.png"
 						label="${c:l('pacad.form.gestionAutores.panelBuscar')}" />
 					<hbox align="center">
-						${c:l('pacad.textoGeneral.nombre')}
+						${c:l('pacad.texto.nombre')}
 						<textbox instant="true" id="txtFiltrarAutor" tabindex="1" />
 					</hbox>
 
 					<listbox id="listBoxAutores"
-						emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}"
+						emptyMessage="${c:l('pacad.texto.sinRegistros')}"
 						height="86%" style="margin-top:10px" rows="9">
 						<listhead>
 							<listheader

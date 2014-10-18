@@ -26,7 +26,7 @@
         <property name="blCampoobligatorio" type="java.lang.Character">
             <column name="BL_CAMPOOBLIGATORIO" length="1" />
         </property>
-        <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_TIPOPRODUCCIONCAMPOS_IDN" precision="10" scale="0" not-null="true" />
             </key>
