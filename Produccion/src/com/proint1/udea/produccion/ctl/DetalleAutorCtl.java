@@ -66,7 +66,6 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 	
 	public void onCreate() throws ProduccionDAOException, ProduccionBLException, ProduccionIWException {
 		this.cargarDatosBasicos();
-		System.err.println("Cargados");
 		this.cargarProducciones();
 	}
 	

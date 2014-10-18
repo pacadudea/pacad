@@ -52,6 +52,8 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	AutorServiceImpl autorService; 
 	TipoIdentificacionServiceImpl tipoIdentificacionService;
 	PaisServiceImpl paisService;
+	
+
 
 	//Lista con todos los autores que existen en el aplicativo
 	private List<TbPrdAutor> listaAutores;
@@ -119,10 +121,43 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 				txtTelefono.getText(),  nacionalidad, null);
 		
 		if (transaccion) {
-			ControlMensajes.mensajeInformation("El Autor se guardo correctamente");
+			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.guardado.true"));
 			this.cargarAutores();
 		}else{
-			ControlMensajes.mensajeInformation("El Autor NO se pudo ser guardado. Intente mas tarde");
+			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.guardado.false"));
+		}
+	}
+	
+	public void onClick$btnActualizar() throws WrongValueException, ProduccionBLException, ProduccionIWException {
+		//Validaciones adicionales
+		
+		if (!Validaciones.isTextoVacio(txtNumeroId.getText())) {
+			if (!Validaciones.validarSoloNumeros(txtNumeroId.getText())){
+				throw new WrongValueException(txtNumeroId, Labels.getLabel("pacad.error.idenformat"));
+			}
+		}
+		
+		if (ltbNacionalidad.getSelectedItem() == null){
+			throw new WrongValueException(ltbNacionalidad, Labels.getLabel("pacad.error.nacionalidad"));
+		}
+		if (!Validaciones.isTextoVacio(txtEmail.getText())) {
+			if (!Validaciones.isEmail(txtEmail.getText())){
+				throw new WrongValueException(txtEmail, Labels.getLabel("pacad.error.email"));
+			}
+		}
+		
+		long tipoId = Long.parseLong(ltbTipoId.getSelectedItem().getValue().toString());
+		long nacionalidad = Long.parseLong(ltbNacionalidad.getSelectedItem().getValue().toString()); 
+		
+		boolean transaccion = autorService.actualizar(tipoId,txtNumeroId.getText(),txtApellidos.getText(),
+				txtNombres.getText(),txtDireccion.getText(),txtEmail.getText(),
+				txtTelefono.getText(),  nacionalidad, null, this.autorSeleccionado);
+		
+		if (transaccion) {
+			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.actualizado.true"));
+			this.cargarAutores();
+		}else{
+			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.actualizado.false"));
 		}
 	}
 	
