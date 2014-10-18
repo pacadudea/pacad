@@ -26,6 +26,7 @@ import org.zkoss.zul.Window;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
 import com.proint1.udea.produccion.ngc.AutorService;
 import com.proint1.udea.produccion.ngc.ProduccionService;
 import com.proint1.udea.produccion.util.ControlMensajes;
@@ -77,64 +78,7 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 		System.err.println("CARGANDO VENTANA");
 		this.cargarProducciones();
 	}
-	
-	public void onClick$bt2() {
-		Map a = new HashMap<>();
-		a.put("juan", "castro");
-		a.put("marcela", "giraldo");
-		/*reporte.getPosition()
-		reporte.getStyle()
-		reporte.detach();*/
-		/*
-		 * if(divCenter==null){
-			divCenter = (Div)Sessions.getCurrent().getAttribute("divPrincipalCtl");
-		}
-		divCenter.getChildren().clear();
-		java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/consultaInteractiva.zul") ; 
-		java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
-		Window windowCenter= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,new HashMap()) ;	
-		windowCenter.doEmbedded();
-		windowCenter.setClass("window");
-		 * 
-		 * */
-		java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/employee_dialog.zul") ;
-		java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
-		
-		Window window;
-		
-		try {
-			
-			/*Div divCenter = (Div)Sessions.getCurrent().getAttribute("divPrincipalCtl");
-			if (divCenter == null  ){
-				System.err.println("no se encontro el div");
-			}else{
-				System.err.println("SE encontro el div");
-				
-			}*/
-			Div divCenter = VistasZk.obtenerDivCenter(reporte);
-			if (divCenter == null  ){
-				System.err.println("no se encontro el div");
-			}else{
-				System.err.println("SE encontro el div");
-				
-			}
-			
-			
-			divCenter.getChildren().clear();
-			window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
-			
-			window.doEmbedded();
-			//window.setStyle(reporte.getStyle());
-			//window.setClass("window");
-			 // window.doModal();
-		} catch (IOException e) {
-			System.err.println("ERROR ENVIANDO");
-			e.printStackTrace();
-		}
-      
-	}
-	
-	
+
 	public void onChange$filNombre() {
 		List<TbPrdProduccion> listaFiltrada = new ArrayList<TbPrdProduccion>();
 		String filtro = this.filNombre.getValue().toLowerCase();
@@ -142,7 +86,6 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 			if (tbPrdProduccion.getVrNombreproduccion().toLowerCase().contains(filtro)){
 				listaFiltrada.add(tbPrdProduccion);
 			}
-			
 		}
 		listaProducciones.setModel(new ListModelList<TbPrdProduccion>(listaFiltrada));
 	}
@@ -223,7 +166,7 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 		Listcell cellTipo = new Listcell();
 		cellTipo.setLabel(pr.getTbPrdTipoproduccion().getVrDescripcion());
 		cellTipo.setStyle(estiloLink);
-		cellTipo.addEventListener(Events.ON_CLICK, new ProduccionSel(pr));	
+		cellTipo.addEventListener(Events.ON_CLICK, new TipoProduccionSel(pr.getTbPrdTipoproduccion()));	
 		
 		Listcell cellEstado = new Listcell();
 		cellEstado.setLabel(pr.getBlEstado()+"");
@@ -258,12 +201,40 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 			try {
 				Window window;
 				Div divCenter = VistasZk.obtenerDivCenter(reporte);
-				if (divCenter == null  ){
-					System.err.println("no se encontro el div");
-				}else{
-					System.err.println("SE encontro el div");
-				}
+				
 								
+				divCenter.getChildren().clear();
+				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
+				window.doEmbedded();
+			} catch (IOException e) {
+				System.err.println("ERROR ENVIANDO");
+				e.printStackTrace();
+			}
+	    }
+	}
+	
+	/**
+	 * Clase que controla el evento de seleccionar la produccón
+	 */
+	private class TipoProduccionSel implements EventListener {
+		
+		private TbPrdTipoproduccion tipoProd;
+		
+		public TipoProduccionSel(TbPrdTipoproduccion tipoProd){
+			this.tipoProd = tipoProd;
+		}
+		
+	    public void onEvent(Event event) {
+	    	Map a = new HashMap<>();
+			a.put("tipoProduccion", tipoProd);
+			
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/detalleTipoProduccion.zul") ;
+			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+			
+			try {
+				Window window;
+				Div divCenter = VistasZk.obtenerDivCenter(reporte);
+												
 				divCenter.getChildren().clear();
 				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
 				window.doEmbedded();
