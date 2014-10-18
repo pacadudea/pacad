@@ -41,10 +41,11 @@
 				
 				<menu label="Consultas" >
 					<menupopup>
-						<menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" />
-						<menuitem label="Consulta interactiva" id="consultaInteractiva" />
-						<menuitem label="Consulta filtrada" id="consultaFiltrada" />
-						<menuitem label="Producciones filtrada" id="produccionesFiltradas" />
+					<menuitem label="Consulta interactiva" id="consultaInteractiva" />
+						<!-- <menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" /> -->
+						 
+						<!-- <menuitem label="Consulta filtrada" id="consultaFiltrada" />-->
+						<!-- <menuitem label="Producciones filtrada" id="produccionesFiltradas" />-->
 						
 					</menupopup>
 				</menu>
