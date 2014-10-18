@@ -57,10 +57,7 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		
 		try{
 		this.produccion = (TbPrdProduccion) arg.get("produccion");
-		
-		System.out.println("SE RECIBIO EL VALOR --- " + produccion.getVrNombreproduccion());
-		
-		
+
 		}catch (Exception e){
 			System.out.println("ERROR RECIBIENDO MAP");
 		}
@@ -88,7 +85,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 			Set <TbPrdAutoresxproduccion>autores =  this.produccion.getTbPrdAutoresxproduccions();
 			for (TbPrdAutoresxproduccion autorsxprods : autores) {
 				TbPrdAutor autor = autorsxprods.getTbPrdAutor();
-				System.err.println("AUTOR -------- " + autor.getPersona().getVrNombres());
 				listaAutors.add(autor);
 			}
 			
@@ -147,8 +143,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		}
 		
 	    public void onEvent(Event event) {
-	    	ControlMensajes.mensajeQuestion("HOLAAAAAAAAAAAAAA --- " + autor.getPersona().getVrNombres());
-	    		    	
 	    	Map a = new HashMap<>();
 			a.put("autor", autor);
 			
@@ -160,13 +154,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 			try {
 				
 				Div divCenter = VistasZk.obtenerDivCenter(detalleProduccion);
-				if (divCenter == null  ){
-					System.err.println("no se encontro el div");
-				}else{
-					System.err.println("SE encontro el div");
-					
-				}
-				
 				
 				divCenter.getChildren().clear();
 				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
