@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17/10/2014 09:41:12 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="TbPrdTipoproduccionesxcampo" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" schema="PROINT1">
+        <id name="nbIdn" type="long">
+            <column name="NB_IDN" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbPrdCampos" class="TbPrdCampos" fetch="select">
+            <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbPrdTipoproduccion" class="TbPrdTipoproduccion" fetch="select">
+            <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="blEstado" type="char">
+            <column name="BL_ESTADO" length="1" not-null="true" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
+        <property name="blCampoobligatorio" type="java.lang.Character">
+            <column name="BL_CAMPOOBLIGATORIO" length="1" />
+        </property>
+        <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_TIPOPRODUCCIONCAMPOS_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbPrdDetalleproducciones" />
+        </set>
+    </class>
+</hibernate-mapping>

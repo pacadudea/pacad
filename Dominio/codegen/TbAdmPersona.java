@@ -1,5 +1,3 @@
-package com.proint1.udea.administracion.entidades.terceros;
-
 // default package
 // Generated 17/10/2014 09:41:12 AM by Hibernate Tools 4.0.0
 
@@ -13,7 +11,7 @@ import java.util.Set;
 public class TbAdmPersona implements java.io.Serializable {
 
 	private long nbIdn;
-	private TbAdmTipoIdentificacion tbAdmTipoidentificacion;
+	private TbAdmTipoidentificacion tbAdmTipoidentificacion;
 	private String vrNombres;
 	private String vrApellidos;
 	private String vrIdentificacion;
@@ -30,9 +28,27 @@ public class TbAdmPersona implements java.io.Serializable {
 	public TbAdmPersona() {
 	}
 
-	public TbAdmPersona(TbAdmTipoIdentificacion tbAdmTipoidentificacion, String vrNombres,
+	public TbAdmPersona(long nbIdn,
+			TbAdmTipoidentificacion tbAdmTipoidentificacion, String vrNombres,
+			String vrApellidos, String vrIdentificacion, String vrAdtusuario,
+			Date dtAdtfecha) {
+		this.nbIdn = nbIdn;
+		this.tbAdmTipoidentificacion = tbAdmTipoidentificacion;
+		this.vrNombres = vrNombres;
+		this.vrApellidos = vrApellidos;
+		this.vrIdentificacion = vrIdentificacion;
+		this.vrAdtusuario = vrAdtusuario;
+		this.dtAdtfecha = dtAdtfecha;
+	}
+
+	public TbAdmPersona(long nbIdn,
+			TbAdmTipoidentificacion tbAdmTipoidentificacion, String vrNombres,
 			String vrApellidos, String vrIdentificacion, String vrDireccion,
-			String vrTelefono,String vrEmail,String vrAdtusuario,Date dtAdtfecha) {
+			String vrTelefono, String vrEmail, String vrAdtusuario,
+			Date dtAdtfecha, Set tbPrdGrupoinvestigacionsForNbDirector,
+			Set tbPrdGrupoinvestigacionsForNbAuxiliar,
+			Set tbPrdMiembrosxgrupos, Set tbPrdAutors) {
+		this.nbIdn = nbIdn;
 		this.tbAdmTipoidentificacion = tbAdmTipoidentificacion;
 		this.vrNombres = vrNombres;
 		this.vrApellidos = vrApellidos;
@@ -42,17 +58,10 @@ public class TbAdmPersona implements java.io.Serializable {
 		this.vrEmail = vrEmail;
 		this.vrAdtusuario = vrAdtusuario;
 		this.dtAdtfecha = dtAdtfecha;
-	}
-	
-	public TbAdmPersona(TbAdmTipoIdentificacion tbAdmTipoidentificacion, String vrNombres,
-			String vrApellidos, String vrIdentificacion, String vrAdtusuario,
-			Date dtAdtfecha) {
-		this.tbAdmTipoidentificacion = tbAdmTipoidentificacion;
-		this.vrNombres = vrNombres;
-		this.vrApellidos = vrApellidos;
-		this.vrIdentificacion = vrIdentificacion;
-		this.vrAdtusuario = vrAdtusuario;
-		this.dtAdtfecha = dtAdtfecha;
+		this.tbPrdGrupoinvestigacionsForNbDirector = tbPrdGrupoinvestigacionsForNbDirector;
+		this.tbPrdGrupoinvestigacionsForNbAuxiliar = tbPrdGrupoinvestigacionsForNbAuxiliar;
+		this.tbPrdMiembrosxgrupos = tbPrdMiembrosxgrupos;
+		this.tbPrdAutors = tbPrdAutors;
 	}
 
 	public long getNbIdn() {
@@ -63,12 +72,12 @@ public class TbAdmPersona implements java.io.Serializable {
 		this.nbIdn = nbIdn;
 	}
 
-	public TbAdmTipoIdentificacion getTbAdmTipoidentificacion() {
+	public TbAdmTipoidentificacion getTbAdmTipoidentificacion() {
 		return this.tbAdmTipoidentificacion;
 	}
 
 	public void setTbAdmTipoidentificacion(
-			TbAdmTipoIdentificacion tbAdmTipoidentificacion) {
+			TbAdmTipoidentificacion tbAdmTipoidentificacion) {
 		this.tbAdmTipoidentificacion = tbAdmTipoidentificacion;
 	}
 

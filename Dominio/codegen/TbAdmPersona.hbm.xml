@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-
+<!-- Generated 17/10/2014 09:41:12 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" table="TB_ADM_PERSONA" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
-        <many-to-one name="tbAdmTipoidentificacion" class="com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion" fetch="select">
+        <many-to-one name="tbAdmTipoidentificacion" class="TbAdmTipoidentificacion" fetch="select">
             <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrNombres" type="string">
@@ -39,25 +39,25 @@
             <key>
                 <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
+            <one-to-many class="TbPrdGrupoinvestigacion" />
         </set>
         <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
+            <one-to-many class="TbPrdGrupoinvestigacion" />
         </set>
         <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
+            <one-to-many class="TbPrdMiembrosxgrupo" />
         </set>
         <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutor" />
+            <one-to-many class="TbPrdAutor" />
         </set>
     </class>
 </hibernate-mapping>

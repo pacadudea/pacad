@@ -1,4 +1,5 @@
-package com.proint1.udea.administracion.entidades.terceros;
+// default package
+// Generated 17/10/2014 09:41:12 AM by Hibernate Tools 4.0.0
 
 import java.util.Date;
 import java.util.HashSet;

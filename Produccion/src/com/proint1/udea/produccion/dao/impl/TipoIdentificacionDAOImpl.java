@@ -10,22 +10,22 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion;
 import com.proint1.udea.produccion.dao.TipoIdentificacionDAO;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 
 public class TipoIdentificacionDAOImpl extends HibernateDaoSupport implements TipoIdentificacionDAO {
 
 	@Override
-	public List<TipoIdentificacion> listar() {
+	public List<TbAdmTipoIdentificacion> listar() {
 		Session session = null;
-		List<TipoIdentificacion> tiposIdentificacion = new ArrayList<TipoIdentificacion>();
+		List<TbAdmTipoIdentificacion> tiposIdentificacion = new ArrayList<TbAdmTipoIdentificacion>();
 		try {
 			session = getSession(true);
-			Criteria criteria = session.createCriteria(TipoIdentificacion.class);
+			Criteria criteria = session.createCriteria(TbAdmTipoIdentificacion.class);
 			tiposIdentificacion = criteria.list();
 			for (Iterator iterator = tiposIdentificacion.iterator(); iterator.hasNext();) {
-				TipoIdentificacion tipoIdentificacion = (TipoIdentificacion) iterator.next();
+				TbAdmTipoIdentificacion tipoIdentificacion = (TbAdmTipoIdentificacion) iterator.next();
 			}
 		} catch (HibernateException e) { // throw new
 			//
@@ -37,19 +37,19 @@ public class TipoIdentificacionDAOImpl extends HibernateDaoSupport implements Ti
 	}
 
 	@Override
-	public void insertar(TipoIdentificacion tipoIdentificacion) {
+	public void insertar(TbAdmTipoIdentificacion tipoIdentificacion) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public TipoIdentificacion obtener(long id) {
-		TipoIdentificacion tipoId = null;
+	public TbAdmTipoIdentificacion obtener(long id) {
+		TbAdmTipoIdentificacion tipoId = null;
 		Session session = null;
 		try {
 			session = getSession(true);
-			Criteria criteria = session.createCriteria(TipoIdentificacion.class).add(Restrictions.eq("idn", id));
-			tipoId = (TipoIdentificacion) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(TbAdmTipoIdentificacion.class).add(Restrictions.eq("nbIdn", id));
+			tipoId = (TbAdmTipoIdentificacion) criteria.uniqueResult();
 		} catch (HibernateException e) {
 			System.out.println("Error: TipoIDDAO.obtener: "+e.getMessage());
 		} finally {
