@@ -4,6 +4,7 @@
 <hibernate-reverse-engineering>
 	<table-filter match-name="TB_ADM_PERSONA" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_ADM_PAISES" match-schema="PROINT1"></table-filter>
+	<table-filter match-name="TB_ADM_TIPOIDENTIFICACION" match-schema="PROINT1"></table-filter>
 	
 	<table-filter match-name="TB_PRD_AUTOR" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_PRD_AUTORESXPRODUCCION" match-schema="PROINT1"></table-filter>

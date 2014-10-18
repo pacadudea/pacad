@@ -2,18 +2,21 @@ package com.proint1.udea.produccion.ngc.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPaises;
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
-import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion;
 import com.proint1.udea.produccion.dao.AutorDAO;
 import com.proint1.udea.produccion.dao.PaisDAO;
 import com.proint1.udea.produccion.dao.PersonaDAO;
 import com.proint1.udea.produccion.dao.TipoIdentificacionDAO;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.ngc.AutorService;
+import com.proint1.udea.produccion.util.ArchivoInternacionalizacion;
+import com.proint1.udea.produccion.util.ControlMensajes;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 import com.proint1.udea.produccion.util.Validaciones;
@@ -87,60 +90,64 @@ public class AutorServiceImpl implements AutorService {
 	}
 
 	@Override
-	public void insertar(long tipoIdentificacionIdn, String id, String nombres,
-			String apellidos, String direccion, String telefono, String email,
-			String sexo, Date fechaNacimiento, long nacionalidad)
+	public boolean insertar(long tipoIdentificacionIdn, String id,
+			String apellidos, String nombre, String direccion, String email,
+			String telefono, long nacionalidad, String foto)
 			throws ProduccionBLException {
-
+		
+		//TODO Leer mensajes desde el archivo properties
+		
 		/**
 		 * iniciamos validaciones antes de grabar el usuario
 		 */
-
-		if (Validaciones.isTextoVacio(sexo)) {
+		if (Validaciones.isTextoVacio(nombre)) {
 			throw new ProduccionBLException(
-					"El sexo del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		if (Validaciones.isTextoVacio(email)) {
-			throw new ProduccionBLException(
-					"El email del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		if(!Validaciones.isEmail(email)){
-			throw new ProduccionBLException("El correo electronico del cleinte debe ser valido");
-		}
-		if (Validaciones.isTextoVacio(telefono)) {
-			throw new ProduccionBLException(
-					"El telefono del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		if (Validaciones.isTextoVacio(direccion)) {
-			throw new ProduccionBLException(
-					"La dirección del autor no puede ser nulo, ni una cadena de caracteres vacio");
+					"El nombre del autor no puede ser nulo, ni una cadena de caracteres vacio");
 		}
 		if (Validaciones.isTextoVacio(apellidos)) {
 			throw new ProduccionBLException(
 					"El (los) apellido(s) del autor no puede ser nulo, ni una cadena de caracteres vacio");
 		}
-		if (Validaciones.isTextoVacio(nombres)) {
+		if (tipoIdentificacionIdn == 0) {
 			throw new ProduccionBLException(
-					"El nombre del autor no puede ser nula, ni una cadena de caracteres vacio");
+					"Debe serleccionar un tipo de identificación");
 		}
 		if (Validaciones.isTextoVacio(id)) {
 			throw new ProduccionBLException(
-					"La identificación del autor no puede ser nula, ni una cadena de caracteres vacio");
+					"El número de indentificación del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+		
+		if (Validaciones.isTextoVacio(telefono)) {
+			throw new ProduccionBLException(
+					"El telefono del autor no puede ser nulo, ni una cadena de caracteres vacio");
 		}
 
 		try {
-			TipoIdentificacion tipoidentificacion = tipoIdentificacionDAO
-					.obtener(tipoIdentificacionIdn);
-			System.out.println("TipoID: " + tipoIdentificacionIdn);
-			TbAdmPersona persona = new TbAdmPersona();
-			// persona.setUsuarioActualizacion("1");
-			// personaDAO.insertar(persona);
+			//Busco la identificacion de la persona para ver si ya existe 
+			TbAdmPersona persona = personaDAO.buscarPersona(id); 
+			if (persona != null){
+				ControlMensajes.mensajeInformation("No se puede crear el autor, pues ya existe otra persona con la misma identificación");
+				return false; 
+			}
+			
+			//Busco el tipo de identficación 
+			TbAdmTipoIdentificacion tipoIdentificacion = tipoIdentificacionDAO.obtener(tipoIdentificacionIdn);
+			
+			//Creando la persona
+			TbAdmPersona nuevaPersona = new TbAdmPersona(tipoIdentificacion, nombre, apellidos, id, direccion, telefono, email, "admin", new Date());
+			personaDAO.insertar(nuevaPersona);
+			
+			//Busco el pais
 			TbAdmPaises pais = paisDAO.obtener(nacionalidad);
-			TbPrdAutor autor = new TbPrdAutor(pais, persona);
-
+			
+			//Creo el autor
+			TbPrdAutor autor = new TbPrdAutor(pais, nuevaPersona, null, "admin",new Date());
 			autorDAO.insertarAutor(autor);
+			
+			return true;
+			
 		} catch (ProduccionDAOException e) {
-			throw new ProduccionBLException(e.getMessage());
+			return false;
 		}
 	}
 

@@ -32,7 +32,7 @@
 			    <value>com/proint1/udea/administracion/mapeo/configuracion/TbAdmPaises.hbm.xml</value>
 			    
 			    <!-- TERCEROS -->
-			    <value>com/proint1/udea/administracion/mapeo/terceros/Tipoidentificacion.hbm.xml</value>
+			    <value>com/proint1/udea/administracion/mapeo/terceros/TbAdmTipoidentificacion.hbm.xml</value>
 			    <value>com/proint1/udea/administracion/mapeo/terceros/TbAdmPersona.hbm.xml</value>
 
 				<!-- Mapeos produccion academica -->
