@@ -23,7 +23,7 @@
         <property name="fechaModifico" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
             </key>

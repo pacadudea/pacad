@@ -29,7 +29,7 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdTipoproduccionesxcampos" table="TB_PRD_TIPOPRODUCCIONESXCAMPO" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
             </key>

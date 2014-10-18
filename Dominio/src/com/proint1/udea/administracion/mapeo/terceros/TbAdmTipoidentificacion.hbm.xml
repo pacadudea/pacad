@@ -17,7 +17,7 @@
         <property name="vrDescripcion" type="string">
             <column name="VR_DESCRIPCION" length="100" not-null="true" />
         </property>
-        <set name="tbAdmPersonas" table="TB_ADM_PERSONA" inverse="true" lazy="true" fetch="select">
+        <set name="tbAdmPersonas" table="TB_ADM_PERSONA" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
             </key>
