@@ -1,14 +1,18 @@
-<window id="modalDialog" title="Coffee Order" border="normal" width="460px"	
-	apply="${consultaInteractivaCtl}"
-	position="center,center" closable="true" 
-	action="show: slideDown;hide: slideUp">
-	<vlayout>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Reporte Dinamico de Producciones" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+<window id="modalDialog" title="Coffee Order" border="normal"
+	width="100%" height="100%" apply="${ensayoCtl}" position="center,center"
+	closable="true" action="show: slideDown;hide: slideUp" style="background:#CEEAD2; ">
+	
 		
-		
+	<div height="50%" style="overflow: auto">
+
+
 		<grid>
 			<columns>
 				<column hflex="1" label="Edison" />
-				<column hflex="2" label="${produccionSeleccionada.vrNombreproduccion}" align="center" />
+				<column hflex="2" label="Quantity" align="center" />
 				<column hflex="1" label="Quantity" align="center" />
 			</columns>
 			<rows>
@@ -27,8 +31,135 @@
 					<label value="Americano" />
 					<label value="6" />
 				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
+				
+				<row>
+					<label value="Evan" />
+					<label value="Java" />
+					<label value="2" />
+				</row>
+				<row>
+					<label value="Billy" />
+					<label value="Latte" />
+					<label value="3" />
+				</row>
+				<row>
+					<label value="Roger" />
+					<label value="Americano" />
+					<label value="6" />
+				</row>
 			</rows>
 		</grid>
-		<button id="closeBtn" hflex="1" label="close"/>
-	</vlayout>
+		<button id="closeBtn" hflex="1" label="close" />
+	</div>	
 </window>
+</zk>

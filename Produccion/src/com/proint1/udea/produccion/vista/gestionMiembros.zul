@@ -12,11 +12,11 @@
            	<groupbox mold="3d" width="300px" height="100%">
                 <caption image="/img/group.png" label="${c:l('pacad.form.gestionMiembros.tituloGrupos')}" />
                 <hbox align="center">
-                	${c:l('pacad.textoGeneral.nombre')}
+                	${c:l('pacad.texto.nombre')}
 			        <textbox id="txtBuscarGrupo" />
-			        <button id="btnBuscarGrupo" label="${c:l('pacad.textoGeneral.buscar')}" image="/img/search.png" />
+			        <button id="btnBuscarGrupo" label="${c:l('pacad.texto.buscar')}" image="/img/search.png" />
 			    </hbox>
-			    <listbox id="listaGrupos" emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}" height="86%" style="margin-top:10px">
+			    <listbox id="listaGrupos" emptyMessage="${c:l('pacad.texto.sinRegistros')}" height="86%" style="margin-top:10px">
 			        <listhead>
 			            <listheader label="${c:l('pacad.form.gestionMiembros.tituloListaGrupos')}" />
 			        </listhead>

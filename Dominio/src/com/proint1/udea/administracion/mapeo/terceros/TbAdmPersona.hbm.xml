@@ -8,7 +8,7 @@
             <column name="NB_IDN" precision="10" scale="0" />
             <generator class="increment" />
         </id>
-        <many-to-one name="tbAdmTipoidentificacion" class="com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion" fetch="select">
+        <many-to-one name="tbAdmTipoidentificacion" class="com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion" fetch="select" lazy="false">
             <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrNombres" type="string">
@@ -35,25 +35,25 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdGrupoinvestigacionsForNbDirector" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdGrupoinvestigacionsForNbDirector" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
         </set>
-        <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
         </set>
-        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
         </set>
-        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>
