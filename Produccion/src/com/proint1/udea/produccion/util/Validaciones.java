@@ -46,4 +46,18 @@ public class Validaciones {
 		}
 		return false;
 	}
+	
+	/**
+	 * Valida que un caracter solo este formado por numeros
+	 * @param text cadena de texto a evaluar
+	 * @return true en caso de que solo tenga numeros, en caso contrario false
+	 */
+	public static boolean validarSoloNumeros(String text) {
+		for (int i = 0; i < text.length(); i++) {
+			if (!(text.charAt(i) > 47 && text.charAt(i) < 58)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

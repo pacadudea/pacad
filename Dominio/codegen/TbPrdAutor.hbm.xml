@@ -1,34 +1,33 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 3/10/2014 01:25:49 AM by Hibernate Tools 4.0.0 -->
+<!-- Generated 17/10/2014 09:41:12 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdAutor" table="TB_PRD_AUTOR" schema="PROINT1">
-        <id name="id" type="long">
+    <class name="TbPrdAutor" table="TB_PRD_AUTOR" schema="PROINT1">
+        <id name="nbAutIdn" type="long">
             <column name="NB_AUT_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
-        <many-to-one name="pais" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPaises" fetch="select" lazy="false">
+        <many-to-one name="tbAdmPaises" class="TbAdmPaises" fetch="select">
             <column name="VR_PAIS_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="persona" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select" lazy="false">
+        <many-to-one name="tbAdmPersona" class="TbAdmPersona" fetch="select">
             <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <property name="foto" type="blob">
+        <property name="phFoto" type="blob">
             <column name="PH_FOTO" />
         </property>
-        <property name="usuarioModifico" type="string">
-            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
         </property>
-        <property name="fechaModifico" type="date">
+        <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
         <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion" />
+            <one-to-many class="TbPrdAutoresxproduccion" />
         </set>
     </class>
 </hibernate-mapping>
-

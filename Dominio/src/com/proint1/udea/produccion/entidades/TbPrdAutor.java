@@ -26,9 +26,12 @@ public class TbPrdAutor implements java.io.Serializable {
 	public TbPrdAutor() {
 	}
 
-	public TbPrdAutor(TbAdmPaises pais, TbAdmPersona persona) {
+	public TbPrdAutor(TbAdmPaises pais, TbAdmPersona persona, Blob foto, String usuarioModifico, Date fechaModifico) {
 		this.pais = pais;
 		this.persona = persona;
+		this.foto = foto;
+		this.usuarioModifico = usuarioModifico; 
+		this.fechaModifico = fechaModifico;
 	}
 	
 	public TbPrdAutor(long nbAutIdn, TbAdmPaises tbAdmPaises,

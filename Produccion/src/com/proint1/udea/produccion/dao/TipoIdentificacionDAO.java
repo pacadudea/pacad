@@ -2,13 +2,13 @@ package com.proint1.udea.produccion.dao;
 
 import java.util.List;
 
-import com.proint1.udea.administracion.entidades.terceros.TipoIdentificacion;
+import com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion;
 
 public interface TipoIdentificacionDAO {
 	
-	public List<TipoIdentificacion> listar();
+	public List<TbAdmTipoIdentificacion> listar();
 	
-	public void insertar(TipoIdentificacion tipoIdentificacion);
+	public void insertar(TbAdmTipoIdentificacion tipoIdentificacion);
 
-	public TipoIdentificacion obtener(long id);
+	public TbAdmTipoIdentificacion obtener(long id);
 }

@@ -2,15 +2,25 @@ package com.proint1.udea.produccion.ctl;
 
 import java.awt.Button;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.zkoss.bind.annotation.Command;
+import org.zkoss.zhtml.Messagebox;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.WrongValueException;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Listitem;
+import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Popup;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.ext.Selectable;
@@ -24,7 +34,7 @@ import com.proint1.udea.produccion.ngc.ProduccionService;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionIWException;
 
-public class ConsultaInteractivaCtl extends GenericForwardComposer{
+public class ConsultaInteractivaCtl extends GenericForwardComposer implements ListitemRenderer{
 	
 	private static final long serialVersionUID = 1L;
 	List<TbPrdProduccion> result;
@@ -66,6 +76,8 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 	Listbox listaProducciones;
 	Listbox listaAutoresxProduccion;
 	Listbox listaDetallesAutor;
+	
+	Button btSeleccion;
 
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
@@ -84,10 +96,10 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 			result =  produccionService.listar();
 			for (Iterator iterator = result.iterator(); iterator.hasNext();) {
 				TbPrdProduccion tbPrdProduccion = (TbPrdProduccion) iterator.next();
-				System.out.println("pROD --------- " + tbPrdProduccion.getTbPrdTipoproduccion().getVrDescripcion());
 				
 			}
 			listaProducciones.setModel(new ListModelList<TbPrdProduccion>(result));
+			listaProducciones.setItemRenderer(this);
 		} catch (Exception e) {
 			throw new ProduccionIWException("No se pudo cargar los elementos iniciales de la ventana");
 		}
@@ -204,6 +216,7 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 	}
 	
 	
+	
 /*	
 
 	private void llenarListboxTiposProd() throws ProduccionBLException{
@@ -250,6 +263,56 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 
 	public void setAutorService(AutorService autorService) {
 		this.autorService = autorService;
+	}
+
+	@Override
+	public void render(Listitem arg0, Object arg1, int arg2) throws Exception {
+		// TODO Auto-generated method stub
+		TbPrdProduccion pr = (TbPrdProduccion)arg1;
+		Listcell cell = new Listcell();
+		cell.setLabel(pr.getVrNombreproduccion());
+		cell.addEventListener(Events.ON_CLICK, new EventListener() {
+
+			@Override
+			public void onEvent(Event arg0) throws Exception {
+				System.out.println("en el texto ");
+				
+			}
+		});
+		
+		Listcell cell2 = new Listcell();
+		org.zkoss.zul.Button btn = new org.zkoss.zul.Button();
+		btn.addEventListener(Events.ON_CLICK, new EventListener() {
+
+			@Override
+			public void onEvent(Event arg0) throws Exception {
+				eventoClic();
+				
+			}
+		});
+		cell2.appendChild(btn);
+		
+		Listcell cell3 = new Listcell();
+		org.zkoss.zul.Button btn2 = new org.zkoss.zul.Button();
+		btn2.addEventListener(Events.ON_CLICK, new EventListener() {
+
+			@Override
+			public void onEvent(Event arg0) throws Exception {
+				System.out.println("segundo en el boton");
+				
+			}
+		});
+		cell3.appendChild(btn2);
+		
+		
+		arg0.appendChild(cell);
+		arg0.appendChild(cell2);
+		arg0.appendChild(cell3);
+		
+	}
+	
+	private void eventoClic(){
+		System.out.println("clic en el boton");
 	}
 	
 	
