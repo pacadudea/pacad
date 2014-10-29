@@ -105,9 +105,31 @@
 		<property name="autorService" ref="autorService"></property>
 	</bean>
 	
+	<bean id="pruebaCtl" class="com.proint1.udea.produccion.ctl.PruebaCtl" scope="prototype">
+		<property name="autorService" ref="autorService"></property> 
+	</bean>
+	
+	<bean id="modelConsulta" class="com.proint1.udea.produccion.vistamodelo.modelConsulta" scope="prototype">
+		<property name="autorService" ref="autorService"></property> 
+	</bean>
+	
 	<bean id="filterProduccionesCtl" class="com.proint1.udea.produccion.ctl.FilterProduccionesCtl" scope="prototype">
 		<property name="produccionService" ref="produccionService"></property>   
 	</bean>
+	
+	<bean id="ensayoCtl" class="com.proint1.udea.produccion.ctl.ensayoCtl" scope="prototype">
+		   
+	</bean>
+	
+	<bean id="detalleProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleProduccionCtl" scope="prototype">
+		   
+	</bean>
+	
+	<bean id="detalleAutorCtl" class="com.proint1.udea.produccion.ctl.DetalleAutorCtl" scope="prototype"/>
+	
+	<bean id="detalleTipoProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleTipoProduccionCtl" scope="prototype"/>
+	
+	
 	
 	<bean id="employeeDialogController" class="com.proint1.udea.produccion.ctl.EmployeeDialogController" scope="prototype">
 		<property name="produccionService" ref="produccionService"></property>     

@@ -8,10 +8,10 @@
             <column name="NB_IDN" precision="10" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbPrdCampos" class="com.proint1.udea.produccion.entidades.TbPrdCampos" fetch="select">
+        <many-to-one name="tbPrdCampos" class="com.proint1.udea.produccion.entidades.TbPrdCampos" fetch="select" lazy="false">
             <column name="NB_CAMPO_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select">
+        <many-to-one name="tbPrdTipoproduccion" class="com.proint1.udea.produccion.entidades.TbPrdTipoproduccion" fetch="select" lazy="false">
             <column name="NB_TIPOPRODUCCION_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="blEstado" type="char">
@@ -26,7 +26,7 @@
         <property name="blCampoobligatorio" type="java.lang.Character">
             <column name="BL_CAMPOOBLIGATORIO" length="1" />
         </property>
-        <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdDetalleproduccioneses" table="TB_PRD_DETALLEPRODUCCIONES" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_TIPOPRODUCCIONCAMPOS_IDN" precision="10" scale="0" not-null="true" />
             </key>

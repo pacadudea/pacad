@@ -1,44 +1,50 @@
 package com.proint1.udea.produccion.ctl;
 
 import java.awt.Button;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.zkoss.zk.ui.Component;
+import org.zkoss.util.resource.Labels;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Div;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
-import org.zkoss.zul.Popup;
+import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Listitem;
+import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.ext.Selectable;
+import org.zkoss.zul.Window;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
-import com.proint1.udea.produccion.entidades.TbPrdAutor;
-import com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
 import com.proint1.udea.produccion.ngc.AutorService;
 import com.proint1.udea.produccion.ngc.ProduccionService;
+import com.proint1.udea.produccion.util.ControlMensajes;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionIWException;
+import com.proint1.udea.produccion.util.VistasZk;
 
-public class ConsultaInteractivaCtl extends GenericForwardComposer{
+public class ConsultaInteractivaCtl extends GenericForwardComposer implements ListitemRenderer{
 	
 	private static final long serialVersionUID = 1L;
 	List<TbPrdProduccion> result;
-	List<TbAdmPersona> autoresxProduccion;
-	List<TbPrdProduccion> produccionesxAutor;
 	
 
-
-	
-	
 	private static Logger logger=Logger.getLogger(ConsultaInteractivaCtl.class);
 	
 	private TbPrdProduccion produccionSeleccionada;
 	private TbAdmPersona autorSeleccionado;
+	
 	
 	/**
 	 * beans del negocio usados
@@ -46,79 +52,33 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 	ProduccionService produccionService;
 	AutorService autorService;
 	
-	Button bt1;
+	//Temporal
 	Button bt2;
-	Popup popDetallesProduccion;
-	Textbox prodd;
+	
+	Window reporte;
+	
 	//Campos para filtrar
 	Textbox filNombre;
 	Textbox filTipoProduccion;
 	Textbox filEstado;
 	
-
-	Textbox filAutorSeleccionado;
-	Textbox filProduccionSeleccionado;
-	Textbox txtautorSeleccionado;
-	
-	/**
-	 * Elementos de la Vista
-	 */
 	Listbox listaProducciones;
-	Listbox listaAutoresxProduccion;
-	Listbox listaDetallesAutor;
+	
 
-	public void doAfterCompose(Component comp) throws Exception {
+	/*public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		System.err.println("CARGANDO VENTANA 2");
-		
-	}
+	}*/
 	
 	/**
 	 * Carga inicial de la ventana
 	 * @throws ProduccionBLException
 	 * @throws ProduccionIWException 
 	 */
-	public void onCreate() throws ProduccionIWException {
+	public void onCreate(){
 		System.err.println("CARGANDO VENTANA");
-		try {
-			result =  produccionService.listar();
-			for (Iterator iterator = result.iterator(); iterator.hasNext();) {
-				TbPrdProduccion tbPrdProduccion = (TbPrdProduccion) iterator.next();
-				System.out.println("pROD --------- " + tbPrdProduccion.getTbPrdTipoproduccion().getVrDescripcion());
-				
-			}
-			listaProducciones.setModel(new ListModelList<TbPrdProduccion>(result));
-		} catch (Exception e) {
-			throw new ProduccionIWException("No se pudo cargar los elementos iniciales de la ventana");
-		}
-       
+		this.cargarProducciones();
 	}
-	
-	public void onChange$filProduccionSeleccionado() {
-		List<TbPrdProduccion> listaProduccionesFiltrada = new ArrayList<TbPrdProduccion>();
-		String filtro = this.filProduccionSeleccionado.getValue().toLowerCase();
-		for (TbPrdProduccion produccion : produccionesxAutor) {
-			if (produccion.getVrNombreproduccion().toLowerCase().contains(filtro)){
-				listaProduccionesFiltrada.add(produccion);
-			}
-			
-		}
-		listaDetallesAutor.setModel(new ListModelList<TbPrdProduccion>(listaProduccionesFiltrada));
-	}
-	
-	public void onChange$filAutorSeleccionado() {
-		System.err.println("CAMIO......");
-		List<TbAdmPersona> listaAutoresFiltrada = new ArrayList<TbAdmPersona>();
-		String filtro = this.filAutorSeleccionado.getValue().toLowerCase();
-		for (TbAdmPersona autor : autoresxProduccion) {
-			if (autor.getVrNombres().toLowerCase().contains(filtro)){
-				listaAutoresFiltrada.add(autor);
-			}
-			
-		}
-		listaAutoresxProduccion.setModel(new ListModelList<TbAdmPersona>(listaAutoresFiltrada));
-	}
-		
+
 	public void onChange$filNombre() {
 		List<TbPrdProduccion> listaFiltrada = new ArrayList<TbPrdProduccion>();
 		String filtro = this.filNombre.getValue().toLowerCase();
@@ -126,7 +86,6 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 			if (tbPrdProduccion.getVrNombreproduccion().toLowerCase().contains(filtro)){
 				listaFiltrada.add(tbPrdProduccion);
 			}
-			
 		}
 		listaProducciones.setModel(new ListModelList<TbPrdProduccion>(listaFiltrada));
 	}
@@ -154,14 +113,14 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 		listaProducciones.setModel(new ListModelList<TbPrdProduccion>(listaFiltrada));
 	}
 	
-
+	
 	
 	/**
 	 * Detecta la seleccion de uno de los grupos de investigación y carga las listas de miembros y posibles miembros
 	 * @throws ProduccionBLException
 	 * @throws ProduccionIWException
 	 */
-	public void onSelect$listaProducciones() throws ProduccionIWException  {
+	/*public void onSelect$listaProducciones() throws ProduccionIWException  {
 		//Detecto la seleccion y la convierto a una clases
 		Set<TbPrdProduccion> selection = ((Selectable<TbPrdProduccion>)listaProducciones.getModel()).getSelection();
 		TbPrdProduccion produccionSelected = selection.iterator().next();
@@ -176,53 +135,116 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 			listaAutores.add(autor);
 		}
 		this.autoresxProduccion = listaAutores;
-		this.listaAutoresxProduccion.setModel(new ListModelList<TbAdmPersona>(listaAutores));
-		
-		popDetallesProduccion.open(this.listaProducciones,"overlap_after");
-	}
+	}*/
 	
-	public void onSelect$listaAutoresxProduccion() throws ProduccionIWException, ProduccionBLException  {
-		//Detecto la seleccion y la convierto a una clases
-		Set<TbAdmPersona> selection = ((Selectable<TbAdmPersona>)listaAutoresxProduccion.getModel()).getSelection();
-		TbAdmPersona autorSelected = selection.iterator().next();
-		this.autorSeleccionado = autorSelected;
-		this.txtautorSeleccionado.setValue(autorSelected.getVrNombres());
-		
-		TbPrdAutor autor = this.autorService.bucarPersona(autorSelected.getNbIdn());
-		
-		Set<TbPrdAutoresxproduccion> set = autor.getTbPrdAutoresxproduccions();
-		
-		List<TbPrdProduccion> listaProducciones = new ArrayList<TbPrdProduccion>(); 
-		for (TbPrdAutoresxproduccion s : set) {
-			TbPrdProduccion prod = s.getTbPrdProduccion();
-			listaProducciones.add(prod);
+	private void cargarProducciones(){
+		try {
+			result =  produccionService.listar();
+			for (Iterator iterator = result.iterator(); iterator.hasNext();) {
+				TbPrdProduccion tbPrdProduccion = (TbPrdProduccion) iterator.next();
+			}
+			listaProducciones.setModel(new ListModelList<TbPrdProduccion>(result));
+			listaProducciones.setItemRenderer(this);
+		} catch (Exception e) {
+			ControlMensajes.mensajeError(Labels.getLabel("pacad.mensajeError.noCargaDatos"));
 		}
-		this.produccionesxAutor = listaProducciones;
-		this.listaDetallesAutor.setModel(new ListModelList<TbPrdProduccion>(listaProducciones));
-		
-		popDetallesProduccion.open(this.listaProducciones,"overlap_after");
 	}
 	
-	
-/*	
-
-	private void llenarListboxTiposProd() throws ProduccionBLException{
-		Listitem items;
-		Listcell uncell;
-		List<TbPrdTipoproduccion> tiposProd = tipoProduccionService.listar();
-		logger.info("se obtuvo la lista de tiposProduccion size: "+tiposProd.size());
-		for (TbPrdTipoproduccion tipo : tiposProd) {
-			logger.info("Estoy agregando al listbox: "+tipo.getVrDescripcion());
-			items = new Listitem();
-			uncell = new Listcell(tipo.getVrDescripcion());
-			uncell.setParent(items);
-			uncell.setValue(tipo.getNbIdn());
-			items.setParent(ltbTipoProduccion);
+	@Override
+	public void render(Listitem arg0, Object arg1, int arg2) throws Exception {
+		String estiloLink= "color:blue; text-decoration:underline;font-weight:bold";
+		
+		//Obtengo el objeto pra cada uno de los rows
+		TbPrdProduccion pr = (TbPrdProduccion)arg1;
+		
+		//Creo las celdas correspondientes
+		Listcell cellPrd = new Listcell();
+		cellPrd.setLabel(pr.getVrNombreproduccion());
+		cellPrd.setStyle(estiloLink);
+		cellPrd.addEventListener(Events.ON_CLICK, new ProduccionSel(pr));		
+		
+		Listcell cellTipo = new Listcell();
+		cellTipo.setLabel(pr.getTbPrdTipoproduccion().getVrDescripcion());
+		cellTipo.setStyle(estiloLink);
+		cellTipo.addEventListener(Events.ON_CLICK, new TipoProduccionSel(pr.getTbPrdTipoproduccion()));	
+		
+		Listcell cellEstado = new Listcell();
+		cellEstado.setLabel(pr.getBlEstado()+"");
+		
+		Listcell cellFecha = new Listcell();
+		cellFecha.setLabel(pr.getDtFechapublicacion().toString());
+		
+		arg0.appendChild(cellPrd);
+		arg0.appendChild(cellTipo);
+		arg0.appendChild(cellEstado);
+		arg0.appendChild(cellFecha);
+	}
+		
+	/**
+	 * Clase que controla el evento de seleccionar la produccón
+	 */
+	private class ProduccionSel implements EventListener {
+		
+		private TbPrdProduccion produccion;
+		
+		public ProduccionSel(TbPrdProduccion produccion){
+			this.produccion = produccion;
+		}
+		
+	    public void onEvent(Event event) {
+	    	Map a = new HashMap<>();
+			a.put("produccion", produccion);
+			
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/detalleProduccion.zul") ;
+			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+			
+			try {
+				Window window;
+				Div divCenter = VistasZk.obtenerDivCenter(reporte);
+				
+								
+				divCenter.getChildren().clear();
+				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
+				window.doEmbedded();
+			} catch (IOException e) {
+				System.err.println("ERROR ENVIANDO");
+				e.printStackTrace();
+			}
 	    }
 	}
-*/
 	
-
+	/**
+	 * Clase que controla el evento de seleccionar la produccón
+	 */
+	private class TipoProduccionSel implements EventListener {
+		
+		private TbPrdTipoproduccion tipoProd;
+		
+		public TipoProduccionSel(TbPrdTipoproduccion tipoProd){
+			this.tipoProd = tipoProd;
+		}
+		
+	    public void onEvent(Event event) {
+	    	Map a = new HashMap<>();
+			a.put("tipoProduccion", tipoProd);
+			
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/detalleTipoProduccion.zul") ;
+			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+			
+			try {
+				Window window;
+				Div divCenter = VistasZk.obtenerDivCenter(reporte);
+												
+				divCenter.getChildren().clear();
+				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
+				window.doEmbedded();
+			} catch (IOException e) {
+				System.err.println("ERROR ENVIANDO");
+				e.printStackTrace();
+			}
+	    }
+	}
+	
 	/**
 	 * Metodos Set y Get para los beans.
 	 *
@@ -253,4 +275,14 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer{
 	}
 	
 	
+	
+	
+	
+	
+
+	
+	
+	
 }
+
+

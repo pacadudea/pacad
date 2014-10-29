@@ -1,11 +1,9 @@
 package com.proint1.udea.produccion.ngc;
 
-import java.util.Date;
 import java.util.List;
 
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.util.ProduccionBLException;
-import com.proint1.udea.produccion.util.ProduccionDAOException;
  
 /**
  * Interfaz que define los metodos que va a proveer el Servicio de Autores 
@@ -22,21 +20,23 @@ public interface AutorService {
 	public List<TbPrdAutor> listar() throws ProduccionBLException;
 	
 	/**
-	 * Insertar un autor en la base de datos
+	 * Inserta un autor en la base de datos
+	 * @param nombre
+	 * @param apellidos
 	 * @param tipoIdentificacionIdn
 	 * @param id
-	 * @param nombres
-	 * @param apellidos
 	 * @param direccion
 	 * @param telefono
 	 * @param email
-	 * @param sexo
-	 * @param fechaNacimiento
 	 * @param nacionalidad
+	 * @param foto
+	 * @return valor booleano que indica si la transaccion fue exitosa o no
 	 * @throws ProduccionBLException
 	 */
-	public void insertar(long tipoIdentificacionIdn, String id, String nombres, String apellidos, String direccion, String telefono, String email, String sexo, Date fechaNacimiento,
-			long nacionalidad)throws ProduccionBLException;
+	
+	public boolean insertar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, String foto)throws ProduccionBLException;
+	
+	public boolean actualizar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, String foto, TbPrdAutor autor)throws ProduccionBLException;
 	
 	/**
 	 * Obtener un autor de la base de datos 

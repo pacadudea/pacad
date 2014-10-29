@@ -6,16 +6,16 @@
     <class name="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" table="TB_ADM_PERSONA" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
+        <many-to-one name="tbAdmTipoidentificacion" class="com.proint1.udea.administracion.entidades.terceros.TbAdmTipoIdentificacion" fetch="select" lazy="false">
+            <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
         <property name="vrNombres" type="string">
             <column name="VR_NOMBRES" length="200" not-null="true" />
         </property>
         <property name="vrApellidos" type="string">
             <column name="VR_APELLIDOS" length="50" not-null="true" />
-        </property>
-        <property name="nbTipoidentificacionIdn" type="long">
-            <column name="NB_TIPOIDENTIFICACION_IDN" precision="10" scale="0" not-null="true" />
         </property>
         <property name="vrIdentificacion" type="string">
             <column name="VR_IDENTIFICACION" length="48" not-null="true" />
@@ -35,26 +35,25 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        
-        <set name="tbPrdGrupoinvestigacionsForNbDirector" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdGrupoinvestigacionsForNbDirector" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
         </set>
-        <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdGrupoinvestigacionsForNbAuxiliar" table="TB_PRD_GRUPOINVESTIGACION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" />
         </set>
-        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
         </set>
-        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
             </key>

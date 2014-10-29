@@ -6,7 +6,7 @@
     <class name="com.proint1.udea.produccion.entidades.TbPrdAutor" table="TB_PRD_AUTOR" schema="PROINT1">
         <id name="id" type="long">
             <column name="NB_AUT_IDN" precision="10" scale="0" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <many-to-one name="pais" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPaises" fetch="select" lazy="false">
             <column name="VR_PAIS_IDN" precision="10" scale="0" not-null="true" />
@@ -18,12 +18,12 @@
             <column name="PH_FOTO" />
         </property>
         <property name="usuarioModifico" type="string">
-            <column name="VR_ADTUSUARIO" length="40" not-null="true" />
+            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
         </property>
         <property name="fechaModifico" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
             </key>

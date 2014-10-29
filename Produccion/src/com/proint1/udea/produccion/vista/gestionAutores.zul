@@ -1,131 +1,122 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?page title="Gesti&#243;n de Autores" contentType="text/html;charset=UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
-	<window title="Gesti&#243;n de Autores" border="normal" width="100%"
+	
+	<window title="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" border="normal" width="100%"
 		height="480px" apply="${gestionAutoresCtl}">
-
+		<style src="/css/estilos.css" />
 		<hlayout width="100%" height="600px;">
 			<hbox spacing="15px">
-				<groupbox mold="3d" width="300px" height="450px;">
-					 <caption image="/img/users-icon.png" label="${c:l('pacad.form.gestionAutores.panelBuscar')}" />
-	                <hbox align="center">
-	                	${c:l('pacad.textoGeneral.nombre')}
-				        <textbox id="txtBuscarAutor" />
-				        <button id="btnBuscarAutor" label="${c:l('pacad.textoGeneral.buscar')}" image="/img/search.png" />
-				    </hbox>
-				    
-					<listbox id="listaAutores" emptyMessage="${c:l('pacad.textoGeneral.sinRegistros')}" height="86%" style="margin-top:10px">
-				        <listhead>
-				            <listheader label="${c:l('pacad.form.gestionAutores.tituloListaAutores')}" />
-				        </listhead>
-				        <template name="model">
-				            <listitem>
-				                <listcell label="${each.persona.vrNombres} ${each.persona.vrApellidos}"></listcell>
-				            </listitem>
-				        </template>
-				    </listbox>
+				<groupbox mold="3d" width="300px" height="430px;">
+					<caption image="/img/users-icon.png"
+						label="${c:l('pacad.form.gestionAutores.panelBuscar')}" />
+					<hbox align="center">
+						${c:l('pacad.texto.nombre')}
+						<textbox instant="true" id="txtFiltrarAutor" tabindex="1" />
+					</hbox>
+
+					<listbox id="listBoxAutores"
+						emptyMessage="${c:l('pacad.texto.sinRegistros')}"
+						height="86%" style="margin-top:10px" rows="9">
+						<listhead>
+							<listheader
+								label="${c:l('pacad.form.gestionAutores.tituloListaAutores')}" />
+						</listhead>
+						<template name="model">
+							<listitem>
+								<listcell
+									label="${each.persona.vrNombres} ${each.persona.vrApellidos}">
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
 				</groupbox>
-				
-				<groupbox mold="3d" width="800px">
-                	<caption image="/img/user-icon.png" label="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" />
-                
-                	<x:table border="0" height="350px">
-						<x:tr>
-							<x:td>Tipo de Identificaci&#243;n:</x:td>
-							<x:td>
-								<listbox id="ltbTipoId" tabindex="2"
-									width="120px" rows="1" mold="select" height="2opx">
+
+
+				<groupbox mold="3d" width="800px" height="430px;">
+					<caption image="/img/user-icon.png"
+						label="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" />
+
+					<grid>
+						<columns>
+							<column width="2%" />
+							<column width="18%" />
+							<column width="50%" />
+							<column width="30%" />
+						</columns>
+						<rows>
+							<row>
+								<x:span class="requerido">*</x:span>
+								${c:l('pacad.form.gestionAutores.tipoId')}
+								<listbox id="ltbTipoId" tabindex="2" 
+									width="50%" rows="1" mold="select" height="20px"/>
+								${c:l('pacad.form.gestionAutores.foto')}
+							</row>
+							<row>
+								<x:span class="requerido">*</x:span>
+								${c:l('pacad.form.gestionAutores.noId')}
+								<textbox id="txtNumeroId" tabindex="3" width="50%" 
+								constraint="no empty : ${c:l('pacad.error.identificacion')}" />
+								<cell rowspan="6" align="center">
+									<image id="foto" src="/img/no-user-icon.png"  />
+								</cell>
+							</row>
+							<row>
+								<x:span class="requerido">*</x:span>
+								${c:l('pacad.form.gestionAutores.nacionalidad')}
+								<listbox id="ltbNacionalidad" tabindex="9" rows="1" mold="select" 
+								height="20px" width="50%">
 								</listbox>
-							</x:td>
-							<x:td>Numero de identificaci&#243;n</x:td>
-							<x:td>
-								<textbox id="txtNumeroId" tabindex="3" />
-							</x:td>
-						</x:tr>
-		
-						<x:tr>
-							<x:td>Primer Apellido</x:td>
-							<x:td>
-								<textbox id="txtPrimerApellido" tabindex="4" />
-							</x:td>
-							<x:td>Segundo Apellido</x:td>
-							<x:td>
-								<textbox id="txtSegundoApellido" tabindex="5" />
-							</x:td>
-		
-						</x:tr>
-		
-						<x:tr>
-							<x:td>Nombres*</x:td>
-							<x:td>
-								<textbox id="txtNombres" tabindex="6" />
-							</x:td>
-							<x:td>Email*</x:td>
-							<x:td>
-								<textbox id="txtEmail" tabindex="7" />
-							</x:td>
-						</x:tr>
-						<x:tr>
-							<x:td>Direcci&#243;n</x:td>
-							<x:td>
-								<textbox id="txtDireccion" tabindex="8" />
-							</x:td>
-							<x:td>Tel&#233;fono*</x:td>
-							<x:td>
-								<textbox id="txtTelefono" tabindex="9" />
-							</x:td>
-						</x:tr>
-						<x:tr>
-							<x:td>Fecha de Nacimiento</x:td>
-							<x:td>
-								<datebox tabindex="10"
-									id="tbiFechaNacimiento">
-								</datebox>
-							</x:td>
-							<x:td>Nacionalidad</x:td>
-							<x:td>
-								<listbox id="ltbNacionalidad" tabindex="11"
-									width="120px" rows="1" mold="select" height="2opx">
-								</listbox>
-							</x:td>
-						</x:tr>
-		
-						<x:tr>
-							<x:td>Sexo</x:td>
-							<x:td>
-								<radiogroup>
-									<radiogroup id="rdoSexo"
-										onCheck="choice1.value = self.selectedItem.label" />
-									<radio id="ra1" label="M" value="M"
-										radiogroup="rdoSexo" tabindex="12" />
-									<html>
-										&#160;&#160;&#160;&#160;&#160;&#160;
-									</html>
-									<radio id="ra2" label="F" value="F"
-										radiogroup="rdoSexo" tabindex="13" />
-								</radiogroup>
-							</x:td>
-						</x:tr>
-						<x:tr>
-							<x:td colspan="4">
-								<div align="center">
-									<hlayout>
-										<button id="btnNuevoAutor"
-											label="Nuevo Autor" tabindex="12">
-										</button>
-										<button id="btnGuardarAutor"
-											label="Guardar Autor" tabindex="13">
-										</button>
-										<button id="btnEliminarAutor"
-											label="Eliminar Autor" tabindex="14">
-										</button>
-									</hlayout>
-								</div>
-							</x:td>
-						</x:tr>
-					</x:table>
-            	</groupbox>
-			</hbox>			
+							</row>
+							<row>
+								<x:span class="requerido">*</x:span>
+								${c:l('pacad.form.gestionAutores.apellidos')}
+								<textbox id="txtApellidos" tabindex="4"	width="90%" 
+								constraint="no empty : ${c:l('pacad.error.apellidos')}" />
+							</row>
+							<row>
+								<x:span class="requerido">*</x:span>
+								${c:l('pacad.form.gestionAutores.nombre')}
+								<textbox id="txtNombres" tabindex="5" width="90%" 
+								constraint="no empty : ${c:l('pacad.error.nombre')}"/>
+							</row>
+							<row>
+								<x:span class="requerido"></x:span>
+								${c:l('pacad.form.gestionAutores.direccion')}
+								<textbox id="txtDireccion" tabindex="6"	width="90%" />
+							</row>
+							<row>
+								<x:span class="requerido"></x:span>
+								${c:l('pacad.form.gestionAutores.email')}
+								<textbox id="txtEmail" tabindex="7"	width="90%" />
+							</row>
+							<row>
+								<x:span class="requerido"></x:span>
+								${c:l('pacad.form.gestionAutores.telefono')}
+								<textbox id="txtTelefono" tabindex="8" width="50%" />
+								<cell align="center">
+									<button label="Cambiar foto" />
+									<button label="Eliminar foto" />
+								</cell>
+							</row>
+						</rows>
+					</grid>
+					<separator height="20px;"/>
+					
+					<div align="center">
+						<button id="btnGuardar" label="${c:l('pacad.boton.guardar')}"
+							tabindex="10">
+						</button>
+						<button id="btnActualizar" label="${c:l('pacad.boton.actualizar')}" visible="false"
+							tabindex="12">
+						</button>
+						<button id="btnLimpiar" label="${c:l('pacad.boton.limpiar')}"
+							tabindex="11">
+						</button>
+					</div>
+				</groupbox>
+			</hbox>
 		</hlayout>
 	</window>
 </zk>

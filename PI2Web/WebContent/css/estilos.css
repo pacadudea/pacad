@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+
+.titulo{
+	color: red;
+	font-weight: bold;
+}
+
+.requerido{
+	color: red;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.requerido2{
+	color: red;
+	font-size: 14pt;
+	font-weight: bold;
+}

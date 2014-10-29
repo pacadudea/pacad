@@ -20,7 +20,7 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="true" fetch="select">
+        <set name="tbPrdAutors" table="TB_PRD_AUTOR" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="VR_PAIS_IDN" precision="10" scale="0" not-null="true" />
             </key>
