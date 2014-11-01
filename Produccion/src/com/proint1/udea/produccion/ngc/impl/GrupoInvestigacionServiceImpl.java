@@ -13,6 +13,7 @@ import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.ngc.GrupoInvestigacionService;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class GrupoInvestigacionServiceImpl implements GrupoInvestigacionService {
 	
@@ -76,34 +77,39 @@ public class GrupoInvestigacionServiceImpl implements GrupoInvestigacionService 
 	}
 	
 	@Override
-	public void insertarGrupoInvestigacion(long nbIdn,TbAdmPersona persona,
+	public boolean insertarGrupoInvestigacion(TbAdmPersona auxiliar,TbAdmPersona director,
 			String vrNombre, String vrAbreviatura, Date dtFechacreacion,
-			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionBLException, ProduccionDAOException {
+			char blEstado, String vrAdtusuario, Date dtAdtfecha)  {
 	
-		if(vrNombre == null || "".equals(vrNombre)){
-			throw new ProduccionBLException("El campo nombre no puede ser nulo o vacío");
-		}
-		
-		if(vrAbreviatura == null || "".equals(vrAbreviatura)){
-			throw new ProduccionBLException("El campo abreviatura no puede ser nulo o vacío");
-		}
-			
-			if(dtFechacreacion == null || "".equals(dtFechacreacion)){
-				throw new ProduccionBLException("La fecha de creacion no puede ser nula o vacía");
+			//TODO: Organizar validaciones del servicio 
+
+			try {
+				TbPrdGrupoinvestigacion nuevoGrupo = new TbPrdGrupoinvestigacion(auxiliar, director, vrNombre,vrAbreviatura,dtFechacreacion, blEstado, vrAdtusuario, dtAdtfecha);
+				grupoInvestigacionDAO.insertarGrupoInvestigacion(nuevoGrupo);
+				
+				return true;
+			} catch (ProduccionDAOException e) {
+				return false;
 			}
-			TbPrdGrupoinvestigacion grupoInvestigacion = new TbPrdGrupoinvestigacion();
-			grupoInvestigacion.setNbIdn(nbIdn);
-			grupoInvestigacion.setVrNombre(vrNombre);
-			grupoInvestigacion.setVrAbreviatura(vrAbreviatura);
-			grupoInvestigacion.setDtFechacreacion(dtFechacreacion);
-			grupoInvestigacion.setBlEstado(blEstado);
-			grupoInvestigacion.setVrAdtusuario(vrAdtusuario);
-			grupoInvestigacion.setDtAdtfecha(dtAdtfecha);
-
-			grupoInvestigacionDAO.insertarGrupoInvestigacion(grupoInvestigacion);
-					
 		}
 
+	@Override
+	public boolean actualizarGrupoInvestigacion(TbAdmPersona auxiliar,TbAdmPersona director,
+			String vrNombre, String vrAbreviatura, Date dtFechacreacion,
+			char blEstado, String vrAdtusuario, Date dtAdtfecha)  {
+	
+			//TODO: Organizar validaciones del servicio 
+
+			try {
+				TbPrdGrupoinvestigacion nuevoGrupo = new TbPrdGrupoinvestigacion(auxiliar, director, vrNombre, vrAbreviatura,dtFechacreacion, blEstado, vrAdtusuario, dtAdtfecha);
+				grupoInvestigacionDAO.insertarGrupoInvestigacion(nuevoGrupo);
+				
+				return true;
+			} catch (ProduccionDAOException e) {
+				return false;
+			}
+		}
+	
 	@Override
 	public void eliminarGrupoInvesticacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion,
 			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionBLException, ProduccionDAOException {
@@ -123,23 +129,7 @@ public class GrupoInvestigacionServiceImpl implements GrupoInvestigacionService 
 			grupoInvestigacionDAO.eliminarGrupoInvestigacion(grupoinvestigacion);
 			}
 
-	@Override
-	public void editarGrupoInvesticacion(long nbIdn, TbAdmPersona persona,
-			String vrNombre, String vrAbreviatura, Date dtFechacreacion,
-			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionDAOException {
-		
-		TbPrdGrupoinvestigacion grupoInvestigacion = new TbPrdGrupoinvestigacion();
-		grupoInvestigacion.setNbIdn(nbIdn);
-		grupoInvestigacion.setVrNombre(vrNombre);
-		grupoInvestigacion.setVrAbreviatura(vrAbreviatura);
-		grupoInvestigacion.setDtFechacreacion(dtFechacreacion);
-		grupoInvestigacion.setBlEstado(blEstado);
-		grupoInvestigacion.setVrAdtusuario(vrAdtusuario);
-		grupoInvestigacion.setDtAdtfecha(dtAdtfecha);
-
-		grupoInvestigacionDAO.editarGrupoInvestigacion(grupoInvestigacion);
-		
-	}
+	
 
 
 	public GrupoInvestigacionDAO getGrupoInvestigacionDAO() {
