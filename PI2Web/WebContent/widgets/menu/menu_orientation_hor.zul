@@ -23,16 +23,12 @@
 				<menuitem id="btnAdministracion" label="Administracin" />
 			</menupopup>
 		</menu>
-		<menu label="Investigacion">
+		<menu label="Producciones Académicas">
 			<menupopup>
-				<menu label="Grupos Investigación" onClick="alert(self.label)">
+				<menu label="Administración" onClick="alert(self.label)">
 					<menupopup>
 						<menuitem label="Gestion Grupos" id="gestionGrupoMenu" />
 						<menuitem label="${c:l('pacad.menu.producciones.gestionMiembros')}" id="gestionMiembros" />
-					</menupopup>
-				</menu>
-				<menu label="Producciones" >
-					<menupopup>
 						<menuitem label="Gestion Autores" id="gestionAutoresMenu" />
 						<menuitem label="Gestion Tipos de Produccion" id="gestionTipoProduccionMenu" />
 						<menuitem label="Gestion Producciones" id="gestionProduccionMenu" />
