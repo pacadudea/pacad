@@ -16,7 +16,7 @@
 		</property>
 	</bean>
 	
-	<bean id="campoDAO" class="com.proint1.udea.produccion.dao.impl.CampoDAOImpl">
+	<bean id="campoDAO" class="com.proint1.udea.produccion.dao.impl.CamposDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="factory"  />
 		</property>

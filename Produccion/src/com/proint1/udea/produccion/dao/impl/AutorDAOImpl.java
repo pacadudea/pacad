@@ -41,6 +41,10 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 		return autores;
 	}
 
+	/**
+	 * Inserta un autor en la base de datos.
+	 * @throws ProduccionDAOException en caso de ocurrir errores en la operacion DAO
+	 */
 	@Override
 	public void insertarAutor(TbPrdAutor autor)throws ProduccionDAOException {
 		Session session = null;
@@ -61,7 +65,11 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 				session.close();
 		}
 	}
-
+	
+	/**
+	 * Elimina un autor en la base de datos.
+	 * @throws ProduccionDAOException en caso de ocurrir errores en la operacion DAO
+	 */
 	@Override
 	public void eliminarAutor(TbPrdAutor autor)throws ProduccionDAOException {
 		Session session = null;
@@ -79,6 +87,10 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 		}
 	}
 
+	/**
+	 * Modifica los datos de un autor en la base de datos.
+	 * @throws ProduccionDAOException en caso de ocurrir errores en la operacion DAO
+	 */
 	@Override
 	public void editarAutor(TbPrdAutor autor)throws ProduccionDAOException {
 		Session session = null;
@@ -95,7 +107,13 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 				session.close();
 		}
 	}
-
+	
+	
+	/**
+	 * Trae un autor desde la base de datos.
+	 * @param id del autor a obtener
+	 * @throws ProduccionDAOException en caso de ocurrir errores en la operacion DAO
+	 */
 	@Override
 	public TbPrdAutor obtenerAutor(long id)throws ProduccionDAOException {
 		TbPrdAutor autor2 = null;
@@ -113,6 +131,11 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 		return autor2;
 	}
 	
+	/**
+	 * Trae los datos de una persona.
+	 * @param id del autor a obtener
+	 * @throws ProduccionDAOException en caso de ocurrir errores en la operacion DAO
+	 */
 	@Override
 	public TbPrdAutor buscarPersona(long id)throws ProduccionDAOException {
 		TbPrdAutor autor2 = null;

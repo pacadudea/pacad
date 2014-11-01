@@ -11,12 +11,11 @@ import org.zkoss.zul.Checkbox;
 import org.zkoss.zul.Grid;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
-import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Row;
 import org.zkoss.zul.Rows;
 import org.zkoss.zul.Textbox;
 
-import com.proint1.udea.produccion.entidades.TbPrdCampo;
+import com.proint1.udea.produccion.entidades.TbPrdCampos;
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
 import com.proint1.udea.produccion.ngc.CampoService;
 import com.proint1.udea.produccion.ngc.TipoProduccionService;
@@ -56,8 +55,8 @@ public class gestionTiposProduccionCtl extends GenericForwardComposer {
 			listCampos.removeItemAt(i);
 		}
 		
-		List<TbPrdCampo> campos = campoService.listar();
-		for (TbPrdCampo campo : campos) { 
+		List<TbPrdCampos> campos = campoService.listar();
+		for (TbPrdCampos campo : campos) { 
 			 Listitem campoItem = new Listitem(); 
 			 campoItem.setValue(campo.getNbIdn());
 			 campoItem.setLabel(campo.getVrDescripcion());
@@ -91,7 +90,9 @@ public class gestionTiposProduccionCtl extends GenericForwardComposer {
 	
 	public void onClick$btnNuevoCampo() throws WrongValueException, ProduccionBLException {
 		if (!txtNuevoCampo.getText().equals("")) {
-			campoService.insertar(txtNuevoCampo.getText(), chkCampoActivo.isChecked());
+			//TODO
+			//campoService.insertar(txtNuevoCampo.getText(), chkCampoActivo.isChecked());
+			//campoService.insertar(vrDescripcion, vrTipocampo, nbTamañocampo, nbDecimales, vrAdtusuario);
 		}
 		
 		txtNuevoCampo.setText("");

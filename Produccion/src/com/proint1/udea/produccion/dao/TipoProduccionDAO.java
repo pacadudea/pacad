@@ -38,6 +38,12 @@ public interface TipoProduccionDAO {
 	 */
 	public TbPrdTipoproduccion obtener(long id)throws ProduccionDAOException;
 	
+	/**
+	 * Obtiene la lista producciones por campo.
+	 * @param idTipoProduccion
+	 * @return
+	 * @throws ProduccionDAOException
+	 */
 	public List<TbPrdTipoproduccionesxcampo> obtenerCamposXTipo(
 			long idTipoProduccion)  throws ProduccionDAOException;
 	

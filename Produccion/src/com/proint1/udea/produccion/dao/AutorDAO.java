@@ -38,6 +38,7 @@ public interface AutorDAO {
 	 */
 	public TbPrdAutor obtenerAutor(long id)throws ProduccionDAOException;
 	
+	
 	public TbPrdAutor buscarPersona(long id)throws ProduccionDAOException;
 	
 }
