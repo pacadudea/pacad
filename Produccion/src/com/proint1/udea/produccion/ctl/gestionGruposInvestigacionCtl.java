@@ -29,10 +29,9 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 	private static Logger logger = Logger.getLogger(gestionGruposInvestigacionCtl.class);
 	private TbPrdGrupoinvestigacion grupoSeleccionado;
 	
-	//Serviccios a usar
+	//Servicios a usar
 	GrupoInvestigacionService grupoInvestigacionService;
 	AutorService autorService;
-	
 	PersonaService personaService;
 	
 	Button btnBuscarGrupo;
@@ -58,6 +57,35 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 		List<TbPrdAutor> lisDirectores =  autorService.listar();
 		listaDirectores.setModel(new ListModelList<TbPrdAutor>(lisDirectores));
 		listaGrupos.setModel(new ListModelList<TbPrdGrupoinvestigacion>(result));
+	}
+
+	/**
+	 * Metodos get y set para los beans usados.
+	 */
+	
+	public GrupoInvestigacionService getGrupoInvestigacionService() {
+		return grupoInvestigacionService;
+	}
+
+	public void setGrupoInvestigacionService(
+			GrupoInvestigacionService grupoInvestigacionService) {
+		this.grupoInvestigacionService = grupoInvestigacionService;
+	}
+
+	public AutorService getAutorService() {
+		return autorService;
+	}
+
+	public void setAutorService(AutorService autorService) {
+		this.autorService = autorService;
+	}
+
+	public PersonaService getPersonaService() {
+		return personaService;
+	}
+
+	public void setPersonaService(PersonaService personaService) {
+		this.personaService = personaService;
 	}
 
 
