@@ -39,14 +39,13 @@ public interface GrupoInvestigacionService {
 	public void actualizarMiembros(long idGrupo, List<MiembrosGrupoInvestigacion> nuevosMiembros) throws ProduccionBLException, ProduccionDAOException;
 	
 	
-	public void insertarGrupoInvestigacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
+	public boolean insertarGrupoInvestigacion(TbAdmPersona auxiliar,TbAdmPersona director, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
 			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionBLException, ProduccionDAOException; 
-					//throws ProduccionBLException, ProduccionDAOException;
+		
+	public boolean actualizarGrupoInvestigacion(TbAdmPersona auxiliar,TbAdmPersona director, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
+			char blEstado, String vrAdtusuario, Date dtAdtfecha) throws ProduccionBLException, ProduccionDAOException; 
 	
 	public void eliminarGrupoInvesticacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
 			char blEstado, String vrAdtusuario, Date dtAdtfecha)throws ProduccionBLException, ProduccionDAOException;
 	
-	public void editarGrupoInvesticacion(long nbIdn, TbAdmPersona persona, String vrNombre, String vrAbreviatura, Date dtFechacreacion, 
-			char blEstado, String vrAdtusuario, Date dtAdtfecha)throws ProduccionBLException, ProduccionDAOException;
-
 	}

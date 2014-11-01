@@ -6,7 +6,7 @@
     <class name="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" table="TB_PRD_GRUPOINVESTIGACION" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <many-to-one name="tbAdmPersonaByNbAuxiliar" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select">
             <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
