@@ -6,21 +6,21 @@
 
 		<groupbox height="100%" width="100%" closable="false">
 			<listbox id="listaProducciones" width="100%">
-				<auxhead sclass="category-center">
-					<auxheader label="Lista categorizada de producciones" colspan="4" />
+				<auxhead>
+					<auxheader label="${c:l('pacad.form.consulta.dimanimaProducciones.titulo')}" colspan="4" />
 				</auxhead>
-				<auxhead sclass="category-center">
+				<auxhead>
 					<auxheader colspan="1">
 						<image	src="/img/funel-icon.png" />
-						<textbox id="filNombre" instant="true" width="95%"/>
+						<textbox id="filNombre" instant="true" width="90%"/>
 					</auxheader>
 					<auxheader colspan="1">
 						<image	src="/img/funel-icon.png" />
-						<textbox id="filTipoProduccion" instant="true" width="95%" />
+						<textbox id="filTipoProduccion" instant="true" width="90%" />
 					</auxheader>
 					<auxheader colspan="1">
 						<image	src="/img/funel-icon.png" />
-						<textbox id="filEstado" instant="true" width="95%"/>
+						<textbox id="filEstado" instant="true" width="90%"/>
 					</auxheader>
 				</auxhead>
 

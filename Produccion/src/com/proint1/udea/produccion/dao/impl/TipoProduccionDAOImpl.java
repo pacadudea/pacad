@@ -53,7 +53,6 @@ public class TipoProduccionDAOImpl extends HibernateDaoSupport implements TipoPr
 			if (session != null)
 				session.close();
 		}
-
 	}
 
 	@Override

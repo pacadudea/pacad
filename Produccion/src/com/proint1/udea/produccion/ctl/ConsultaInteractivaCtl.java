@@ -137,12 +137,15 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 		this.autoresxProduccion = listaAutores;
 	}*/
 	
+	/**
+	 * Carga todas las producciones que se hallan realizado
+	 */
 	private void cargarProducciones(){
 		try {
 			result =  produccionService.listar();
-			for (Iterator iterator = result.iterator(); iterator.hasNext();) {
+			/*for (Iterator iterator = result.iterator(); iterator.hasNext();) {
 				TbPrdProduccion tbPrdProduccion = (TbPrdProduccion) iterator.next();
-			}
+			}*/
 			listaProducciones.setModel(new ListModelList<TbPrdProduccion>(result));
 			listaProducciones.setItemRenderer(this);
 		} catch (Exception e) {
@@ -160,7 +163,7 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 		//Creo las celdas correspondientes
 		Listcell cellPrd = new Listcell();
 		cellPrd.setLabel(pr.getVrNombreproduccion());
-		cellPrd.setStyle(estiloLink);
+		cellPrd.setStyle(estiloLink);	
 		cellPrd.addEventListener(Events.ON_CLICK, new ProduccionSel(pr));		
 		
 		Listcell cellTipo = new Listcell();
@@ -202,7 +205,6 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 				Window window;
 				Div divCenter = VistasZk.obtenerDivCenter(reporte);
 				
-								
 				divCenter.getChildren().clear();
 				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
 				window.doEmbedded();
