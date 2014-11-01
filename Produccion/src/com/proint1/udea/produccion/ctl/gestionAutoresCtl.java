@@ -14,6 +14,7 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Constraint;
 import org.zkoss.zul.Datebox;
+import org.zkoss.zul.Image;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
@@ -52,8 +53,6 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	AutorServiceImpl autorService; 
 	TipoIdentificacionServiceImpl tipoIdentificacionService;
 	PaisServiceImpl paisService;
-	
-
 
 	//Lista con todos los autores que existen en el aplicativo
 	private List<TbPrdAutor> listaAutores;
@@ -70,9 +69,9 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	Textbox txtTelefono;
 	Textbox txtFiltrarAutor;
 	Listbox ltbNacionalidad;
+	Image imgAddNew;
 
 	Button btnGuardar;
-	Button btnLimpiar;
 	Button btnActualizar;
 	
 	
@@ -123,6 +122,7 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		if (transaccion) {
 			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.guardado.true"));
 			this.cargarAutores();
+			this.limpiarCampos();
 		}else{
 			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.guardado.false"));
 		}
@@ -156,6 +156,7 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		if (transaccion) {
 			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.actualizado.true"));
 			this.cargarAutores();
+			this.limpiarCampos();
 		}else{
 			ControlMensajes.mensajeInformation(Labels.getLabel("pacad.form.actualizado.false"));
 		}
@@ -175,10 +176,15 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	/**
 	 * Se limpian todos los campos del formulario, para el ingreso de datos nuevos
 	 */
-	public void onClick$btnLimpiar()  {
+	public void onClick$imgAddNew()  {
+		this.limpiarCampos();
+	}
 	
+	private void limpiarCampos(){
 		ltbTipoId.clearSelection();
 		ltbNacionalidad.clearSelection();
+		listBoxAutores.clearSelection();
+		
 		limpiarCampoConstraint(txtNumeroId);
 		limpiarCampoConstraint(txtApellidos);
 		limpiarCampoConstraint(txtNombres);
@@ -191,6 +197,7 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		this.btnActualizar.setVisible(false);
 		this.btnGuardar.setVisible(true);
 	}
+	
 	
 	/**
 	 * Metodo para limpiar campo TextBox con Constraint

@@ -30,15 +30,14 @@ public class TbPrdGrupoinvestigacion implements java.io.Serializable {
 	public TbPrdGrupoinvestigacion() {
 	}
 
-	public TbPrdGrupoinvestigacion(long nbIdn,
-			TbAdmPersona tbAdmPersonaByNbAuxiliar,
-			TbAdmPersona tbAdmPersonaByNbDirector, String vrNombre,
+	public TbPrdGrupoinvestigacion(TbAdmPersona tbAdmPersonaByNbAuxiliar,
+			TbAdmPersona tbAdmPersonaByNbDirector, String vrNombre,String vrAbreviatura,
 			Date dtFechacreacion, char blEstado, String vrAdtusuario,
 			Date dtAdtfecha) {
-		this.nbIdn = nbIdn;
 		this.tbAdmPersonaByNbAuxiliar = tbAdmPersonaByNbAuxiliar;
 		this.tbAdmPersonaByNbDirector = tbAdmPersonaByNbDirector;
 		this.vrNombre = vrNombre;
+		this.vrAbreviatura= vrAbreviatura;
 		this.dtFechacreacion = dtFechacreacion;
 		this.blEstado = blEstado;
 		this.vrAdtusuario = vrAdtusuario;

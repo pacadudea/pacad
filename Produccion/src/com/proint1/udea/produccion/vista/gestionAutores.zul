@@ -4,13 +4,19 @@
 <zk xmlns:x="xhtml" xmlns:zk="zk">
 	
 	<window title="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" border="normal" width="100%"
-		height="480px" apply="${gestionAutoresCtl}">
+		height="100%" apply="${gestionAutoresCtl}">
 		<style src="/css/estilos.css" />
 		<hlayout width="100%" height="600px;">
 			<hbox spacing="15px">
 				<groupbox mold="3d" width="300px" height="430px;">
-					<caption image="/img/users-icon.png"
-						label="${c:l('pacad.form.gestionAutores.panelBuscar')}" />
+					<caption>						
+						<div style="float:left;">
+							<image src="/img/users-icon.png" />	
+							<label value="${c:l('pacad.form.gestionAutores.panelBuscar')}" />
+						</div>
+						<div style="float:right;"><image id="imgAddNew" src="/img/add-icon.png" /></div>
+					</caption>
+
 					<hbox align="center">
 						${c:l('pacad.texto.nombre')}
 						<textbox instant="true" id="txtFiltrarAutor" tabindex="1" />
@@ -21,20 +27,22 @@
 						height="86%" style="margin-top:10px" rows="9">
 						<listhead>
 							<listheader
-								label="${c:l('pacad.form.gestionAutores.tituloListaAutores')}" />
+								label="${c:l('pacad.form.gestionAutores.tituloListaAutores')}"  sort="auto(persona.vrNombres)"/>
 						</listhead>
 						<template name="model">
 							<listitem>
 								<listcell
-									label="${each.persona.vrNombres} ${each.persona.vrApellidos}">
+									label="${each.persona.vrNombres} ${each.persona.vrApellidos}"> 
 								</listcell>
 							</listitem>
 						</template>
 					</listbox>
 				</groupbox>
+				
+			
 
 
-				<groupbox mold="3d" width="800px" height="430px;">
+				<groupbox mold="3d" width="800px" height="100%">
 					<caption image="/img/user-icon.png"
 						label="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" />
 
@@ -110,9 +118,6 @@
 						</button>
 						<button id="btnActualizar" label="${c:l('pacad.boton.actualizar')}" visible="false"
 							tabindex="12">
-						</button>
-						<button id="btnLimpiar" label="${c:l('pacad.boton.limpiar')}"
-							tabindex="11">
 						</button>
 					</div>
 				</groupbox>
