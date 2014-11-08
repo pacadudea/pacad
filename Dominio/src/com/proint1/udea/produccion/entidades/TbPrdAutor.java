@@ -5,8 +5,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import oracle.sql.BLOB;
-
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPaises;
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 
@@ -47,7 +45,7 @@ public class TbPrdAutor implements java.io.Serializable {
 		this.fechaModifico = dtAdtfecha;
 	}
 
-	public TbPrdAutor(long nbAutIdn, TbAdmPaises tbAdmPaises,
+	/*public TbPrdAutor(long nbAutIdn, TbAdmPaises tbAdmPaises,
 			TbAdmPersona tbAdmPersona, BLOB phFoto, String vrAdtusuario,
 			Date dtAdtfecha, Set tbPrdAutoresxproduccions) {
 		this.id = nbAutIdn;
@@ -56,7 +54,7 @@ public class TbPrdAutor implements java.io.Serializable {
 		this.usuarioModifico = vrAdtusuario;
 		this.fechaModifico = dtAdtfecha;
 		this.tbPrdAutoresxproduccions = tbPrdAutoresxproduccions;
-	}
+	}*/
 
 	public long getId() {
 		return id;
