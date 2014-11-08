@@ -94,7 +94,173 @@ public class AutorServiceImpl implements AutorService {
 			String apellidos, String nombre, String direccion, String email,
 			String telefono, long nacionalidad, String foto)
 			throws ProduccionBLException {
-		
+
+		// TODO Leer mensajes desde el archivo properties
+
+		/**
+		 * iniciamos validaciones antes de grabar el usuario
+		 */
+		if (Validaciones.isTextoVacio(nombre)) {
+			throw new ProduccionBLException(
+					"El nombre del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+		if (Validaciones.isTextoVacio(apellidos)) {
+			throw new ProduccionBLException(
+					"El (los) apellido(s) del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+		if (tipoIdentificacionIdn == 0) {
+			throw new ProduccionBLException(
+					"Debe serleccionar un tipo de identificación");
+		}
+		if (Validaciones.isTextoVacio(id)) {
+			throw new ProduccionBLException(
+					"El número de indentificación del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+
+		/*
+		 * if (Validaciones.isTextoVacio(telefono)) { throw new
+		 * ProduccionBLException(
+		 * "El telefono del autor no puede ser nulo, ni una cadena de caracteres vacio"
+		 * ); }
+		 */
+
+		try {
+			// Busco la identificacion de la persona para ver si ya existe
+			TbAdmPersona persona = personaDAO.buscarPersona(id);
+			if (persona != null) {
+				ControlMensajes
+						.mensajeInformation("No se puede crear el autor, pues ya existe otra persona con la misma identificación");
+				return false;
+			}
+
+			// Busco el tipo de identficación
+			TbAdmTipoIdentificacion tipoIdentificacion = tipoIdentificacionDAO
+					.obtener(tipoIdentificacionIdn);
+
+			// Creando la persona
+			TbAdmPersona nuevaPersona = new TbAdmPersona(tipoIdentificacion,
+					nombre, apellidos, id, direccion, telefono, email, "admin",
+					new Date());
+			personaDAO.insertar(nuevaPersona);
+
+			// Busco el pais
+			TbAdmPaises pais = paisDAO.obtener(nacionalidad);
+
+			// Creo el autor
+			TbPrdAutor autor = new TbPrdAutor(pais, nuevaPersona, null,
+					"admin", new Date());
+			autorDAO.insertarAutor(autor);
+
+			return true;
+
+		} catch (ProduccionDAOException e) {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean actualizar(long tipoIdentificacionIdn, String id,
+			String apellidos, String nombre, String direccion, String email,
+			String telefono, long nacionalidad, String foto, TbPrdAutor autor)
+			throws ProduccionBLException {
+
+		// TODO Leer mensajes desde el archivo properties
+
+		/**
+		 * iniciamos validaciones antes de grabar el usuario
+		 */
+		if (Validaciones.isTextoVacio(nombre)) {
+			throw new ProduccionBLException(
+					"El nombre del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+		if (Validaciones.isTextoVacio(apellidos)) {
+			throw new ProduccionBLException(
+					"El (los) apellido(s) del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+		if (tipoIdentificacionIdn == 0) {
+			throw new ProduccionBLException(
+					"Debe serleccionar un tipo de identificación");
+		}
+		if (Validaciones.isTextoVacio(id)) {
+			throw new ProduccionBLException(
+					"El número de indentificación del autor no puede ser nulo, ni una cadena de caracteres vacio");
+		}
+
+		/*
+		 * if (Validaciones.isTextoVacio(telefono)) { throw new
+		 * ProduccionBLException(
+		 * "El telefono del autor no puede ser nulo, ni una cadena de caracteres vacio"
+		 * ); }
+		 */
+
+		try {
+
+			// Busco el tipo de identficación
+			TbAdmTipoIdentificacion tipoIdentificacion = tipoIdentificacionDAO
+					.obtener(tipoIdentificacionIdn);
+
+			// Busco la identificacion de la persona para ver si ya existe
+			TbAdmPersona persona = personaDAO.buscarPersona(id);
+			persona.setTbAdmTipoidentificacion(tipoIdentificacion);
+			persona.setVrNombres(nombre);
+			persona.setVrApellidos(apellidos);
+			persona.setVrIdentificacion(id);
+			persona.setVrDireccion(direccion);
+			persona.setVrTelefono(telefono);
+			persona.setVrEmail(email);
+			persona.setVrAdtusuario("admin");
+			persona.setDtAdtfecha(new Date());
+
+			// Creando la persona
+			// TbAdmPersona nuevaPersona = new TbAdmPersona(tipoIdentificacion,
+			// nombre, apellidos, id, direccion, telefono, email, "admin", new
+			// Date());
+			personaDAO.actualizar(persona);
+
+			// Busco el pais
+			TbAdmPaises pais = paisDAO.obtener(nacionalidad);
+
+			autor.setPersona(persona);
+			autor.setPais(pais);
+			autor.setImagen(null);
+
+			autorDAO.editarAutor(autor);
+
+			return true;
+
+		} catch (ProduccionDAOException e) {
+			return false;
+		}
+	}
+
+	@Override
+	public TbPrdAutor obtenerAutor(long id) throws ProduccionBLException {
+		logger.info("--Obteniendo un autor--");
+		try {
+			return autorDAO.obtenerAutor(id);
+		} catch (ProduccionDAOException e) {
+			throw new ProduccionBLException(e.getMessage());
+		}
+
+	}
+
+	@Override
+	public TbPrdAutor bucarPersona(long id) throws ProduccionBLException {
+		logger.info("--Obteniendo un autor--");
+		try {
+			return autorDAO.buscarPersona(id);
+		} catch (ProduccionDAOException e) {
+			throw new ProduccionBLException(e.getMessage());
+		}
+
+	}
+
+	@Override
+	public boolean insertar(long tipoIdentificacionIdn, String id,
+			String apellidos, String nombre, String direccion, String email,
+			String telefono, long nacionalidad, byte[] foto)
+			throws ProduccionBLException {
+
 		//TODO Leer mensajes desde el archivo properties
 		
 		/**
@@ -141,7 +307,12 @@ public class AutorServiceImpl implements AutorService {
 			TbAdmPaises pais = paisDAO.obtener(nacionalidad);
 			
 			//Creo el autor
-			TbPrdAutor autor = new TbPrdAutor(pais, nuevaPersona, null, "admin",new Date());
+			
+			//Autor sin foto
+			//TbPrdAutor autor = new TbPrdAutor(pais, nuevaPersona, null, "admin",new Date());
+			
+			TbPrdAutor autor = new TbPrdAutor(pais, nuevaPersona, foto, "admin", new Date());
+			
 			autorDAO.insertarAutor(autor);
 			
 			return true;
@@ -149,99 +320,5 @@ public class AutorServiceImpl implements AutorService {
 		} catch (ProduccionDAOException e) {
 			return false;
 		}
-	}
-	
-	@Override
-	public boolean actualizar(long tipoIdentificacionIdn, String id,
-			String apellidos, String nombre, String direccion, String email,
-			String telefono, long nacionalidad, String foto, TbPrdAutor autor)
-			throws ProduccionBLException {
-		
-		//TODO Leer mensajes desde el archivo properties
-		
-		/**
-		 * iniciamos validaciones antes de grabar el usuario
-		 */
-		if (Validaciones.isTextoVacio(nombre)) {
-			throw new ProduccionBLException(
-					"El nombre del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		if (Validaciones.isTextoVacio(apellidos)) {
-			throw new ProduccionBLException(
-					"El (los) apellido(s) del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		if (tipoIdentificacionIdn == 0) {
-			throw new ProduccionBLException(
-					"Debe serleccionar un tipo de identificación");
-		}
-		if (Validaciones.isTextoVacio(id)) {
-			throw new ProduccionBLException(
-					"El número de indentificación del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}
-		
-		/*if (Validaciones.isTextoVacio(telefono)) {
-			throw new ProduccionBLException(
-					"El telefono del autor no puede ser nulo, ni una cadena de caracteres vacio");
-		}*/
-
-		try {
-			
-			//Busco el tipo de identficación 
-			TbAdmTipoIdentificacion tipoIdentificacion = tipoIdentificacionDAO.obtener(tipoIdentificacionIdn);
-			
-			
-			//Busco la identificacion de la persona para ver si ya existe 
-			TbAdmPersona persona = personaDAO.buscarPersona(id); 
-			persona.setTbAdmTipoidentificacion(tipoIdentificacion);
-			persona.setVrNombres(nombre);
-			persona.setVrApellidos(apellidos);
-			persona.setVrIdentificacion(id);
-			persona.setVrDireccion(direccion);
-			persona.setVrTelefono(telefono);
-			persona.setVrEmail(email);
-			persona.setVrAdtusuario("admin");
-			persona.setDtAdtfecha(new Date());
-			
-			
-			//Creando la persona
-			//TbAdmPersona nuevaPersona = new TbAdmPersona(tipoIdentificacion, nombre, apellidos, id, direccion, telefono, email, "admin", new Date());
-			personaDAO.actualizar(persona);
-			
-			//Busco el pais
-			TbAdmPaises pais = paisDAO.obtener(nacionalidad);
-			
-			autor.setPersona(persona);
-			autor.setPais(pais);
-			autor.setFoto(null);
-			
-			autorDAO.editarAutor(autor);
-			
-			return true;
-			
-		} catch (ProduccionDAOException e) {
-			return false;
-		}
-	}
-
-	@Override
-	public TbPrdAutor obtenerAutor(long id) throws ProduccionBLException {
-		logger.info("--Obteniendo un autor--");
-		try {
-			return autorDAO.obtenerAutor(id);
-		} catch (ProduccionDAOException e) {
-			throw new ProduccionBLException(e.getMessage());
-		}
-
-	}
-	
-	@Override
-	public TbPrdAutor bucarPersona(long id) throws ProduccionBLException {
-		logger.info("--Obteniendo un autor--");
-		try {
-			return autorDAO.buscarPersona(id);
-		} catch (ProduccionDAOException e) {
-			throw new ProduccionBLException(e.getMessage());
-		}
-
 	}
 }
