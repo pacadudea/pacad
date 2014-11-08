@@ -221,7 +221,7 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		boolean transaccion = autorService.actualizar(tipoId,
 				txtNumeroId.getText(), txtApellidos.getText(),
 				txtNombres.getText(), txtDireccion.getText(),
-				txtEmail.getText(), txtTelefono.getText(), nacionalidad, null,
+				txtEmail.getText(), txtTelefono.getText(), nacionalidad, imagenEnBytes,
 				this.autorSeleccionado);
 
 		if (transaccion) {
@@ -269,6 +269,8 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 		txtDireccion.setText(null);
 		txtEmail.setText(null);
 		txtTelefono.setText(null);
+		
+		foto.setSrc("/img/no-user-icon.png");
 
 		// Cambio boton actualizar por guardar
 		this.btnActualizar.setVisible(false);
@@ -340,7 +342,19 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 				.getVrEmail());
 		this.txtTelefono.setText((persona.getVrTelefono() == null) ? ""
 				: persona.getVrTelefono());
-
+		byte[] imgByte = autorSeleccionado.getImagen();
+		if(imgByte!=null){	
+			try {
+				AImage img = new AImage("", imgByte);
+				foto.setContent(img);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+		}else{
+			foto.setSrc("/img/no-user-icon.png");
+		}
 		// Cambio boton guardar por actualizar
 		this.btnActualizar.setVisible(true);
 		this.btnGuardar.setVisible(false);

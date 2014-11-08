@@ -161,7 +161,7 @@ public class AutorServiceImpl implements AutorService {
 	@Override
 	public boolean actualizar(long tipoIdentificacionIdn, String id,
 			String apellidos, String nombre, String direccion, String email,
-			String telefono, long nacionalidad, String foto, TbPrdAutor autor)
+			String telefono, long nacionalidad, byte[] foto, TbPrdAutor autor)
 			throws ProduccionBLException {
 
 		// TODO Leer mensajes desde el archivo properties
@@ -222,7 +222,7 @@ public class AutorServiceImpl implements AutorService {
 
 			autor.setPersona(persona);
 			autor.setPais(pais);
-			autor.setImagen(null);
+			autor.setImagen(foto);
 
 			autorDAO.editarAutor(autor);
 
