@@ -2,17 +2,20 @@ package com.proint1.udea.produccion.ctl;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.zkoss.image.AImage;
 import org.zkoss.util.media.Media;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zhtml.Messagebox;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.WrongValueException;
+import org.zkoss.zk.ui.event.UploadEvent;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Constraint;
@@ -37,9 +40,11 @@ import com.proint1.udea.produccion.ngc.impl.AutorServiceImpl;
 import com.proint1.udea.produccion.ngc.impl.PaisServiceImpl;
 import com.proint1.udea.produccion.ngc.impl.TipoIdentificacionServiceImpl;
 import com.proint1.udea.produccion.util.ControlMensajes;
+import com.proint1.udea.produccion.util.MediaDTO;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 import com.proint1.udea.produccion.util.ProduccionIWException;
+import com.proint1.udea.produccion.util.UploadMedia;
 import com.proint1.udea.produccion.util.Validaciones;
 
 /**
@@ -74,11 +79,13 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	Textbox txtFiltrarAutor;
 	Listbox ltbNacionalidad;
 	Image imgAddNew;
+	byte[] imagenEnBytes;
 
 	Button btnGuardar;
 	Button btnActualizar;
 	Button btnCambiarFoto;
 	Button btnGuardarImagen;
+	Image foto;
 
 	// Imagen de perfil
 	Image imagen;
@@ -143,12 +150,12 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 
 		// convertimos la imagen en cadena de bit
 
-		byte[] foto = convertirEnArregloDeByte(imagen);
+//		byte[] foto = convertirEnArregloDeByte(imagen);
 
 		boolean transaccion = autorService.insertar(tipoId,
 				txtNumeroId.getText(), txtApellidos.getText(),
 				txtNombres.getText(), txtDireccion.getText(),
-				txtEmail.getText(), txtTelefono.getText(), nacionalidad, foto);
+				txtEmail.getText(), txtTelefono.getText(), nacionalidad, imagenEnBytes);
 
 		if (transaccion) {
 			ControlMensajes.mensajeInformation(Labels
@@ -166,22 +173,23 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	// byte[] bFile = new byte[(int) file.length()];
 	// }
 
-	private byte[] convertirEnArregloDeByte(Image imagen2) {
-		 File file = new File(imagen2.toString());
-		 byte[] bFile = new byte[(int) file.length()];
-		 try {
-		 FileInputStream fileInputStream = new FileInputStream(file);
-		 // convertimos el file en array de bytes
-		 fileInputStream.read(bFile);
-		 fileInputStream.close();
-		 } catch (Exception e) {
-		 e.printStackTrace();
-			}
-		
-		//byte [] bFile = imagen2.getAction().getBytes();
-		
-		return bFile;
-	}
+//	private byte[] convertirEnArregloDeByte(Image imagen2) {
+//		//imagen2.getContent().
+//		 File file = new File(imagen2.toString());
+//		 //byte[] bFile = new byte[(int) file.length()];
+//		 try {
+//		 FileInputStream fileInputStream = new FileInputStream(file);
+//		 // convertimos el file en array de bytes
+//		 fileInputStream.read(bFile);
+//		 fileInputStream.close();
+//		 } catch (Exception e) {
+//		 e.printStackTrace();
+//			}
+//		
+//		//byte [] bFile = imagen2.getAction().getBytes();
+//		
+//		return bFile;
+//	}
 
 	public void onClick$btnActualizar() throws WrongValueException,
 			ProduccionBLException, ProduccionIWException {
@@ -400,5 +408,21 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 
 	public void setPaisService(PaisServiceImpl paisService) {
 		this.paisService = paisService;
+	}
+	
+	public void onUpload$btnGuardarImagen(UploadEvent evt){
+		MediaDTO dtoMedia = new MediaDTO();
+		Media media = evt.getMedia();
+		try {
+			dtoMedia = UploadMedia.getMedia(media);
+			AImage im = new AImage(dtoMedia.getName(), dtoMedia.getObject());
+			imagenEnBytes = dtoMedia.getObject();
+			foto.setContent(im);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+        
 	}
 }
