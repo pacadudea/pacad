@@ -55,7 +55,6 @@ public class AutorDAOImpl extends HibernateDaoSupport implements AutorDAO {
 			System.out.println(e.getMessage());
 			throw new ProduccionDAOException("No se pudieron insertar autores de la base de datos");
 			
-
 		} finally {
 			if (session != null)
 				session.close();
