@@ -3,7 +3,7 @@
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
 	
-	<window title="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" border="normal" width="100%"
+	<window id="winAutores" title="${c:l('pacad.form.gestionAutores.tituloAdminAutores')}" border="normal" width="100%"
 		height="100%" apply="${gestionAutoresCtl}">
 		<style src="/css/estilos.css" />
 		<hlayout width="100%" height="600px;">
@@ -104,7 +104,29 @@
 								${c:l('pacad.form.gestionAutores.telefono')}
 								<textbox id="txtTelefono" tabindex="8" width="50%" />
 								<cell align="center">
-									<button label="Cambiar foto" />
+									
+
+		<hbox> 
+			<button label="Cargar imagen" upload="true" id="btnGuardarImagen">
+<!-- 			<attribute name="onUpload">{ -->
+<!-- 				org.zkoss.util.media.Media media = event.getMedia(); -->
+<!-- 				if (media instanceof org.zkoss.image.Image) { -->
+<!-- 					org.zkoss.zul.Image image = new org.zkoss.zul.Image(); -->
+<!-- 					image.setContent((org.zkoss.image.Image)media); -->
+<!-- 					image.setParent(imagen); -->
+<!-- 				} else { -->
+<!-- 					Messagebox.show("No es una imagen: "+ media, "Error", Messagebox.OK, Messagebox.ERROR); -->
+<!-- 					break; -->
+<!-- 				} -->
+<!-- 			}</attribute> -->
+		</button>
+	</hbox>
+<!-- <vbox id="imagen" width="20px" height="20px" /> -->
+
+
+    
+    
+    
 									<button label="Eliminar foto" />
 								</cell>
 							</row>
@@ -117,7 +139,13 @@
 							tabindex="10">
 						</button>
 						<button id="btnActualizar" label="${c:l('pacad.boton.actualizar')}" visible="false"
+							tabindex="11">
+						</button>
+						<button id="btnAProducciones" label="${c:l('pacad.boton.aProducciones')}" visible="false"
 							tabindex="12">
+						</button>
+						<button id="btnEliminar" label="${c:l('pacad.boton.eliminar')}" visible="false"
+							tabindex="13">
 						</button>
 					</div>
 				</groupbox>

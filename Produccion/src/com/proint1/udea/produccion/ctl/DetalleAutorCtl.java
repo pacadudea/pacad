@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.zkoss.image.AImage;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
@@ -15,6 +16,7 @@ import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Image;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -48,6 +50,7 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 	Label lbDireccion;
 	Label lbEmail;
 	Label lbTelefono;
+	Image foto;
 	
 	Listbox listaProducciones;
 	
@@ -83,13 +86,27 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 		this.lbDireccion.setValue(this.autor.getPersona().getVrDireccion());
 		this.lbEmail.setValue(this.autor.getPersona().getVrEmail());
 		this.lbTelefono.setValue(this.autor.getPersona().getVrTelefono());
+		byte[] imgByte = this.autor.getImagen();
+		if(imgByte!=null){	
+			try {
+				AImage img = new AImage("",imgByte);
+				foto.setContent(img);
+			}catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			foto.setSrc("/img/no-user-icon.png");
+		}
+		System.err.println("CARGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 	}
 	
 	private void cargarProducciones(){
 		try {
 			List<TbPrdProduccion> listaProds = new ArrayList<TbPrdProduccion>();
-			
+			System.err.println("CARGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 1");
 			Set <TbPrdAutoresxproduccion>producciones =  this.autor.getTbPrdAutoresxproduccions();
+			System.err.println("CARGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 2");
 			for (TbPrdAutoresxproduccion prodsxautor : producciones) {
 				TbPrdProduccion prod = prodsxautor.getTbPrdProduccion();
 				listaProds.add(prod);

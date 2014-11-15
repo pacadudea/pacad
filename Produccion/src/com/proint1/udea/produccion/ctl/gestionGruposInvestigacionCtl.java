@@ -118,15 +118,15 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 	 */
 	private void cargarMiembros(){
 		try {
-			List<TbAdmPersona> listaMiembros = new ArrayList<TbAdmPersona>();
+			List<TbPrdAutor> listaMiembros = new ArrayList<TbPrdAutor>();
 			
 			Set <TbPrdMiembrosxgrupo>miembros =  grupoSeleccionado.getTbPrdMiembrosxgrupos();
 			for (TbPrdMiembrosxgrupo miemxgrupo : miembros){
-				TbAdmPersona miembro = miemxgrupo.getTbAdmPersona();
+				TbPrdAutor miembro = miemxgrupo.getTbPrdAutor();
 				listaMiembros.add(miembro);
 			}
 			
-			this.listBoxMiembros.setModel(new ListModelList<TbAdmPersona>(listaMiembros));
+			this.listBoxMiembros.setModel(new ListModelList<TbPrdAutor>(listaMiembros));
 		} catch (Exception e) {
 			ControlMensajes.mensajeError(Labels.getLabel("pacad.mensajeError.noCargaDatos"));
 		}

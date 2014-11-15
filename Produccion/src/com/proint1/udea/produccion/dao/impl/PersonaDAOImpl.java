@@ -95,4 +95,22 @@ public class PersonaDAOImpl  extends HibernateDaoSupport implements PersonaDAO {
 		}
 	}
 
+	@Override
+	public boolean eliminar(TbAdmPersona persona) throws ProduccionDAOException {
+		Session session = null;
+		Transaction tx = null;
+		try {
+			session = getSession(true);
+			tx = session.beginTransaction();
+			session.delete(persona);
+			tx.commit();
+			return true;
+		} catch (HibernateException e) {
+			return false;
+		} finally {
+			if (session != null)
+				session.close();
+		}
+	}
+
 }

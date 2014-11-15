@@ -127,8 +127,8 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 			 TbPrdMiembrosxgrupo member = (TbPrdMiembrosxgrupo) iterator.next();
 			 
 			 MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(new Integer((int)grupoSelected.getNbIdn()), 
-					 grupoSelected.getVrNombre(), new Integer((int)member.getTbAdmPersona().getNbIdn()), member.getTbAdmPersona().getVrNombres(), 
-					 member.getTbAdmPersona().getVrApellidos());
+					 grupoSelected.getVrNombre(), new Integer((int)member.getTbPrdAutor().getId()), member.getTbPrdAutor().getPersona().getVrNombres(), 
+					 member.getTbPrdAutor().getPersona().getVrApellidos());
 			 
 			 listaMiembros.add(miembro); 
 		}

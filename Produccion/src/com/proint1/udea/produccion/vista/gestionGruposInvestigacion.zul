@@ -137,11 +137,11 @@
 					
 					<listbox id="listBoxMiembros" emptyMessage="${c:l('pacad.form.grupos.sinMiembros')}" height="86%" style="margin-top:10px" visible="false">
 				        <listhead>
-				            <listheader label="${c:l('pacad.form.gestionMiembros.panelMiembrosGrupo')}" sort="auto(vrNombres)" />
+				            <listheader label="${c:l('pacad.form.gestionMiembros.panelMiembrosGrupo')}" sort="auto(persona.vrNombres)" />
 				        </listhead>
 				        <template name="model">
 				            <listitem>
-				            	<listcell label="${each.vrNombres} ${each.vrApellidos}">
+				            	<listcell label="${each.persona.vrNombres} ${each.persona.vrApellidos}">
 				                </listcell> 
 				            </listitem>
 				        </template>
