@@ -1,0 +1,83 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+
+	<window id="winDetalleGrupoInvestigacion" title="${c:l('pacad.window.detGrupo.titulo')}" border="normal"
+		width="100%" height="100%" apply="${detalleGruposInvestigacionCtl}">
+	
+		
+		<hlayout width="99">
+			<hbox spacing="15px">
+				<groupbox mold="3d" width="300px" height="450px;">
+					<caption>
+						<div style="float:left;">
+							<image src="/img/group.png" />	
+							<label value="${c:l('pacad.form.gestionMiembros.tituloGrupos')}" />
+						</div>
+					</caption>
+					
+					<hbox align="center">
+						${c:l('pacad.texto.nombre')}
+						<textbox instant="true" id="txtFiltrarGrupo" tabindex="1" />
+					</hbox>
+	                
+					<listbox id="listBoxGrupos" emptyMessage="${c:l('pacad.texto.sinRegistros')}" height="86%" style="margin-top:10px">
+				        <listhead>
+				            <listheader label="${c:l('pacad.form.gestionMiembros.tituloListaGrupos')}" sort="auto(vrNombre)" />
+				        </listhead>
+				        <template name="model">
+				            <listitem>
+				                <listcell label="${each.vrNombre}"></listcell>
+				            </listitem>
+				        </template>
+				    </listbox>
+				</groupbox>
+				
+			<div width="99%" height="98%" style="overflow: auto">
+				<label value="${c:l('pacad.texto.grupoInv')}: " zclass="titulo1"/>
+				<label value="AQUI GRUPO" id="lbNombreGrupo" sclass="titulo2"/>
+		
+			<grid>
+				<columns>
+					<column width="30%" />
+					<column width="70%" />
+				</columns>	
+				
+				<rows>
+				
+					<row>
+						${c:l('pacad.form.grupos.abreviatura')}
+						<label id="lbAbreviatura"/>
+					</row>
+					<row>
+						${c:l('pacad.texto.estado')}
+						<label id="lbEstado"/>
+					</row>
+					<row>
+						${c:l('pacad.form.grupos.director')}
+						<label id="lbDirector"  sclass="estiloLink"/>
+					</row>
+					<row>
+						${c:l('pacad.form.grupos.auxiliar')}
+						<label id="lbAuxiliar" sclass="estiloLink"/>
+					</row>
+				</rows>
+			</grid>
+			
+			<separator height="15px"></separator>	
+			<label value="${c:l('pacad.detalle.resumenTipos')}" zclass="titulo3"/>
+			
+			<listbox id="listBoxResumenTipo" width="100%" visible="false">
+				<listhead>
+					<listheader label="${c:l('pacad.texto.tipoProduccion')}" width="50%" />
+					<listheader label="${c:l('pacad.texto.cantidad')}" width="50%"/>
+				</listhead>
+			</listbox>
+			
+			<label id="sinResumen" value="No existen producciones realacionadas con este grupo" visible="false" />
+			</div>
+			</hbox>
+		</hlayout>
+		
+	</window>
+</zk>

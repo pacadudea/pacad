@@ -45,8 +45,8 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 	Label lbTipoProduccion;
 	Label lbEstado;
 	Label lbFechaPublicacion;
-	Label lbUrl;
 	Label lbDoi;
+	Image lbUrl2;
 	
 	Listbox listaAutores;
 	
@@ -57,10 +57,7 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		
 		try{
 		this.produccion = (TbPrdProduccion) arg.get("produccion");
-		
-		System.out.println("SE RECIBIO EL VALOR --- " + produccion.getVrNombreproduccion());
-		
-		
+
 		}catch (Exception e){
 			System.out.println("ERROR RECIBIENDO MAP");
 		}
@@ -77,7 +74,12 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		this.lbTipoProduccion.setValue(this.produccion.getTbPrdTipoproduccion().getVrDescripcion());
 		this.lbEstado.setValue(this.produccion.getBlEstado()+"");
 		this.lbFechaPublicacion.setValue(this.produccion.getDtFechapublicacion().toString());
-		this.lbUrl.setValue(this.produccion.getVrUrl());
+		if (this.produccion.getVrUrl() == null){
+			this.lbUrl2.setSrc("/img/noUrl-icon.png");
+		}else{
+			this.lbUrl2.setSrc("/img/viewFile-icon.png");
+			this.lbUrl2.addEventListener(Events.ON_CLICK, new UrlOpen(this.produccion.getVrUrl()));
+		}
 		this.lbDoi.setValue(this.produccion.getVrDoi());
 	}
 	
@@ -88,7 +90,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 			Set <TbPrdAutoresxproduccion>autores =  this.produccion.getTbPrdAutoresxproduccions();
 			for (TbPrdAutoresxproduccion autorsxprods : autores) {
 				TbPrdAutor autor = autorsxprods.getTbPrdAutor();
-				System.err.println("AUTOR -------- " + autor.getPersona().getVrNombres());
 				listaAutors.add(autor);
 			}
 			
@@ -135,6 +136,7 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		arg0.appendChild(cellEmail);
 	}
 	
+	
 	/**
 	 * Clase que controla el evento de seleccionar la produccón
 	 */
@@ -147,8 +149,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 		}
 		
 	    public void onEvent(Event event) {
-	    	ControlMensajes.mensajeQuestion("HOLAAAAAAAAAAAAAA --- " + autor.getPersona().getVrNombres());
-	    		    	
 	    	Map a = new HashMap<>();
 			a.put("autor", autor);
 			
@@ -160,13 +160,6 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 			try {
 				
 				Div divCenter = VistasZk.obtenerDivCenter(detalleProduccion);
-				if (divCenter == null  ){
-					System.err.println("no se encontro el div");
-				}else{
-					System.err.println("SE encontro el div");
-					
-				}
-				
 				
 				divCenter.getChildren().clear();
 				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,a) ;	
@@ -177,6 +170,22 @@ public class DetalleProduccionCtl extends GenericForwardComposer implements List
 				System.err.println("ERROR ENVIANDO");
 				e.printStackTrace();
 			}
+	    }
+	}
+	
+	/**
+	 * Clase que controla el evento de seleccionar la produccón
+	 */
+	private class UrlOpen implements EventListener {
+		
+		private String url;
+		
+		public UrlOpen(String url){
+			this.url = url;
+		}
+		
+	    public void onEvent(Event event) {
+	    	execution.sendRedirect(this.url, "_blank");
 	    }
 	}
 	

@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 3/10/2014 01:25:49 AM by Hibernate Tools 4.0.0 -->
+<!-- Generated 8/11/2014 11:56:05 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" table="TB_PRD_GRUPOINVESTIGACION" schema="PROINT1">
+    <class name="TbPrdGrupoinvestigacion" table="TB_PRD_GRUPOINVESTIGACION" schema="PROINT1">
         <id name="nbIdn" type="long">
             <column name="NB_IDN" precision="10" scale="0" />
-            <generator class="increment" />
+            <generator class="assigned" />
         </id>
-        <many-to-one name="tbAdmPersonaByNbAuxiliar" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select">
+        <many-to-one name="tbAdmPersonaByNbAuxiliar" class="TbAdmPersona" fetch="select">
             <column name="NB_AUXILIAR" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbAdmPersonaByNbDirector" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select">
+        <many-to-one name="tbAdmPersonaByNbDirector" class="TbAdmPersona" fetch="select">
             <column name="NB_DIRECTOR" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrNombre" type="string">
@@ -35,17 +35,23 @@
         <property name="dtAdtfecha" type="date">
             <column name="DT_ADTFECHA" length="7" not-null="true" />
         </property>
-        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="false" fetch="select">
-            <key>
-                <column name="NB_GRU_IDN" precision="10" scale="0" />
-            </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion" />
-        </set>
-        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="false" fetch="select">
+        <set name="tbPrdHistoriamiembroses" table="TB_PRD_HISTORIAMIEMBROS" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="NB_GPI_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" />
+            <one-to-many class="TbPrdHistoriamiembros" />
+        </set>
+        <set name="tbPrdAutoresxproduccions" table="TB_PRD_AUTORESXPRODUCCION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_GRU_IDN" precision="10" scale="0" />
+            </key>
+            <one-to-many class="TbPrdAutoresxproduccion" />
+        </set>
+        <set name="tbPrdMiembrosxgrupos" table="TB_PRD_MIEMBROSXGRUPO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NB_GPI_IDN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="TbPrdMiembrosxgrupo" />
         </set>
     </class>
 </hibernate-mapping>

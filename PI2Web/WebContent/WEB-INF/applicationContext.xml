@@ -42,7 +42,8 @@
 				<value>com/proint1/udea/produccion/mapeo/TbPrdDetalleproducciones.hbm.xml</value>
 				
 				<value>com/proint1/udea/produccion/mapeo/TbPrdGrupoinvestigacion.hbm.xml</value>
-				<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value> 
+				<value>com/proint1/udea/produccion/mapeo/TbPrdMiembrosxgrupo.hbm.xml</value>
+				<value>com/proint1/udea/produccion/mapeo/TbPrdHistoriamiembros.hbm.xml</value> 
 				<value>com/proint1/udea/produccion/mapeo/TbPrdProduccion.hbm.xml</value>
 				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccion.hbm.xml</value>
 				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccionesxcampo.hbm.xml</value>

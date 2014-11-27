@@ -45,12 +45,12 @@ public class ensayoCtl extends GenericForwardComposer {
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		System.err.println("CARGANDO VENTANA 2");
+
 		
 		try{
 		String nombre = (String) arg.get("juan");
 		
-		System.out.println("SE RECIBIO EL VALOR --- " + nombre);
+	
 		}catch (Exception e){
 			System.out.println("ERROR RECIBIENDO MAP");
 		}

@@ -2,19 +2,21 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-name="TB_ADM_PERSONA" match-schema="PROINT1"></table-filter>
+	 <!---->  <table-filter match-name="TB_ADM_PERSONA" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_ADM_PAISES" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_ADM_TIPOIDENTIFICACION" match-schema="PROINT1"></table-filter>
 	
-	<table-filter match-name="TB_PRD_AUTOR" match-schema="PROINT1"></table-filter>
+	
 	<table-filter match-name="TB_PRD_AUTORESXPRODUCCION" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_PRD_CAMPOS" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_PRD_DETALLEPRODUCCIONES" match-schema="PROINT1"></table-filter>
-	<table-filter match-name="TB_PRD_GRUPOINVESTIGACION" match-schema="PROINT1"></table-filter>
-	<table-filter match-name="TB_PRD_MIEMBROSXGRUPO" match-schema="PROINT1"></table-filter>
+	
+	
+	<table-filter match-name="TB_PRD_HISTORIAMIEMBROS" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_PRD_PRODUCCION" match-schema="PROINT1"></table-filter>
 	<table-filter match-name="TB_PRD_TIPOPRODUCCION" match-schema="PROINT1"></table-filter>
-	<table-filter match-name="TB_PRD_TIPOPRODUCCIONESXCAMPO" match-schema="PROINT1"></table-filter>
+	<table-filter match-name="TB_PRD_TIPOPRODUCCIONESXCAMPO" match-schema="PROINT1"></table-filter> 
+	<table-filter match-name="TB_PRD_GRUPOINVESTIGACION" match-schema="PROINT1"></table-filter>
+	<table-filter match-name="TB_PRD_AUTOR" match-schema="PROINT1"></table-filter>
+	<table-filter match-name="TB_PRD_MIEMBROSXGRUPO" match-schema="PROINT1"></table-filter>
 </hibernate-reverse-engineering>
-
-

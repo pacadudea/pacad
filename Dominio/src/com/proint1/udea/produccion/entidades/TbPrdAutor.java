@@ -1,6 +1,6 @@
 package com.proint1.udea.produccion.entidades;
 
-import java.sql.Blob;
+//import java.sql.Blob;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +18,9 @@ public class TbPrdAutor implements java.io.Serializable {
 	private long id;
 	private TbAdmPaises pais;
 	private TbAdmPersona persona;
-	private Blob foto;
+	//private Blob foto;
+	//private BLOB foto;
+	private byte[] imagen;
 	private String usuarioModifico;
 	private Date fechaModifico;
 	private Set tbPrdAutoresxproduccions = new HashSet(0);
@@ -26,10 +28,10 @@ public class TbPrdAutor implements java.io.Serializable {
 	public TbPrdAutor() {
 	}
 
-	public TbPrdAutor(TbAdmPaises pais, TbAdmPersona persona, Blob foto, String usuarioModifico, Date fechaModifico) {
+	public TbPrdAutor(TbAdmPaises pais, TbAdmPersona persona, byte[] imagen, String usuarioModifico, Date fechaModifico) {
 		this.pais = pais;
 		this.persona = persona;
-		this.foto = foto;
+		this.imagen = imagen;
 		this.usuarioModifico = usuarioModifico; 
 		this.fechaModifico = fechaModifico;
 	}
@@ -43,8 +45,8 @@ public class TbPrdAutor implements java.io.Serializable {
 		this.fechaModifico = dtAdtfecha;
 	}
 
-	public TbPrdAutor(long nbAutIdn, TbAdmPaises tbAdmPaises,
-			TbAdmPersona tbAdmPersona, Blob phFoto, String vrAdtusuario,
+	/*public TbPrdAutor(long nbAutIdn, TbAdmPaises tbAdmPaises,
+			TbAdmPersona tbAdmPersona, BLOB phFoto, String vrAdtusuario,
 			Date dtAdtfecha, Set tbPrdAutoresxproduccions) {
 		this.id = nbAutIdn;
 		this.pais = tbAdmPaises;
@@ -52,7 +54,7 @@ public class TbPrdAutor implements java.io.Serializable {
 		this.usuarioModifico = vrAdtusuario;
 		this.fechaModifico = dtAdtfecha;
 		this.tbPrdAutoresxproduccions = tbPrdAutoresxproduccions;
-	}
+	}*/
 
 	public long getId() {
 		return id;
@@ -78,16 +80,28 @@ public class TbPrdAutor implements java.io.Serializable {
 		this.persona = persona;
 	}
 
-	public Blob getFoto() {
-		return foto;
-	}
-
-	public void setFoto(Blob foto) {
-		this.foto = foto;
-	}
+//	public BLOB getFoto() {
+//		return foto;
+//	}
+//
+//	public void setFoto(BLOB foto) {
+//		this.foto = foto;
+//	}
 
 	public String getUsuarioModifico() {
 		return usuarioModifico;
+	}
+
+	public byte[] getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(byte[] imagen) {
+		this.imagen = imagen;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public void setUsuarioModifico(String usuarioModifico) {

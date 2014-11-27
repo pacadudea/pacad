@@ -23,16 +23,12 @@
 				<menuitem id="btnAdministracion" label="Administracin" />
 			</menupopup>
 		</menu>
-		<menu label="Investigacion">
+		<menu label="Producciones Académicas">
 			<menupopup>
-				<menu label="Grupos Investigación" onClick="alert(self.label)">
+				<menu label="Administración" onClick="alert(self.label)">
 					<menupopup>
 						<menuitem label="Gestion Grupos" id="gestionGrupoMenu" />
 						<menuitem label="${c:l('pacad.menu.producciones.gestionMiembros')}" id="gestionMiembros" />
-					</menupopup>
-				</menu>
-				<menu label="Producciones" >
-					<menupopup>
 						<menuitem label="Gestion Autores" id="gestionAutoresMenu" />
 						<menuitem label="Gestion Tipos de Produccion" id="gestionTipoProduccionMenu" />
 						<menuitem label="Gestion Producciones" id="gestionProduccionMenu" />
@@ -41,10 +37,13 @@
 				
 				<menu label="Consultas" >
 					<menupopup>
-						<menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" />
-						<menuitem label="Consulta interactiva" id="consultaInteractiva" />
-						<menuitem label="Consulta filtrada" id="consultaFiltrada" />
-						<menuitem label="Producciones filtrada" id="produccionesFiltradas" />
+					<menuitem label="Consulta interactiva" id="consultaInteractiva" />
+					<menuitem label="Consulta grupos investigación" id="consultaGrupos" />
+					
+						<!-- <menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" /> -->
+						 
+						<!-- <menuitem label="Consulta filtrada" id="consultaFiltrada" />-->
+						<!-- <menuitem label="Producciones filtrada" id="produccionesFiltradas" />-->
 						
 					</menupopup>
 				</menu>

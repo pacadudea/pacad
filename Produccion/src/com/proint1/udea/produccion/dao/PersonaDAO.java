@@ -3,6 +3,7 @@ package com.proint1.udea.produccion.dao;
 import java.util.List;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
+import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.util.ProduccionBLException;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 
@@ -19,4 +20,8 @@ public interface PersonaDAO {
 	 * @throws ProduccionBLException
 	 */
 	public TbAdmPersona buscarPersona(String identificacion)throws ProduccionDAOException;
+	
+	public boolean actualizar(TbAdmPersona persona)  throws ProduccionDAOException;
+	
+	public boolean eliminar(TbAdmPersona persona)  throws ProduccionDAOException;
 }

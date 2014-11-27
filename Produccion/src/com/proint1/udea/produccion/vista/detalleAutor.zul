@@ -3,7 +3,7 @@
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
 	
-	<window id="detalleAutor" title="${c:l('pacad.window.detProduccion.titulo')}" border="normal"
+	<window id="detalleAutor" title="${c:l('pacad.window.detAutor.titulo')}" border="normal"
 		width="100%" height="100%" apply="${detalleAutorCtl}"
 		action="show: slideDown;hide: slideUp" >
 		
@@ -61,15 +61,14 @@
 			<label value="${c:l('pacad.form.producciones.participantes')}" zclass="titulo3"/>
 			
 			<listbox id="listaProducciones" width="100%">
-				<auxhead sclass="category-center" style="text-align:center">
-					<auxheader label="${c:l('pacad.form.autores.lista')}" colspan="4" />
-				</auxhead>
-
 				<listhead>
-					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.producciones')}" width="40%" />
-					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.tipoProduccion')}" width="25%"/>
-					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.estado')}" width="10%"/>
-					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.fechaPublicacion')}" width="15%"/>
+					<listheader   label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.producciones')}" width="40%" />
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.tipoProduccion')}" width="25%"/>
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.estado')}" width="10%"/>
+					<listheader 
+						label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.fechaPublicacion')}" width="15%"/>
 				</listhead>
 			</listbox>
 		</div>
