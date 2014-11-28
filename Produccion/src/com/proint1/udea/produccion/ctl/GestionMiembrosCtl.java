@@ -128,7 +128,7 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 			 
 			 MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(new Integer((int)grupoSelected.getNbIdn()), 
 					 grupoSelected.getVrNombre(), new Integer((int)member.getTbPrdAutor().getId()), member.getTbPrdAutor().getPersona().getVrNombres(), 
-					 member.getTbPrdAutor().getPersona().getVrApellidos());
+					 member.getTbPrdAutor().getPersona().getVrApellidos(), new Integer((int)member.getTbPrdAutor().getId()));
 			 
 			 listaMiembros.add(miembro); 
 		}
@@ -165,7 +165,7 @@ public class GestionMiembrosCtl extends GenericForwardComposer  {
 				
 				if (!existe){
 					MiembrosGrupoInvestigacion miembro = new MiembrosGrupoInvestigacion(null, null, new Integer((int)autor.getPersona().getNbIdn()), 
-							autor.getPersona().getVrNombres(), autor.getPersona().getVrApellidos());
+							autor.getPersona().getVrNombres(), autor.getPersona().getVrApellidos(), new Integer((int)autor.getId()));
 					
 					posiblesMiembros.add(miembro);
 				}

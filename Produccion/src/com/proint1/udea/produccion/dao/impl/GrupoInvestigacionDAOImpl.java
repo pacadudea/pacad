@@ -18,6 +18,7 @@ import com.proint1.udea.produccion.dto.MiembrosGrupoInvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo;
+import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupoId;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
 
 public class GrupoInvestigacionDAOImpl extends HibernateDaoSupport implements GrupoInvestigacionDAO {
@@ -165,18 +166,18 @@ public class GrupoInvestigacionDAOImpl extends HibernateDaoSupport implements Gr
 			
 			for (Iterator iterator = nuevosIntegrantes.iterator(); iterator.hasNext();) {
 				MiembrosGrupoInvestigacion member = (MiembrosGrupoInvestigacion) iterator.next();
-				
+				TbPrdMiembrosxgrupoId nmId = new TbPrdMiembrosxgrupoId();
+				nmId.setNbAutIdn(member.getIdAutor());
+				nmId.setNbGpiIdn(idGrupo);
 				TbPrdMiembrosxgrupo nm = new TbPrdMiembrosxgrupo();
-				nm.setTbPrdAutor(new TbPrdAutor());
-				nm.getTbPrdAutor().setId(Long.parseLong(member.getIdPersona() +"")); 
-				nm.setTbPrdGrupoinvestigacion(new TbPrdGrupoinvestigacion());
-				nm.getTbPrdGrupoinvestigacion().setNbIdn(idGrupo);
+				nm.setId(nmId);
 				
 				session.save(nm);
 			}
 			tx.commit();
 		} catch (HibernateException e) {
-			throw new ProduccionDAOException(e);
+			e.printStackTrace();
+			//throw new ProduccionDAOException(e);
 		} finally {
 			if (session != null)
 				session.close();
