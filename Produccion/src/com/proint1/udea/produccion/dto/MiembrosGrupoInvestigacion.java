@@ -15,9 +15,12 @@ public class MiembrosGrupoInvestigacion implements java.io.Serializable {
 	 */
 	private Integer idGrupo; 
 	private String nombreGrugo;
-	private Integer idPersona; 
+	private Integer idPersona;
+	private Integer idAutor; 
 	private	String nombreMiembro;
 	private String apellidoMiembro; 
+	private String accion;
+	
 	
 	public MiembrosGrupoInvestigacion() {
 	}
@@ -30,10 +33,11 @@ public class MiembrosGrupoInvestigacion implements java.io.Serializable {
 	 * @param nombreMiembro nombre de miembro del grupo 
 	 * @param apellidoMiembro apellido de miembro del grupo
 	 */
-	public MiembrosGrupoInvestigacion(Integer idGrupo,String nombreGrugo, Integer idPersona,String nombreMiembro,String apellidoMiembro) {
+	public MiembrosGrupoInvestigacion(Integer idGrupo,String nombreGrugo, Integer idPersona,String nombreMiembro,String apellidoMiembro,Integer idAutor) {
 		this.idGrupo = idGrupo;
 		this.nombreGrugo = nombreGrugo;
 		this.idPersona = idPersona;
+		this.idAutor = idAutor;
 		this.nombreMiembro = nombreMiembro;
 		this.apellidoMiembro = apellidoMiembro;
 	}
@@ -77,4 +81,22 @@ public class MiembrosGrupoInvestigacion implements java.io.Serializable {
 	public void setApellidoMiembro(String apellidoMiembro) {
 		this.apellidoMiembro = apellidoMiembro;
 	}
+
+	public Integer getIdAutor() {
+		return idAutor;
+	}
+
+	public void setIdAutor(Integer idAutor) {
+		this.idAutor = idAutor;
+	}
+
+	public String getAccion() {
+		return accion;
+	}
+
+	public void setAccion(String accion) {
+		this.accion = accion;
+	}
+	
+	
 }
