@@ -1,47 +1,65 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
-<?page title="Gesti&#243;n de Tipos de Producci&#243;n" contentType="text/html;charset=UTF-8"?>
+<?page title="Gestion de Producciones" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
-	<window title="Registro de Producciones" border="normal"
-		width="900px" height="480px" apply="${registroProduccionCtl}">
 
-		<hlayout width="100%">
-
-			<!-- panel del lado derecho -->
-
-			<vlayout width="100%" height="450px">
-				<hlayout width="100%">
-					<label>Título</label>
-					<textbox id="txtTitulo" tabindex="3" />
-					<label>Tipo de producci&#243;n</label>
-					<listbox id="ltbTipoProduccion" tabindex="2" width="20"
-							rows="1" mold="select" height="2opx">
-						</listbox>
-				</hlayout>
-				<separator orient="horizontal" spacing="8px" />
-				<hlayout>
-					<grid height="100%" id="gridCampos">
-						<columns menupopup="auto">
-							<column label="Campo"
-								sort="auto" />
-							<column label="Informaci&#243;n" />
-						</columns>
-
-					</grid>
-			    </hlayout>
-			    <separator orient="horizontal" spacing="10px" />
-				<hlayout width="100%">
-					<button id="btnNuevo"
-						label="Nuevo" tabindex="12">
-					</button>
-					<button id="btnGuardar"
-						label="Guardar" tabindex="13">
-					</button>
-					<button id="btnEliminar"
-						label="Eliminar" tabindex="14">
-					</button>
-				</hlayout>
-			</vlayout>
-		</hlayout>
+	<window title="${c:l('pacad.form.producciones.titulo')}" 
+		border="normal" width="100%" height="100%" apply="${registroProduccionCtl}">
+		<style src="/css/estilos.css" />
+		
+		<div> 
+			<borderlayout>
+				<north size="90px" border="0">
+					<hlayout width="100%" height="600px;">
+							<vlayout width="100%" height="450px">
+									<hlayout width="100%">
+										<label value="${c:l('pacad.form.producciones.nombre')}" />
+										<textbox id="txtTitulo" tabindex="3" />
+										<label value="${c:l('pacad.form.producciones.selecionTipo')}" />
+										<listbox id="ltbTipoProduccion" tabindex="2" width="20"
+												rows="1" mold="select" height="2opx">
+										</listbox>
+									</hlayout>
+							</vlayout>
+					</hlayout>
+					
+				</north>
+				<west>
+					<div>
+				
+					</div>
+				</west>
+				<center>
+					<div>
+						<vlayout width="100%" height="450px">
+							<hlayout>
+								<grid height="65%" id="gridCampos">
+									<columns menupopup="auto">
+										<column label="${c:l('pacad.form.producciones.campo')}" sort="auto" />
+										<column label="${c:l('pacad.form.producciones.informacion')}" />
+									</columns>
+								</grid>
+			    			</hlayout>
+						</vlayout>
+					</div>
+				</center>
+				<east>
+					<div>
+				
+					</div>
+				</east>
+				<south>
+					<div>
+						<vlayout width="100%" height="450px">
+							<hlayout width="100%">
+								<button id="btnNuevo" label="Nuevo" tabindex="12"></button>
+								<button id="btnGuardar" label="Guardar" tabindex="13"></button>
+								
+							</hlayout>
+						</vlayout>
+					</div>
+				</south>					
+			</borderlayout>
+		</div>
 	</window>
 	<zscript><![CDATA[
         void moverCampo(Component dragged) {

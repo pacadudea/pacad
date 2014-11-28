@@ -21,9 +21,7 @@ import org.zkoss.zul.ext.Selectable;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
-import com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
-import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo;
 import com.proint1.udea.produccion.ngc.AutorService;
 import com.proint1.udea.produccion.ngc.GrupoInvestigacionService;
 import com.proint1.udea.produccion.ngc.PersonaService;
@@ -58,7 +56,6 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 	Radio optInactivo; 
 	Listbox listBoxDirectores;
 	Listbox listBoxAuxiliares;
-	Listbox listBoxMiembros;
 	Bandbox bandDirector;
 	Bandbox bandAuxiliar;
 	
@@ -113,24 +110,6 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 			ControlMensajes.mensajeError(Labels.getLabel("pacad.mensajeError.noCargaDatos"));
 		}
 	}
-	/**
-	 * Carga todos los miembros del grupo de investigacion seleccionado
-	 */
-	private void cargarMiembros(){
-		try {
-			List<TbAdmPersona> listaMiembros = new ArrayList<TbAdmPersona>();
-			
-			Set <TbPrdMiembrosxgrupo>miembros =  grupoSeleccionado.getTbPrdMiembrosxgrupos();
-			for (TbPrdMiembrosxgrupo miemxgrupo : miembros){
-				TbAdmPersona miembro = miemxgrupo.getTbAdmPersona();
-				listaMiembros.add(miembro);
-			}
-			
-			this.listBoxMiembros.setModel(new ListModelList<TbAdmPersona>(listaMiembros));
-		} catch (Exception e) {
-			ControlMensajes.mensajeError(Labels.getLabel("pacad.mensajeError.noCargaDatos"));
-		}
-	}
 	
 	/**
 	 * Detecta la seleccion de uno de un grupo y carga su informacion para ser modificada
@@ -141,7 +120,6 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 		Set<TbPrdGrupoinvestigacion> selection = ((Selectable<TbPrdGrupoinvestigacion>)listBoxGrupos.getModel()).getSelection();
 		this.grupoSeleccionado = selection.iterator().next();
 		this.llenarDatos();
-		this.cargarMiembros();
 	}
 	
 	private void llenarDatos()  {
@@ -163,8 +141,7 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 			this.optInactivo.setSelected(true);
 		}
 		
-		//Modifico la vista del formulario
-		this.listBoxMiembros.setVisible(true);
+		//Cambio boton guardar por actualizar
 		this.btnGuardar.setVisible(false);
 		this.btnActualizar.setVisible(true);
 	}
@@ -278,7 +255,6 @@ public class gestionGruposInvestigacionCtl extends GenericForwardComposer {
 		this.listBoxAuxiliares.clearSelection();
 		
 		//Cambio boton actualizar por guardar
-		this.listBoxMiembros.setVisible(false);
 		this.btnActualizar.setVisible(false);
 		this.btnGuardar.setVisible(true);
 	}
