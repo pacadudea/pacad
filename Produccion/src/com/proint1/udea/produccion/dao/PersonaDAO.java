@@ -22,4 +22,6 @@ public interface PersonaDAO {
 	public TbAdmPersona buscarPersona(String identificacion)throws ProduccionDAOException;
 	
 	public boolean actualizar(TbAdmPersona persona)  throws ProduccionDAOException;
+	
+	public boolean eliminar(TbAdmPersona persona)  throws ProduccionDAOException;
 }

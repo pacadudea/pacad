@@ -9,43 +9,30 @@ import com.proint1.udea.produccion.dao.ProduccionDAO;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
 import com.proint1.udea.produccion.ngc.ProduccionService;
-import com.proint1.udea.produccion.util.ProduccionBLException;
 
 public class ProduccionServiceImpl implements ProduccionService {
 
 	ProduccionDAO produccionDAO;
 
-	private static Logger logger = Logger.getLogger(ProduccionServiceImpl.class);
+	private static Logger logger = Logger
+			.getLogger(ProduccionServiceImpl.class);
 
 	@Override
-	public List<TbPrdProduccion> listar()throws ProduccionBLException {
+	public List<TbPrdProduccion> listar() {
 		logger.info("Iniciando consulta de Producciones");
-		List<TbPrdProduccion> lista=null;
-		try{
-			lista= produccionDAO.listar();
-		}catch(Exception e){
-			throw new ProduccionBLException(e);
-		}
-		return lista;
+		return produccionDAO.listar();
 	}
 
 	@Override
-	public TbPrdProduccion obtener(long id)throws ProduccionBLException {
-		TbPrdProduccion prod = null;
-		try{
-		prod = produccionDAO.obtener(id);
-		}catch(Exception e){
-			throw new ProduccionBLException(e);
-		}
-		return prod;
+	public TbPrdProduccion obtener(long id) {
+		return produccionDAO.obtener(id);
 	}
 
 	@Override
 	public void insertar(String titulo, List<TbPrdAutor> autores,
 			String palabrasClave, long tipoProduccion,
-			HashMap<Long, String> informacion)throws ProduccionBLException {
+			HashMap<Long, String> informacion) {
 		// TODO Auto-generated method stub
-		//Realizar validaciones
 	}
 
 	public ProduccionDAO getProduccionDAO() {

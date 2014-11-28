@@ -16,7 +16,7 @@
 		</property>
 	</bean>
 	
-	<bean id="campoDAO" class="com.proint1.udea.produccion.dao.impl.CamposDAOImpl">
+	<bean id="campoDAO" class="com.proint1.udea.produccion.dao.impl.CampoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="factory"  />
 		</property>
@@ -39,12 +39,6 @@
 			<ref bean="factory"  />
 		</property>
 	</bean>   
-	
-	<bean id="autoresXProduccionDAO" class="com.proint1.udea.produccion.dao.impl.AutoresXProduccionDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="factory"  />
-		</property>
-	</bean> 
     
 <!-- BEANS DE NEGOCIO -->	
 
@@ -69,10 +63,6 @@
 	
 	<bean id="tipoProduccionService" class="com.proint1.udea.produccion.ngc.impl.TipoProduccionServiceImpl">
 	    <property name="tipoProduccionDAO" ref="tipoProduccionDAO"></property>
-	</bean>
-	
-	<bean id="autoresXProduccionService" class="com.proint1.udea.produccion.ngc.impl.AutoresXProduccionServiceImpl">
-	    <property name="autoresXProduccionDAO" ref="autoresXProduccionDAO"></property>
 	</bean>
 
 <!-- BEANS PARA LOS CONTROLADORES -->		
@@ -139,8 +129,10 @@
 	
 	<bean id="detalleTipoProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleTipoProduccionCtl" scope="prototype"/>
 	
-	<bean id="detalleGrupoXTipoProdCtl" class="com.proint1.udea.produccion.ctl.DetalleGrupoXTipoProdCtl" scope="prototype"/>
 	
+	<bean id="detalleGruposInvestigacionCtl" class="com.proint1.udea.produccion.ctl.DetalleGruposInvestigacionCtl" scope="prototype">
+	    <property name="grupoInvestigacionService" ref="grupoInvestigacionService"></property>
+	</bean>
 	
 	
 	<bean id="employeeDialogController" class="com.proint1.udea.produccion.ctl.EmployeeDialogController" scope="prototype">

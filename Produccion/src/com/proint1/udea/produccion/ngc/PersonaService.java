@@ -4,11 +4,10 @@ import java.util.List;
 
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.util.ProduccionBLException;
-import com.proint1.udea.produccion.util.ProduccionDAOException;
 
 public interface PersonaService {
 
-	public List<TbAdmPersona> listar()throws ProduccionBLException;
+	public List<TbAdmPersona> listar();
 	
 	/**
 	 * Busca una persona por el numero de su identificacion

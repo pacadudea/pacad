@@ -38,7 +38,7 @@
 				<menu label="Consultas" >
 					<menupopup>
 					<menuitem label="Consulta interactiva" id="consultaInteractiva" />
-					<menuitem label="Grupos y Tipos" id="gruposXtipos" />
+					<menuitem label="Consulta grupos investigación" id="consultaGrupos" />
 					
 						<!-- <menuitem label="Reporte Dinamico de Producción" id="reporteDinamicoProduccionMenu" /> -->
 						 
