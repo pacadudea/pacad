@@ -188,12 +188,12 @@ public class AutorServiceImpl implements AutorService {
 		
 		try {
 			//Verifico que no exista doble identificacion
-			TbAdmPersona personaQue = personaDAO.buscarPersona(id);
+		/*	TbAdmPersona personaQue = personaDAO.buscarPersona(id);
 			if (personaQue != null) {
 				ControlMensajes
 						.mensajeError("No se puede crear el autor, pues ya existe otra persona con la misma identificación");
 				return false;
-			}
+			}*/
 			
 			
 			// Busco el tipo de identficación

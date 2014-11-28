@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.zkoss.util.resource.Labels;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -24,6 +25,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 
+import com.proint1.udea.administracion.entidades.seguridad.Usuario;
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
 import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
@@ -38,7 +40,7 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 	
 	private static final long serialVersionUID = 1L;
 	List<TbPrdProduccion> result;
-	
+	public static final long idConsulta = 1;
 
 	private static Logger logger=Logger.getLogger(ConsultaInteractivaCtl.class);
 	
@@ -65,9 +67,27 @@ public class ConsultaInteractivaCtl extends GenericForwardComposer implements Li
 	Listbox listaProducciones;
 	
 
-	/*public void doAfterCompose(Component comp) throws Exception {
+	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-	}*/
+		Usuario usuario = new Usuario();		
+		Executions.getCurrent().getSession().setAttribute("usuario", usuario);
+		
+		if( Executions.getCurrent().getSession().getAttribute("usuario") instanceof Usuario){
+			Usuario usuarioLogueado = (Usuario) Executions.getCurrent().getSession().getAttribute("usuario");
+			// consultar si hay permiso sobre la funcionalidad
+			boolean answer = true;//remplazar por método de consulta
+			if(!answer){
+				self.detach();
+			}
+			
+		}else {
+			self.detach();
+			//Executions.getCurrent().getSession().invalidate();
+			
+		}
+		
+		
+	}
 	
 	/**
 	 * Carga inicial de la ventana
