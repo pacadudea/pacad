@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.proint1.udea.administracion.entidades.terceros.TbAdmPersona;
 import com.proint1.udea.produccion.dao.GrupoInvestigacionDAO;
 import com.proint1.udea.produccion.dto.MiembrosGrupoInvestigacion;
+import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo;
 import com.proint1.udea.produccion.util.ProduccionDAOException;
@@ -166,8 +167,8 @@ public class GrupoInvestigacionDAOImpl extends HibernateDaoSupport implements Gr
 				MiembrosGrupoInvestigacion member = (MiembrosGrupoInvestigacion) iterator.next();
 				
 				TbPrdMiembrosxgrupo nm = new TbPrdMiembrosxgrupo();
-				nm.setTbAdmPersona(new TbAdmPersona());
-				nm.getTbAdmPersona().setNbIdn(Long.parseLong(member.getIdPersona()+""));
+				nm.setTbPrdAutor(new TbPrdAutor());
+				nm.getTbPrdAutor().setId(Long.parseLong(member.getIdPersona() +"")); 
 				nm.setTbPrdGrupoinvestigacion(new TbPrdGrupoinvestigacion());
 				nm.getTbPrdGrupoinvestigacion().setNbIdn(idGrupo);
 				

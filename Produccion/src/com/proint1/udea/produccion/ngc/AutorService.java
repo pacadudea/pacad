@@ -36,7 +36,17 @@ public interface AutorService {
 	
 	public boolean insertar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, String foto)throws ProduccionBLException;
 	
-	public boolean actualizar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, String foto, TbPrdAutor autor)throws ProduccionBLException;
+	public boolean insertar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, byte[] foto)throws ProduccionBLException;
+	
+	public boolean actualizar(long tipoIdentificacionIdn, String id,String apellidos, String nombre, String direccion,String email,String telefono, long nacionalidad, byte[] foto, TbPrdAutor autor)throws ProduccionBLException;
+	
+	/**
+	 * Elimina un registro de autor que no tenga publicaciones asociadas
+	 * @param id identificiacion del autor a eliminar
+	 * @return
+	 * @throws ProduccionBLException
+	 */
+	public boolean eliminar(TbPrdAutor autor) throws ProduccionBLException;
 	
 	/**
 	 * Obtener un autor de la base de datos 

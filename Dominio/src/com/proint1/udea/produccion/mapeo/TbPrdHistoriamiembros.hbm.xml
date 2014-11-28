@@ -3,13 +3,16 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 8/11/2014 11:56:05 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
-    <class name="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupo" table="TB_PRD_MIEMBROSXGRUPO" schema="PROINT1">
-        <composite-id name="id" class="com.proint1.udea.produccion.entidades.TbPrdMiembrosxgrupoId">
+    <class name="com.proint1.udea.produccion.entidades.TbPrdHistoriamiembros" table="TB_PRD_HISTORIAMIEMBROS" schema="PROINT1">
+        <composite-id name="id" class="com.proint1.udea.produccion.entidades.TbPrdHistoriamiembrosId">
             <key-property name="nbGpiIdn" type="long">
                 <column name="NB_GPI_IDN" precision="10" scale="0" />
             </key-property>
             <key-property name="nbAutIdn" type="long">
                 <column name="NB_AUT_IDN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dtFecha" type="serializable">
+                <column name="DT_FECHA" />
             </key-property>
         </composite-id>
         <many-to-one name="tbPrdGrupoinvestigacion" class="com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion" update="false" insert="false" fetch="select">
@@ -18,5 +21,17 @@
         <many-to-one name="tbPrdAutor" class="com.proint1.udea.produccion.entidades.TbPrdAutor" update="false" insert="false" fetch="select">
             <column name="NB_AUT_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
+        <property name="vrAccion" type="string">
+            <column name="VR_ACCION" length="20" not-null="true" />
+        </property>
+        <property name="vrDetalles" type="string">
+            <column name="VR_DETALLES" />
+        </property>
+        <property name="vrAdtusuario" type="string">
+            <column name="VR_ADTUSUARIO" length="10" not-null="true" />
+        </property>
+        <property name="dtAdtfecha" type="date">
+            <column name="DT_ADTFECHA" length="7" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>
