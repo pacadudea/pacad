@@ -11,6 +11,9 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Label;
@@ -27,6 +30,7 @@ import com.proint1.udea.produccion.dto.TipoProduccionxGrupo;
 import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
+import com.proint1.udea.produccion.entidades.TbPrdTipoproduccion;
 import com.proint1.udea.produccion.ngc.GrupoInvestigacionService;
 import com.proint1.udea.produccion.util.ControlMensajes;
 import com.proint1.udea.produccion.util.ProduccionBLException;
@@ -124,7 +128,7 @@ public class DetalleGruposInvestigacionCtl extends GenericForwardComposer implem
 					if (tipoP.getTipo().getVrDescripcion().equals(tipo)){
 						tipoP.setCantidad(tipoP.getCantidad() + 1);
 						break;
-					}
+					}	
 				}
 			}else{
 				TipoProduccionxGrupo nuevTipo = new TipoProduccionxGrupo();
@@ -158,6 +162,7 @@ public class DetalleGruposInvestigacionCtl extends GenericForwardComposer implem
 		Listcell cellTipo = new Listcell();
 		cellTipo.setLabel(t.getTipo().getVrDescripcion());
 		cellTipo.setStyle(estiloLink);
+		cellTipo.addEventListener(Events.ON_CLICK, new irDetalleTipo(t.getGrupo() , t.getTipo()));
 		
 		Listcell cellCantidad = new Listcell();
 		cellCantidad.setLabel(t.getCantidad()+"");
@@ -174,17 +179,7 @@ public class DetalleGruposInvestigacionCtl extends GenericForwardComposer implem
 		}
 		return false;
 	}
-	
-	
-	private List<TipoProduccionxGrupo> crearLisa(List<TipoProduccionxGrupo> lista, String tipo){
 		
-		
-		
-		
-		return null;
-	}
-	
-	
 	public void onClick$lbAuxiliar(){
 		TbPrdAutor auxiliar; 
 		auxiliar = (TbPrdAutor) this.grupoSeleccionado.getTbAdmPersonaByNbAuxiliar().getTbPrdAutors().iterator().next();
@@ -195,6 +190,7 @@ public class DetalleGruposInvestigacionCtl extends GenericForwardComposer implem
 		director = (TbPrdAutor) this.grupoSeleccionado.getTbAdmPersonaByNbDirector().getTbPrdAutors().iterator().next();
 		this.irDetalleAutor(director);
 	}
+	
 	
 	public void irDetalleAutor(TbPrdAutor autor){
 		Map args = new HashMap<>();
@@ -223,4 +219,36 @@ public class DetalleGruposInvestigacionCtl extends GenericForwardComposer implem
 			GrupoInvestigacionService grupoInvestigacionService) {
 		this.grupoInvestigacionService = grupoInvestigacionService;
 	}
+
+	private class irDetalleTipo implements EventListener {
+	
+		private TbPrdGrupoinvestigacion grupo;
+		private TbPrdTipoproduccion tipo;
+		
+		public irDetalleTipo(TbPrdGrupoinvestigacion agrupo, TbPrdTipoproduccion atipo){
+			this.grupo = agrupo;
+			this.tipo = atipo;
+		}
+	
+		public void onEvent(Event event){	
+			Map args = new HashMap<>();
+			args.put("grupo", grupo);
+			args.put("tipo", tipo);
+	
+			java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/detalleGrupoXTipoProd.zul") ;
+			java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+	
+			Window window;
+			try {
+				Div divCenter = VistasZk.obtenerDivCenter(winDetalleGrupoInvestigacion);
+				divCenter.getChildren().clear();
+				window= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,args) ;	
+				window.doEmbedded();
+			} catch (IOException e) {
+				System.err.println("ERROR ENVIANDO");
+				e.printStackTrace();
+			}
+		}
+	}
+
 }
