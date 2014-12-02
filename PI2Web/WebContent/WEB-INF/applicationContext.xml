@@ -47,6 +47,12 @@
 				<value>com/proint1/udea/produccion/mapeo/TbPrdProduccion.hbm.xml</value>
 				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccion.hbm.xml</value>
 				<value>com/proint1/udea/produccion/mapeo/TbPrdTipoproduccionesxcampo.hbm.xml</value>
+				
+				<value>com/proint1/udea/administracion/mapeo/seguridad/TbAdmPermisosxrol.hbm.xml</value>
+				<value>com/proint1/udea/administracion/mapeo/seguridad/TbAdmRecurso.hbm.xml</value>
+				<value>com/proint1/udea/administracion/mapeo/seguridad/TbAdmRol.hbm.xml</value>
+				<value>com/proint1/udea/administracion/mapeo/seguridad/TbAdmUsuario.hbm.xml</value>
+				<value>com/proint1/udea/administracion/mapeo/seguridad/TbAdmUsuarioxrol.hbm.xml</value>
 
 			</list>
 		</property>

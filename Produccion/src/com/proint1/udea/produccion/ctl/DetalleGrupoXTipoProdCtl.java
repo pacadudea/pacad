@@ -25,6 +25,7 @@ import org.zkoss.zul.ListitemRenderer;
 import org.zkoss.zul.Window;
 import org.zkoss.zul.ext.Selectable;
 
+import com.proint1.udea.produccion.entidades.TbPrdAutor;
 import com.proint1.udea.produccion.entidades.TbPrdAutoresxproduccion;
 import com.proint1.udea.produccion.entidades.TbPrdGrupoinvestigacion;
 import com.proint1.udea.produccion.entidades.TbPrdProduccion;
@@ -62,9 +63,31 @@ public class DetalleGrupoXTipoProdCtl extends GenericForwardComposer  implements
 		}
 	}
 	
+	
+	
 	public void onCreate() throws ProduccionDAOException, ProduccionBLException, ProduccionIWException {
 		this.cargarCampos();
+		this.cargarDatos(tipoProduccion, grupoInvestigacion);
 	}
+	
+	public void cargarDatos(TbPrdTipoproduccion tp, TbPrdGrupoinvestigacion g){
+		List<TbPrdProduccion>datos = new ArrayList<TbPrdProduccion>();
+		
+		Set lista = g.getTbPrdAutoresxproduccions();
+		for (Iterator iterator = lista.iterator(); iterator.hasNext();) {
+			TbPrdAutoresxproduccion ap = (TbPrdAutoresxproduccion) iterator.next();
+			
+			TbPrdProduccion p = ap.getTbPrdProduccion();
+			if (p.getTbPrdTipoproduccion().getVrDescripcion().equals(tp.getVrDescripcion())){
+				datos.add(p);
+			}
+		}
+		this.listboxProducciones.setModel(new ListModelList<TbPrdProduccion>(datos));
+		this.listboxProducciones.setItemRenderer(this);
+		
+	}
+	
+	
 	
 	/**
 	 * 
@@ -73,6 +96,7 @@ public class DetalleGrupoXTipoProdCtl extends GenericForwardComposer  implements
 		//Titulo grupo seleccionado
 		this.lbGrupo.setValue(this.grupoInvestigacion.getVrNombre());
 		//Tipos de las producciones del Grupo
+		
 		List<TbPrdTipoproduccion>tipos = new ArrayList<TbPrdTipoproduccion>();
 		
 		try{	
@@ -99,7 +123,14 @@ public class DetalleGrupoXTipoProdCtl extends GenericForwardComposer  implements
 	 * @throws ProduccionIWException
 	 */
 	public void onSelect$listboxTiposProd() throws ProduccionIWException  {
-		Set<TbPrdTipoproduccion> tipoSeleccion =((Selectable<TbPrdTipoproduccion>)listboxTiposProd.getModel()).getSelection();
+		Set<TbPrdTipoproduccion> selection = ((Selectable<TbPrdTipoproduccion>) listboxTiposProd
+				.getModel()).getSelection();
+		TbPrdTipoproduccion t = selection.iterator().next();
+		
+		this.cargarDatos(t, this.grupoInvestigacion);
+		
+		
+		/*Set<TbPrdTipoproduccion> tipoSeleccion =((Selectable<TbPrdTipoproduccion>)listboxTiposProd.getModel()).getSelection();
 		Set autoresXprod = this.grupoInvestigacion.getTbPrdAutoresxproduccions();
 		for(Iterator iterator = autoresXprod.iterator(); iterator.hasNext();){
 			TbPrdAutoresxproduccion autorxPr =(TbPrdAutoresxproduccion) iterator.next();
@@ -112,7 +143,7 @@ public class DetalleGrupoXTipoProdCtl extends GenericForwardComposer  implements
 			}
 		}
 		this.listboxProducciones.setModel(new ListModelList<TbPrdProduccion>(producciones));
-		//this.listboxProducciones.setItemRenderer(this);
+		//this.listboxProducciones.setItemRenderer(this);*/
 	}
 
 	

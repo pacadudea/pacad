@@ -3,8 +3,8 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="TbAdmPermisosxrol" table="TB_ADM_PERMISOSXROL" schema="PROINT1">
-        <composite-id name="id" class="TbAdmPermisosxrolId">
+    <class name="com.proint1.udea.administracion.entidades.seguridad.PermisoRol" table="TB_ADM_PERMISOSXROL" schema="PROINT1">
+        <composite-id name="id" class="com.proint1.udea.administracion.entidades.seguridad.PermisoRolId">
             <key-property name="nbPxrIdn" type="long">
                 <column name="NB_PXR_IDN" precision="10" scale="0" />
             </key-property>
@@ -27,10 +27,10 @@
                 <column name="BN_PXR_ACTUALIZAR" length="1" />
             </key-property>
         </composite-id>
-        <many-to-one name="tbAdmRecurso" class="TbAdmRecurso" update="false" insert="false" fetch="select">
+        <many-to-one name="tbAdmRecurso" class="com.proint1.udea.administracion.entidades.seguridad.Recurso" update="false" insert="false" fetch="select"  lazy="false">
             <column name="NB_REC_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbAdmRol" class="TbAdmRol" update="false" insert="false" fetch="select">
+        <many-to-one name="tbAdmRol" class="com.proint1.udea.administracion.entidades.seguridad.Rol" update="false" insert="false" fetch="select" lazy="false">
             <column name="NB_ROL_IDN" precision="22" scale="0" not-null="true" />
         </many-to-one>
     </class>

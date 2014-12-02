@@ -59,7 +59,7 @@
 								${c:l('pacad.form.gestionAutores.tipoId')}
 								<listbox id="ltbTipoId" tabindex="2" 
 									width="50%" rows="1" mold="select" height="20px"/>
-								${c:l('pacad.form.gestionAutores.foto')}
+								
 							</row>
 							<row>
 								<x:span class="requerido">*</x:span>
@@ -107,7 +107,7 @@
 									
 
 		<hbox> 
-			<button label="Cargar imagen" upload="true" id="btnGuardarImagen">
+			<button label="Cargar" upload="true" id="btnGuardarImagen">
 <!-- 			<attribute name="onUpload">{ -->
 <!-- 				org.zkoss.util.media.Media media = event.getMedia(); -->
 <!-- 				if (media instanceof org.zkoss.image.Image) { -->
@@ -119,7 +119,7 @@
 <!-- 					break; -->
 <!-- 				} -->
 <!-- 			}</attribute> -->
-		</button>
+		</button><button label="Eliminar" />
 	</hbox>
 <!-- <vbox id="imagen" width="20px" height="20px" /> -->
 
@@ -127,7 +127,7 @@
     
     
     
-									<button label="Eliminar foto" />
+									
 								</cell>
 							</row>
 						</rows>

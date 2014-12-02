@@ -7,19 +7,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.zkoss.image.AImage;
+import org.zkoss.lang.Library;
+import org.zkoss.util.Locales;
 import org.zkoss.util.media.Media;
 import org.zkoss.util.resource.Labels;
+import org.zkoss.web.Attributes;
 import org.zkoss.zhtml.Messagebox;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.WrongValueException;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.UploadEvent;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Constraint;
@@ -125,6 +130,7 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	 */
 	public void onClick$btnGuardar() throws WrongValueException,
 			ProduccionBLException, ProduccionIWException {
+		
 		// Validaciones adicionales
 		if (ltbTipoId.getSelectedItem() == null) {
 			throw new WrongValueException(ltbTipoId,

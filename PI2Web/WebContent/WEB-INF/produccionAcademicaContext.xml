@@ -16,6 +16,12 @@
 		</property>
 	</bean>
 	
+	<bean id="usuarioDAO" class="com.proint1.udea.produccion.dao.impl.UsuarioDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="factory"  />
+		</property>
+	</bean>
+	
 	<bean id="campoDAO" class="com.proint1.udea.produccion.dao.impl.CampoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="factory"  />
@@ -47,6 +53,10 @@
 	    <property name="tipoIdentificacionDAO" ref="tipoIdentificacionDAO"></property>
 	    <property name="personaDAO" ref="personaDAO"></property>
 	    <property name="paisDAO" ref="paisDAO"></property>
+	</bean>
+	
+	<bean id="usuarioService" class="com.proint1.udea.produccion.ngc.impl.UsuarioServiceImpl">
+	    <property name="usuarioDAO" ref="usuarioDAO"></property>
 	</bean>
 	
 	<bean id="campoService" class="com.proint1.udea.produccion.ngc.impl.CampoServiceImpl">
@@ -115,6 +125,10 @@
 	
 	<bean id="filterProduccionesCtl" class="com.proint1.udea.produccion.ctl.FilterProduccionesCtl" scope="prototype">
 		<property name="produccionService" ref="produccionService"></property>   
+	</bean>
+	
+	<bean id="loginCtl" class="com.proint1.udea.produccion.ctl.LoginCtl" scope="prototype">
+		<property name="usuarioService" ref="usuarioService"></property>   
 	</bean>
 	
 	<bean id="ensayoCtl" class="com.proint1.udea.produccion.ctl.ensayoCtl" scope="prototype">

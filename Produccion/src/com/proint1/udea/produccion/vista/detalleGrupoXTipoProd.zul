@@ -13,7 +13,7 @@
 						
 			<groupbox height="100%" width="100%" closable="false">
 			${c:l('pacad.form.producciones.tipo')}
-			<listbox id="listboxTiposProd" tabindex="2" width="50%" rows="10" mold="select" height="20px">
+			<listbox id="listboxTiposProd" tabindex="2" width="50%" rows="1" mold="select" height="20px">
 				<template name="model">
 					<listitem>
 				        <listcell label="${each.vrDescripcion}"></listcell>
@@ -25,13 +25,8 @@
 					<listheader label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.producciones')}" width="40%" />
 					<listheader	label="${c:l('pacad.form.consulta.dimanimaProducciones.encabezado.fechaPublicacion')}" width="15%"/>
 				</listhead>
-			 <!--	
-				<template name="model">
-					<listitem> -->
-				       <!-- <listcell label="${each.vrNombreproduccion}"></listcell>-->
-				       <!-- <listcell label="${each.dtFechapublicacion}"></listcell>-->
-			 <!--	    </listitem>
-				</template> -->
+			 	
+				
 				
 			</listbox>
 		</groupbox>
