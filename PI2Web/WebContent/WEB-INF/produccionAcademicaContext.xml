@@ -129,6 +129,7 @@
 	
 	<bean id="detalleTipoProduccionCtl" class="com.proint1.udea.produccion.ctl.DetalleTipoProduccionCtl" scope="prototype"/>
 	
+	<bean id="detalleGrupoXTipoProdCtl" class="com.proint1.udea.produccion.ctl.DetalleGrupoXTipoProdCtl" scope="prototype"/>
 	
 	<bean id="detalleGruposInvestigacionCtl" class="com.proint1.udea.produccion.ctl.DetalleGruposInvestigacionCtl" scope="prototype">
 	    <property name="grupoInvestigacionService" ref="grupoInvestigacionService"></property>
