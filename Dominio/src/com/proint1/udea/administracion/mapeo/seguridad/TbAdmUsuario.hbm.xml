@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="TbAdmUsuario" table="TB_ADM_USUARIO" schema="PROINT1">
+    <class name="com.proint1.udea.administracion.entidades.seguridad.Usuario" table="TB_ADM_USUARIO" schema="PROINT1">
         <id name="nbUsuIdn" type="long">
             <column name="NB_USU_IDN" precision="10" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbAdmPersona" class="TbAdmPersona" fetch="select">
+        <many-to-one name="tbAdmPersona" class="com.proint1.udea.administracion.entidades.terceros.TbAdmPersona" fetch="select" lazy="false">
             <column name="NB_PER_IDN" precision="10" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrUsuLogin" type="string">
@@ -17,11 +17,11 @@
         <property name="nbUsuActivo" type="long">
             <column name="NB_USU_ACTIVO" precision="10" scale="0" not-null="true" />
         </property>
-        <set name="tbAdmUsuarioxrols" table="TB_ADM_USUARIOXROL" inverse="true" lazy="true" fetch="select">
+        <set name="tbAdmUsuarioxrols" table="TB_ADM_USUARIOXROL" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_USU_IDN" precision="10" scale="0" not-null="true" />
             </key>
-            <one-to-many class="TbAdmUsuarioxrol" />
+            <one-to-many class="com.proint1.udea.administracion.entidades.seguridad.UsuarioRol" />
         </set>
     </class>
 </hibernate-mapping>

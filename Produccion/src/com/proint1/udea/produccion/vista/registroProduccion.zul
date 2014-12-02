@@ -49,17 +49,22 @@
 					<label value="${c:l('pacad.form.producciones.selecionTipo')}" />
 					<listbox id="ltbTipoProduccion" tabindex="2" width="20"
 							rows="1" mold="select" height="2opx">
+							
+							<template name="model">
+							<listitem>
+								<listcell
+									label="${each.vrDescripcion}"> 
+								</listcell>
+							</listitem>
+						</template>
 					</listbox>
 					
-					<grid>
+					<grid id="gridCampos">
 						<columns>
 							<column width="50%" label="${c:l('pacad.form.producciones.campo')}" sort="auto" />
 							<column width="50%" label="${c:l('pacad.form.producciones.informacion')}" />
 						</columns>
 						<rows>
-							<row>
-								
-							</row>														
 						</rows>
 					</grid>
 					<separator height="20px;"/>

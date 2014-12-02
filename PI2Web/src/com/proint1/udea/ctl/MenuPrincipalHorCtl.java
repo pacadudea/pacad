@@ -2,21 +2,28 @@ package com.proint1.udea.ctl;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Locale;
 
 import org.apache.log4j.Logger;
+import org.zkoss.lang.Library;
+import org.zkoss.web.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Menu;
 import org.zkoss.zul.Window;
 
 import com.proint1.udea.produccion.util.ProduccionException;
+import com.proint1.udea.produccion.util.Seguridad;
 
 public class MenuPrincipalHorCtl  extends GenericForwardComposer{
 	
 	Div divCenter;
-	 
+	Menu menuConsultas;
+	Menu menuAdmin;
+	
 	private static Logger logger=Logger.getLogger(MenuPrincipalHorCtl.class);
 	
 	public void onCreate(){
@@ -24,6 +31,18 @@ public class MenuPrincipalHorCtl  extends GenericForwardComposer{
 
 	public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
+        
+        System.out.println("CARGANDO PRINCIPAL");
+        Seguridad.cargarPagina(self);
+        
+        boolean admin = Seguridad.accesoAdministrador();
+        if (!admin){
+        	this.menuAdmin.detach();
+        }
+        
+       
+        
+        
         logger.info("cargando MenuPrincipalHorCtl");     
    }
 	
@@ -179,5 +198,10 @@ public class MenuPrincipalHorCtl  extends GenericForwardComposer{
 		} catch (IOException e) {
 			throw new ProduccionException("ERROR :: No se encuentra la vista de gestion de miembros de producción" + e.getMessage());
 		}	
-	}	
+	}
+	                    						
+	public void onClick$mCerrarSesion() throws ProduccionException {
+		System.out.println("#cerrando");
+		Seguridad.cerrarSesion();	
+	}
 }

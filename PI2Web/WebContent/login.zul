@@ -1,0 +1,49 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Ingreso al sistema UDEA" contentType="text/html;charset=UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<zk xmlns:n="native" xmlns:x="xhtml" xmlns:zk="zk">
+
+<?link rel="stylesheet" type="text/css"	href="/style/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/style/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css" href="/style/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"	href="/style/grey.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"	href="/style/menu.css"?>
+
+
+<style src="/css/estilos2.css" />
+<div apply="${loginCtl}">
+	<div sclass="cabeza">
+		<div align="center"><image src="img/logoUdea.png" style="margin:auto; width:10%" /></div> 
+	</div>
+	
+	
+
+	
+	<div width="400px;" style="margin-left:40%;margin-top:5%;" sclass="efecto2">
+	<label value="Datos de ingreso" sclass="tituloBlack"/>
+	<grid width="100%">
+			<columns>
+				<column width="30%" />
+				<column width="70%" />
+			</columns>
+			<rows sclass="narrow">
+				<row>
+					${c:l('pacad.texto.usuario')}
+					<textbox id="txtUsuario" tabindex="1" constraint="no empty : ${c:l('error.sinUsuario')}" />
+				</row>
+				<row>
+					${c:l('pacad.texto.contraseña')}
+					<textbox id="txtPass" type="password" tabindex="2" constraint="no empty : ${c:l('error.sinPass')}" />
+				</row>
+			</rows>
+		</grid>
+	</div>
+	
+	<div width="400px;" style="margin-left:40%;margin-top:1%;">
+		<div align="center"><button id="btnIngresar" label="${c:l('pacad.boton.ingresar')}" tabindex="3" sclass="miBoton"/>
+		</div>
+	</div>
+	
+
+</div>
+</zk>
