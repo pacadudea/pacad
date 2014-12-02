@@ -2,11 +2,11 @@ package com.proint1.udea.ctl;
 
 import org.apache.log4j.Logger;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
 
-
-import org.zkoss.zk.ui.*;
+import com.proint1.udea.produccion.util.Seguridad;
 
 public class PrincipalCtl extends GenericForwardComposer{
 	
@@ -19,7 +19,8 @@ public class PrincipalCtl extends GenericForwardComposer{
 	
 	public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
-        logger.info("cargando PrincipalCtl");    
+        
+        
         
         Sessions.getCurrent().setAttribute("divPrincipalCtl", divCenter);
    }

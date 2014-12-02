@@ -104,9 +104,7 @@ public class DetalleAutorCtl extends GenericForwardComposer implements ListitemR
 	private void cargarProducciones(){
 		try {
 			List<TbPrdProduccion> listaProds = new ArrayList<TbPrdProduccion>();
-			System.err.println("CARGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 1");
 			Set <TbPrdAutoresxproduccion>producciones =  this.autor.getTbPrdAutoresxproduccions();
-			System.err.println("CARGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 2");
 			for (TbPrdAutoresxproduccion prodsxautor : producciones) {
 				TbPrdProduccion prod = prodsxautor.getTbPrdProduccion();
 				listaProds.add(prod);

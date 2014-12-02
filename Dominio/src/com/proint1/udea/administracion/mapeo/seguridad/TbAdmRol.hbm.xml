@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 10-may-2014 11:58:30 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="TbAdmRol" table="TB_ADM_ROL" schema="PROINT1">
+    <class name="com.proint1.udea.administracion.entidades.seguridad.Rol" table="TB_ADM_ROL" schema="PROINT1">
         <id name="nbRolIdn" type="big_decimal">
             <column name="NB_ROL_IDN" precision="22" scale="0" />
             <generator class="assigned" />
@@ -11,17 +11,17 @@
         <property name="vrRolNombre" type="string">
             <column name="VR_ROL_NOMBRE" length="200" not-null="true" />
         </property>
-        <set name="tbAdmUsuarioxrols" table="TB_ADM_USUARIOXROL" inverse="true" lazy="true" fetch="select">
+        <set name="tbAdmUsuarioxrols" table="TB_ADM_USUARIOXROL" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_ROL_IDN" precision="22" scale="0" not-null="true" />
             </key>
-            <one-to-many class="TbAdmUsuarioxrol" />
+            <one-to-many class="com.proint1.udea.administracion.entidades.seguridad.UsuarioRol" />
         </set>
-        <set name="tbAdmPermisosxrols" table="TB_ADM_PERMISOSXROL" inverse="true" lazy="true" fetch="select">
+        <set name="tbAdmPermisosxrol" table="TB_ADM_PERMISOSXROL" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="NB_ROL_IDN" precision="22" scale="0" not-null="true" />
             </key>
-            <one-to-many class="TbAdmPermisosxrol" />
+            <one-to-many class="com.proint1.udea.administracion.entidades.seguridad.PermisoRol" />
         </set>
     </class>
 </hibernate-mapping>

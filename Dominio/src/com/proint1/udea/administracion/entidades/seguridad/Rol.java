@@ -14,7 +14,7 @@ public class Rol implements java.io.Serializable {
 	private BigDecimal nbRolIdn;
 	private String vrRolNombre;
 	private Set tbAdmUsuarioxrols = new HashSet(0);
-	private Set tbAdmPermisosxrols = new HashSet(0);
+	private Set tbAdmPermisosxrol = new HashSet(0);
 
 	public Rol() {
 	}
@@ -29,7 +29,7 @@ public class Rol implements java.io.Serializable {
 		this.nbRolIdn = nbRolIdn;
 		this.vrRolNombre = vrRolNombre;
 		this.tbAdmUsuarioxrols = tbAdmUsuarioxrols;
-		this.tbAdmPermisosxrols = tbAdmPermisosxrols;
+		this.tbAdmPermisosxrol = tbAdmPermisosxrols;
 	}
 
 	public BigDecimal getNbRolIdn() {
@@ -56,12 +56,12 @@ public class Rol implements java.io.Serializable {
 		this.tbAdmUsuarioxrols = tbAdmUsuarioxrols;
 	}
 
-	public Set getTbAdmPermisosxrols() {
-		return this.tbAdmPermisosxrols;
+	public Set getTbAdmPermisosxrol() {
+		return tbAdmPermisosxrol;
 	}
 
-	public void setTbAdmPermisosxrols(Set tbAdmPermisosxrols) {
-		this.tbAdmPermisosxrols = tbAdmPermisosxrols;
+	public void setTbAdmPermisosxrol(Set tbAdmPermisosxrol) {
+		this.tbAdmPermisosxrol = tbAdmPermisosxrol;
 	}
 
 }

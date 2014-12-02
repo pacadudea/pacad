@@ -25,17 +25,17 @@
 		</menu>
 		<menu label="Producciones Académicas">
 			<menupopup>
-				<menu label="Administración" onClick="alert(self.label)">
+				<menu label="Administración" id="menuAdmin" onClick="alert(self.label)">
 					<menupopup>
 						<menuitem label="Gestion Grupos" id="gestionGrupoMenu" />
 						<menuitem label="${c:l('pacad.menu.producciones.gestionMiembros')}" id="gestionMiembros" />
 						<menuitem label="Gestion Autores" id="gestionAutoresMenu" />
-						<menuitem label="Gestion Tipos de Produccion" id="gestionTipoProduccionMenu" />
+<!-- 						<menuitem label="Gestion Tipos de Produccion" id="gestionTipoProduccionMenu" /> -->
 						<menuitem label="Gestion Producciones" id="gestionProduccionMenu" />
 					</menupopup>
 				</menu>
 				
-				<menu label="Consultas" >
+				<menu label="Consultas" id="menuConsultas">
 					<menupopup>
 					<menuitem label="Consulta interactiva" id="consultaInteractiva" />
 					<menuitem label="Consulta grupos investigación" id="consultaGrupos" />
@@ -47,7 +47,11 @@
 						
 					</menupopup>
 				</menu>
-						
+				
+				<menuseparator/>
+				<menuitem label="Cerrar Sesión" id="mCerrarSesion">
+					
+				</menuitem>						
 				
 			</menupopup>
 		</menu>
