@@ -35,7 +35,7 @@
 				
 			<div width="99%" height="98%" style="overflow: auto">
 				<label value="${c:l('pacad.texto.grupoInv')}: " zclass="titulo1"/>
-				<label value="AQUI GRUPO" id="lbNombreGrupo" sclass="titulo2"/>
+				<label value="SELECCIONE UN GRUPO" id="lbNombreGrupo" sclass="titulo2"/>
 		
 			<grid>
 				<columns>

@@ -402,11 +402,9 @@ public class gestionAutoresCtl extends GenericForwardComposer {
 	 */
 	private void cargarTipoDocumentos() throws ProduccionIWException {
 		try {
-			List<TbAdmTipoIdentificacion> tipos = tipoIdentificacionService
-					.listar();
+			List<TbAdmTipoIdentificacion> tipos = tipoIdentificacionService.listar();
 			for (TbAdmTipoIdentificacion tipo : tipos) {
-				ltbTipoId.appendChild(new Listitem(tipo.getVrDescripcion(),
-						tipo.getNbIdn()));
+				ltbTipoId.appendChild(new Listitem(tipo.getVrDescripcion(),tipo.getNbIdn()));
 			}
 		} catch (Exception e) {
 			throw new ProduccionIWException(
