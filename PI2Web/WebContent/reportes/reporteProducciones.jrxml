@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteProducciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7caed91e-20e7-4ba2-98ce-c4bc41d6d297">
 	<property name="ireport.zoom" value="1.6500000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="135"/>
 	<subDataset name="dataset1" uuid="5513a88b-aa71-44d9-bb2f-1c20e9d8b103"/>
 	<subDataset name="dataset2" uuid="6f49c6d2-c8b0-4dcf-9069-3d4a9c753fe6"/>
 	<subDataset name="dataset3" uuid="1ff5be24-df4b-4d2e-aa82-36b7e51aada0"/>
@@ -57,7 +57,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="213" splitType="Stretch">
+		<band height="264" splitType="Stretch">
 			<rectangle>
 				<reportElement x="4" y="62" width="159" height="137" uuid="8884c7bd-f136-4b9e-bbbd-48153b9ab7cd"/>
 			</rectangle>
@@ -100,7 +100,7 @@
 				<textFieldExpression><![CDATA[$F{autores}.replace(";","\n")]]></textFieldExpression>
 			</textField>
 			<rectangle>
-				<reportElement x="164" y="62" width="379" height="137" uuid="93be1f2e-9b2d-4a61-bcbc-4ed0b83c3387"/>
+				<reportElement x="164" y="62" width="379" height="202" uuid="93be1f2e-9b2d-4a61-bcbc-4ed0b83c3387"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="191" y="74" width="116" height="20" uuid="db465c52-ec0c-4856-b217-f931586eda68"/>
@@ -111,7 +111,7 @@
 			</staticText>
 			<textField>
 				<reportElement x="299" y="75" width="100" height="20" uuid="583be62b-3cdf-4cde-8248-460de46e4c38"/>
-				<textFieldExpression><![CDATA[$F{fechaPublicacion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{fechaPublicacion}.replace("null","No diligenciado")]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="191" y="95" width="100" height="20" uuid="799d0153-e706-482a-b5ee-e24ac282f6e9"/>
@@ -122,7 +122,7 @@
 			</staticText>
 			<textField>
 				<reportElement x="300" y="95" width="100" height="20" uuid="e1c106da-e6f6-411d-87c3-4a1ba20557bd"/>
-				<textFieldExpression><![CDATA[$F{urlProduccion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{urlProduccion}.replace("null","No diligenciado")]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="193" y="117" width="100" height="20" uuid="f85d9c5e-db6e-45f9-be16-17505830a9e0"/>
@@ -133,7 +133,7 @@
 			</staticText>
 			<textField>
 				<reportElement x="300" y="117" width="100" height="20" uuid="9ea76e54-272b-475d-97be-b2206f54d2a9"/>
-				<textFieldExpression><![CDATA[$F{doiProduccion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{doiProduccion}.replace("null","No diligenciado")]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="190" y="139" width="100" height="20" uuid="0dc28909-5e79-48ff-96ac-02d7003d74e2"/>
@@ -143,8 +143,8 @@
 				<text><![CDATA[Detalles producción:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="299" y="139" width="171" height="47" uuid="ee965c6d-411b-429f-a8cc-eeda8ed23979"/>
-				<textFieldExpression><![CDATA[$F{detalles}.replace(";","-").replace("-","\n")]]></textFieldExpression>
+				<reportElement x="299" y="139" width="222" height="114" uuid="ee965c6d-411b-429f-a8cc-eeda8ed23979"/>
+				<textFieldExpression><![CDATA[$F{detalles}.replace(";",": ").replace("-","\n").replace("null","No diligenciado")]]></textFieldExpression>
 			</textField>
 			<rectangle radius="10">
 				<reportElement x="290" y="3" width="253" height="31" uuid="c56ea2b2-3507-4ca5-9f55-f15874750b47"/>

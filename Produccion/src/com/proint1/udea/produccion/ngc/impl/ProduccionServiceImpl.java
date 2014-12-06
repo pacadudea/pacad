@@ -87,8 +87,8 @@ public class ProduccionServiceImpl implements ProduccionService {
 		String detalle = "";
 		for( Iterator it = tbDetalleProds.iterator(); it.hasNext();) { 
 			TbPrdDetalleproducciones detalleProd = (TbPrdDetalleproducciones) it.next();
-			detalle = detalle + detalleProd.getTbPrdTipoproduccionesxcampo().getTbPrdCampos().getVrTipocampo() + ";";
-			detalle = detalle + detalleProd.getTbPrdTipoproduccionesxcampo().getTbPrdCampos().getVrDescripcion() + "-";
+			detalle = detalle + detalleProd.getTbPrdTipoproduccionesxcampo().getTbPrdCampos().getVrDescripcion() + ";";
+			detalle = detalle + detalleProd.getVrValor() + "-";
 		}
 		System.out.println("Detalle --->" + detalle);
 		return detalle;
