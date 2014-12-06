@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteProducciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7caed91e-20e7-4ba2-98ce-c4bc41d6d297">
+	<property name="ireport.zoom" value="1.6500000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="135"/>
+	<subDataset name="dataset1" uuid="5513a88b-aa71-44d9-bb2f-1c20e9d8b103"/>
+	<subDataset name="dataset2" uuid="6f49c6d2-c8b0-4dcf-9069-3d4a9c753fe6"/>
+	<subDataset name="dataset3" uuid="1ff5be24-df4b-4d2e-aa82-36b7e51aada0"/>
+	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
+	<parameter name="TOTALPRODUCCIONES" class="java.lang.String"/>
+	<parameter name="PROYECTO" class="java.lang.String"/>
+	<field name="nombreProduccion" class="java.lang.String"/>
+	<field name="tipoProduccion" class="java.lang.String"/>
+	<field name="autores" class="java.lang.String"/>
+	<field name="fechaPublicacion" class="java.lang.String"/>
+	<field name="urlProduccion" class="java.lang.String"/>
+	<field name="doiProduccion" class="java.lang.String"/>
+	<field name="detalles" class="java.lang.String"/>
+	<field name="grupoInvestigacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<rectangle>
+				<reportElement x="182" y="38" width="161" height="20" uuid="74d5c0b5-68bd-45ce-b4b3-51de1b5c56fb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="123" y="0" width="315" height="31" uuid="0131692b-9736-4a26-873c-b9e6329ca1cb"/>
+			</rectangle>
+			<image>
+				<reportElement x="13" y="0" width="150" height="81" uuid="77d45470-56c8-4cf8-945f-d5b4f2c69204"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Desktop\\udea1.gif.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="207" y="1" width="231" height="20" uuid="b7e56a1f-3892-46ea-8159-58826543e6b8"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOMBREEMPRESA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="42" width="140" height="20" uuid="78123859-4e1e-46eb-abbc-6c97f76446d9"/>
+				<textFieldExpression><![CDATA[$P{TOTALPRODUCCIONES}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="42" width="136" height="20" uuid="0fd7c5a4-e66c-4a08-bdc9-8093202a981d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Producciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="207" y="16" width="155" height="20" uuid="460aba65-c865-40b7-80a7-12c0405f53b1"/>
+				<textFieldExpression><![CDATA[$P{PROYECTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="264" splitType="Stretch">
+			<rectangle>
+				<reportElement x="4" y="62" width="159" height="137" uuid="8884c7bd-f136-4b9e-bbbd-48153b9ab7cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="5" y="62" width="158" height="20" uuid="611c7bab-68d5-4913-88d5-33d9740191b6"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="4" y="3" width="254" height="31" backcolor="#CCCCCC" uuid="feeb1de1-999e-4f18-bb5c-cf5323f80bcc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="9" y="9" width="122" height="20" uuid="70dfc75e-9846-44ce-ab83-e7c2ce052800"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Producción: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="12" width="99" height="22" uuid="783cd5f8-d682-4a24-9088-b462efead7ac"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoProduccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="42" width="204" height="20" uuid="a7478118-7ebc-4cfe-8530-ab7a8c86dfff"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProduccion}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="64" y="66" width="100" height="20" uuid="a080b2ce-9c3a-4879-b62e-b83d567724da"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autores]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="92" width="161" height="72" uuid="70f3fdfd-b868-47a6-aada-305fbd705f69"/>
+				<textFieldExpression><![CDATA[$F{autores}.replace(";","\n")]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="164" y="62" width="379" height="202" uuid="93be1f2e-9b2d-4a61-bcbc-4ed0b83c3387"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="191" y="74" width="116" height="20" uuid="db465c52-ec0c-4856-b217-f931586eda68"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Publicación: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="299" y="75" width="100" height="20" uuid="583be62b-3cdf-4cde-8248-460de46e4c38"/>
+				<textFieldExpression><![CDATA[$F{fechaPublicacion}.replace("null","No diligenciado")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="191" y="95" width="100" height="20" uuid="799d0153-e706-482a-b5ee-e24ac282f6e9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[URL Producción:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="95" width="100" height="20" uuid="e1c106da-e6f6-411d-87c3-4a1ba20557bd"/>
+				<textFieldExpression><![CDATA[$F{urlProduccion}.replace("null","No diligenciado")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="193" y="117" width="100" height="20" uuid="f85d9c5e-db6e-45f9-be16-17505830a9e0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOI: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="117" width="100" height="20" uuid="9ea76e54-272b-475d-97be-b2206f54d2a9"/>
+				<textFieldExpression><![CDATA[$F{doiProduccion}.replace("null","No diligenciado")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="139" width="100" height="20" uuid="0dc28909-5e79-48ff-96ac-02d7003d74e2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalles producción:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="299" y="139" width="222" height="114" uuid="ee965c6d-411b-429f-a8cc-eeda8ed23979"/>
+				<textFieldExpression><![CDATA[$F{detalles}.replace(";",": ").replace("-","\n").replace("null","No diligenciado")]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="290" y="3" width="253" height="31" uuid="c56ea2b2-3507-4ca5-9f55-f15874750b47"/>
+			</rectangle>
+			<textField>
+				<reportElement x="300" y="9" width="221" height="20" uuid="2223dfcc-6d3a-4565-88dc-5fdbc5c24dad"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grupoInvestigacion}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="188" y="42" width="63" height="20" uuid="3164cc82-a473-4752-8149-37469533da55"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
