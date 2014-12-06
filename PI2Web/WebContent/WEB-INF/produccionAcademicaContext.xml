@@ -149,10 +149,6 @@
 	    <property name="grupoInvestigacionService" ref="grupoInvestigacionService"></property>
 	</bean>
 	
-	<bean id="reporteProduccionesCtl" class="com.proint1.udea.produccion.ctl.ReporteProduccionCtl" scope="prototype">
-	    <property name="produccionService" ref="produccionService"></property>
-	    <property name="grupoInvestigacionService" ref="grupoInvestigacionService"></property>
-	</bean>
 	
 	<bean id="employeeDialogController" class="com.proint1.udea.produccion.ctl.EmployeeDialogController" scope="prototype">
 		<property name="produccionService" ref="produccionService"></property>     
