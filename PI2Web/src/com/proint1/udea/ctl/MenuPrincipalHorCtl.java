@@ -199,6 +199,18 @@ public class MenuPrincipalHorCtl  extends GenericForwardComposer{
 			throw new ProduccionException("ERROR :: No se encuentra la vista de gestion de miembros de producción" + e.getMessage());
 		}	
 	}
+	
+	public void onClick$reportes() throws IOException{
+		if(divCenter==null){
+			divCenter = (Div)Sessions.getCurrent().getAttribute("divPrincipalCtl");
+		}
+		divCenter.getChildren().clear();
+		java.io.InputStream zulInput = this.getClass().getClassLoader().getResourceAsStream("com/proint1/udea/produccion/vista/reportes.zul") ; 
+		java.io.Reader zulReader = new java.io.InputStreamReader(zulInput);
+		Window windowCenter= (Window)Executions.createComponentsDirectly(zulReader,"zul",divCenter,new HashMap<Object, Object>()) ;	
+		windowCenter.doEmbedded();
+		windowCenter.setClass("window");
+	}
 	                    						
 	public void onClick$mCerrarSesion() throws ProduccionException {
 		System.out.println("#cerrando");

@@ -44,7 +44,7 @@
 						 
 						<!-- <menuitem label="Consulta filtrada" id="consultaFiltrada" />-->
 						<!-- <menuitem label="Producciones filtrada" id="produccionesFiltradas" />-->
-						
+						<menuitem label="Reportes" id="reportes" />
 					</menupopup>
 				</menu>
 				
