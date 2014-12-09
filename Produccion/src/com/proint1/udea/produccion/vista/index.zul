@@ -1,5 +1,5 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
-<?page title="Producion Academica" contentType="text/html;charset=UTF-8"?>
+<?page title="PACAD" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:x="xhtml" xmlns:zk="zk">
 	<window title="Producion Academica" border="normal" width="900px"
 		height="480px">
