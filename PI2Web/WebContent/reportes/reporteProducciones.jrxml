@@ -2,13 +2,16 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteProducciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7caed91e-20e7-4ba2-98ce-c4bc41d6d297">
 	<property name="ireport.zoom" value="1.6500000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="135"/>
+	<property name="ireport.y" value="0"/>
 	<subDataset name="dataset1" uuid="5513a88b-aa71-44d9-bb2f-1c20e9d8b103"/>
 	<subDataset name="dataset2" uuid="6f49c6d2-c8b0-4dcf-9069-3d4a9c753fe6"/>
 	<subDataset name="dataset3" uuid="1ff5be24-df4b-4d2e-aa82-36b7e51aada0"/>
 	<parameter name="NOMBREEMPRESA" class="java.lang.String"/>
 	<parameter name="TOTALPRODUCCIONES" class="java.lang.String"/>
 	<parameter name="PROYECTO" class="java.lang.String"/>
+	<parameter name="FECHAINICIAL" class="java.lang.String"/>
+	<parameter name="FECHAFINAL" class="java.lang.String"/>
+	<parameter name="INFOGRUPOS" class="java.lang.String"/>
 	<field name="nombreProduccion" class="java.lang.String"/>
 	<field name="tipoProduccion" class="java.lang.String"/>
 	<field name="autores" class="java.lang.String"/>
@@ -21,9 +24,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="81" splitType="Stretch">
+		<band height="138" splitType="Stretch">
 			<rectangle>
-				<reportElement x="182" y="38" width="161" height="20" uuid="74d5c0b5-68bd-45ce-b4b3-51de1b5c56fb"/>
+				<reportElement x="182" y="105" width="161" height="20" uuid="74d5c0b5-68bd-45ce-b4b3-51de1b5c56fb"/>
 			</rectangle>
 			<rectangle>
 				<reportElement x="123" y="0" width="315" height="31" uuid="0131692b-9736-4a26-873c-b9e6329ca1cb"/>
@@ -40,11 +43,11 @@
 				<textFieldExpression><![CDATA[$P{NOMBREEMPRESA}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="316" y="42" width="140" height="20" uuid="78123859-4e1e-46eb-abbc-6c97f76446d9"/>
+				<reportElement x="316" y="108" width="140" height="20" uuid="78123859-4e1e-46eb-abbc-6c97f76446d9"/>
 				<textFieldExpression><![CDATA[$P{TOTALPRODUCCIONES}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="185" y="42" width="136" height="20" uuid="0fd7c5a4-e66c-4a08-bdc9-8093202a981d"/>
+				<reportElement x="185" y="108" width="136" height="20" uuid="0fd7c5a4-e66c-4a08-bdc9-8093202a981d"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -53,6 +56,17 @@
 			<textField>
 				<reportElement x="207" y="16" width="155" height="20" uuid="460aba65-c865-40b7-80a7-12c0405f53b1"/>
 				<textFieldExpression><![CDATA[$P{PROYECTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="36" width="408" height="20" uuid="e97d9e2a-00c9-411b-ae2b-c6af01ac9d9d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Filtro de producciones entre las fechas: "+$P{FECHAINICIAL}+" y "+$P{FECHAFINAL}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="60" width="419" height="45" uuid="026a559e-be9d-4894-9e6a-9262bca40658"/>
+				<textFieldExpression><![CDATA["Para: "+$P{INFOGRUPOS}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

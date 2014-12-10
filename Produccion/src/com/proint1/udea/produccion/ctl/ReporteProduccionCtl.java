@@ -118,6 +118,9 @@ public class ReporteProduccionCtl extends GenericForwardComposer{
 			parameters.put("NOMBREEMPRESA", "Universidad de Antioquia");
 			parameters.put("TOTALPRODUCCIONES", ""+lista.size()+"");
 			parameters.put("PROYECTO", "Producciones Académicas");
+			parameters.put("FECHAINICIAL", dtFechaInicial.getText());
+			parameters.put("FECHAFINAL", dtFechaFinal.getText());
+			parameters.put("INFOGRUPOS", grupoSeleccionado == null ? "Todas las producciones académicas.": "El grupo de investigación: " + grupoSeleccionado.getVrNombre());
 	        JasperPrint jasperPrint = JasperFillManager.fillReport(reporte,parameters, new JRBeanCollectionDataSource(lista));  
 	       // JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\Users\\usuario\\Documents\\Reportes\\ProyectoIntegrador2\\simple_report.pdf"); 
 	        //JasperExportManager.exportReportToPdfFile(jasperPrint);

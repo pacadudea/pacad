@@ -66,8 +66,8 @@ public class ProduccionServiceImpl implements ProduccionService {
 			reporteProd.setAutores(obtenerAutoresXProd(tbAutXProd));
 			reporteProd.setDetalles(obtenerDetalleProducciones(tbDetalleProducciones));
 			reporteProd.setNombreProduccion(tbPrdProduccion.getVrNombreproduccion());
-			reporteProd.setUrlProduccion(tbPrdProduccion.getVrUrl());
-			reporteProd.setDoiProduccion(tbPrdProduccion.getVrDoi());
+			reporteProd.setUrlProduccion(tbPrdProduccion.getVrUrl()== null || tbPrdProduccion.getVrUrl().equals("")? "No diligenciado" : tbPrdProduccion.getVrUrl());
+			reporteProd.setDoiProduccion(tbPrdProduccion.getVrDoi()== null || tbPrdProduccion.getVrDoi().equals("")? "No diligenciado" : tbPrdProduccion.getVrDoi());
 			Date fechaPublicacion = tbPrdProduccion.getDtFechapublicacion();
 			reporteProd.setFechaPublicacion(fechaPublicacion.toString());
 			
