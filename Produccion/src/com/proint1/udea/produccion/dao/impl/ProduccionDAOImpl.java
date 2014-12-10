@@ -9,6 +9,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -29,6 +30,7 @@ public class ProduccionDAOImpl extends HibernateDaoSupport implements Produccion
 		try {
 			session = getSession(true);
 			Criteria criteria = session.createCriteria(TbPrdProduccion.class);
+			criteria.addOrder(Order.asc("dtFechapublicacion"));
 			producciones = criteria.list();
 		} catch (HibernateException e) { // throw new
 			System.out.println(e.getMessage());
